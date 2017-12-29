@@ -1915,7 +1915,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5886ff;
+  background: #69ffdb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3141,6 +3141,11 @@ a {
   animation-timing-function: ease-in-out;
   animation-delay: 5s;
   animation-iteration-count: infinite;
+}
+@media (max-width: 991px) {
+  .waifu-tips {
+    margin: -60px 20px;
+  }
 }
 .waifu #live2d {
   position: relative;
