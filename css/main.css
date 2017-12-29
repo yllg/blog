@@ -1915,7 +1915,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #69ffdb;
+  background: #29d203;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2906,11 +2906,11 @@ body {
 }
 .header-inner {
   position: relative;
+  padding: 0;
   width: 100%;
   height: 750px;
-  padding: 0;
-  box-shadow: initial;
   border-radius: initial;
+  box-shadow: initial;
 }
 @media (max-width: 0px) {
   .container .header-inner {
@@ -2928,8 +2928,8 @@ body {
   .header-inner {
     position: relative;
     width: auto;
-    border-radius: initial;
     height: 260px;
+    border-radius: initial;
   }
 }
 .main {
@@ -2959,23 +2959,23 @@ body {
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  width: 772px;
   min-height: 700px;
-  box-shadow: initial;
+  width: 772px;
   border-radius: initial;
+  box-shadow: initial;
 }
 @media (max-width: 0px) {
   .content-wrap {
-    width: 100%;
     padding: 0;
+    width: 100%;
     border-radius: initial;
   }
 }
 @media (max-width: 991px) {
   .content-wrap {
-    width: 100%;
     padding: 0;
     min-height: auto;
+    width: 100%;
     border-radius: initial;
   }
 }
@@ -3001,32 +3001,32 @@ body {
   display: none;
 }
 .footer {
-  background: #232323;
   padding: 15px 0 10px;
-  text-align: center;
+  background: #232323;
   color: #888;
+  text-align: center;
   font-size: 12px;
   line-height: 1.5;
 }
 .footer .footer-inner {
-  width: 100%;
   margin: 0;
+  width: 100%;
 }
 .footer .footer-inner p {
   margin: 5px 0;
 }
 @media (max-width: 0px) {
   .footer .footer-inner {
-    width: auto;
-    padding-left: 0 !important;
     padding-right: 0 !important;
+    padding-left: 0 !important;
+    width: auto;
   }
 }
 @media (max-width: 991px) {
   .footer .footer-inner {
-    width: auto;
-    padding-left: 0 !important;
     padding-right: 0 !important;
+    padding-left: 0 !important;
+    width: auto;
   }
 }
 .sidebar-position-right .header-inner {
@@ -3040,23 +3040,23 @@ body {
 }
 #evanyou {
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
   z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 a {
   border-bottom: 0;
   color: #795548;
 }
 .btn {
+  padding: 1px 15px;
+  border: none;
+  border-radius: 5px;
   background: #97dffd;
   color: #fff;
   font-size: 13px;
-  padding: 1px 15px;
-  border-radius: 5px;
-  border: none;
 }
 .btn:hover {
   background: #47456d;
@@ -3065,40 +3065,23 @@ a {
   border: none;
 }
 .animated {
-  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 .animated.hinge {
-  -webkit-animation-duration: 2s;
   animation-duration: 2s;
-}
-@-webkit-keyframes tada {
-  0% {
-    -webkit-transform: scale(1);
-  }
-  10%, 20% {
-    -webkit-transform: scale(0.9) rotate(-3deg);
-  }
-  30%, 50%, 70%, 90% {
-    -webkit-transform: scale(1.1) rotate(3deg);
-  }
-  40%, 60%, 80% {
-    -webkit-transform: scale(1.1) rotate(-3deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotate(0deg);
-  }
+  -webkit-animation-duration: 2s;
 }
 .tada {
-  -webkit-animation-name: tada;
   animation-name: tada;
+  -webkit-animation-name: tada;
 }
 .waifu {
   position: fixed;
+  right: 10%;
   bottom: 0;
-  right: 3%;
   z-index: 2;
   font-size: 0;
   transition: all 0.3s ease-in-out;
@@ -3122,6 +3105,10 @@ a {
     right: 15%;
   }
 }
+body.night .waifu {
+  filter: brightness(30%);
+  color: #34495e;
+}
 .waifu-tips {
   position: absolute;
   overflow: hidden;
@@ -3131,8 +3118,9 @@ a {
   height: 70px;
   border: 1px solid rgba(224,186,140,0.62);
   border-radius: 12px;
-  background-color: rgba(236,217,188,0.5);
+  background-color: rgba(151,224,251,0.7);
   box-shadow: 0 3px 15px 2px rgba(191,158,118,0.2);
+  color: #fff;
   text-overflow: ellipsis;
   font-size: 12px;
   opacity: 0;
@@ -3147,10 +3135,41 @@ a {
     margin: -60px 20px;
   }
 }
+.waifu-tool {
+  position: absolute;
+  top: 100px;
+  left: -10px;
+  display: none;
+  color: #aaa;
+  font-size: 14px;
+}
+@media (max-width: 991px) {
+  .waifu-tool {
+    top: 35px;
+  }
+  .waifu-tool .fui-user,
+  .waifu-tool .fui-photo,
+  .waifu-tool .fui-info-circle {
+    display: none;
+  }
+}
+.waifu:hover .waifu-tool {
+  display: block;
+}
+.waifu-tool span {
+  display: block;
+  color: #5b6c7d;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.waifu-tool span:hover {
+  color: #34495e;
+}
 .waifu #live2d {
   position: relative;
-  bottom: 0;
   right: 0;
+  bottom: 0;
 }
 @media (max-width: 991px) {
   .waifu #live2d {
@@ -3163,172 +3182,270 @@ a {
     width: 140px !important;
   }
 }
+body.night {
+  background-color: #263238;
+  color: #aaa;
+}
+body.night #live2d {
+  filter: brightness(30%);
+  color: #34495e;
+}
+body.night img {
+  filter: brightness(30%);
+}
+body.night .waifu,
+body.night .site-master-avatar,
+body.night .site-author-image {
+  filter: brightness(100%);
+}
+body.night .site-brand-wrapper {
+  filter: brightness(30%);
+}
+body.night .site-master {
+  filter: brightness(30%);
+}
+body.night .post,
+body.night .sidebar-inner,
+body.night .affix-top,
+body.night .affix,
+body.night .pagination,
+body.night .comments {
+  opacity: 0.7;
+}
 @-moz-keyframes tada {
   0% {
     -webkit-transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
   }
   10%, 20% {
     -webkit-transform: scale(0.9) rotate(-3deg);
-    -webkit-transform: scale(0.9) rotate(-3deg);
-    -moz-transform: scale(0.9) rotate(-3deg);
-    -ms-transform: scale(0.9) rotate(-3deg);
-    -o-transform: scale(0.9) rotate(-3deg);
-    transform: scale(0.9) rotate(-3deg);
   }
   30%, 50%, 70%, 90% {
     -webkit-transform: scale(1.1) rotate(3deg);
-    -webkit-transform: scale(1.1) rotate(3deg);
-    -moz-transform: scale(1.1) rotate(3deg);
-    -ms-transform: scale(1.1) rotate(3deg);
-    -o-transform: scale(1.1) rotate(3deg);
-    transform: scale(1.1) rotate(3deg);
   }
   40%, 60%, 80% {
     -webkit-transform: scale(1.1) rotate(-3deg);
-    -webkit-transform: scale(1.1) rotate(-3deg);
-    -moz-transform: scale(1.1) rotate(-3deg);
-    -ms-transform: scale(1.1) rotate(-3deg);
-    -o-transform: scale(1.1) rotate(-3deg);
-    transform: scale(1.1) rotate(-3deg);
   }
   100% {
-    -webkit-transform: scale(1) rotate(0deg);
-    -webkit-transform: scale(1) rotate(0deg);
-    -moz-transform: scale(1) rotate(0deg);
-    -ms-transform: scale(1) rotate(0deg);
-    -o-transform: scale(1) rotate(0deg);
-    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0);
   }
 }
 @-webkit-keyframes tada {
   0% {
     -webkit-transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
   }
   10%, 20% {
     -webkit-transform: scale(0.9) rotate(-3deg);
-    -webkit-transform: scale(0.9) rotate(-3deg);
-    -moz-transform: scale(0.9) rotate(-3deg);
-    -ms-transform: scale(0.9) rotate(-3deg);
-    -o-transform: scale(0.9) rotate(-3deg);
-    transform: scale(0.9) rotate(-3deg);
   }
   30%, 50%, 70%, 90% {
     -webkit-transform: scale(1.1) rotate(3deg);
-    -webkit-transform: scale(1.1) rotate(3deg);
-    -moz-transform: scale(1.1) rotate(3deg);
-    -ms-transform: scale(1.1) rotate(3deg);
-    -o-transform: scale(1.1) rotate(3deg);
-    transform: scale(1.1) rotate(3deg);
   }
   40%, 60%, 80% {
     -webkit-transform: scale(1.1) rotate(-3deg);
-    -webkit-transform: scale(1.1) rotate(-3deg);
-    -moz-transform: scale(1.1) rotate(-3deg);
-    -ms-transform: scale(1.1) rotate(-3deg);
-    -o-transform: scale(1.1) rotate(-3deg);
-    transform: scale(1.1) rotate(-3deg);
   }
   100% {
-    -webkit-transform: scale(1) rotate(0deg);
-    -webkit-transform: scale(1) rotate(0deg);
-    -moz-transform: scale(1) rotate(0deg);
-    -ms-transform: scale(1) rotate(0deg);
-    -o-transform: scale(1) rotate(0deg);
-    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0);
   }
 }
 @-o-keyframes tada {
   0% {
     -webkit-transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
   }
   10%, 20% {
     -webkit-transform: scale(0.9) rotate(-3deg);
-    -webkit-transform: scale(0.9) rotate(-3deg);
-    -moz-transform: scale(0.9) rotate(-3deg);
-    -ms-transform: scale(0.9) rotate(-3deg);
-    -o-transform: scale(0.9) rotate(-3deg);
-    transform: scale(0.9) rotate(-3deg);
   }
   30%, 50%, 70%, 90% {
     -webkit-transform: scale(1.1) rotate(3deg);
-    -webkit-transform: scale(1.1) rotate(3deg);
-    -moz-transform: scale(1.1) rotate(3deg);
-    -ms-transform: scale(1.1) rotate(3deg);
-    -o-transform: scale(1.1) rotate(3deg);
-    transform: scale(1.1) rotate(3deg);
   }
   40%, 60%, 80% {
     -webkit-transform: scale(1.1) rotate(-3deg);
-    -webkit-transform: scale(1.1) rotate(-3deg);
-    -moz-transform: scale(1.1) rotate(-3deg);
-    -ms-transform: scale(1.1) rotate(-3deg);
-    -o-transform: scale(1.1) rotate(-3deg);
-    transform: scale(1.1) rotate(-3deg);
   }
   100% {
-    -webkit-transform: scale(1) rotate(0deg);
-    -webkit-transform: scale(1) rotate(0deg);
-    -moz-transform: scale(1) rotate(0deg);
-    -ms-transform: scale(1) rotate(0deg);
-    -o-transform: scale(1) rotate(0deg);
-    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0);
   }
 }
 @keyframes tada {
   0% {
     -webkit-transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+  }
+}
+@-moz-keyframes tada {
+  0% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
+    -webkit-transform: scale(1);
   }
   10%, 20% {
-    -webkit-transform: scale(0.9) rotate(-3deg);
     -webkit-transform: scale(0.9) rotate(-3deg);
     -moz-transform: scale(0.9) rotate(-3deg);
     -ms-transform: scale(0.9) rotate(-3deg);
     -o-transform: scale(0.9) rotate(-3deg);
     transform: scale(0.9) rotate(-3deg);
+    -webkit-transform: scale(0.9) rotate(-3deg);
   }
   30%, 50%, 70%, 90% {
-    -webkit-transform: scale(1.1) rotate(3deg);
     -webkit-transform: scale(1.1) rotate(3deg);
     -moz-transform: scale(1.1) rotate(3deg);
     -ms-transform: scale(1.1) rotate(3deg);
     -o-transform: scale(1.1) rotate(3deg);
     transform: scale(1.1) rotate(3deg);
+    -webkit-transform: scale(1.1) rotate(3deg);
   }
   40%, 60%, 80% {
-    -webkit-transform: scale(1.1) rotate(-3deg);
     -webkit-transform: scale(1.1) rotate(-3deg);
     -moz-transform: scale(1.1) rotate(-3deg);
     -ms-transform: scale(1.1) rotate(-3deg);
     -o-transform: scale(1.1) rotate(-3deg);
     transform: scale(1.1) rotate(-3deg);
+    -webkit-transform: scale(1.1) rotate(-3deg);
   }
   100% {
-    -webkit-transform: scale(1) rotate(0deg);
-    -webkit-transform: scale(1) rotate(0deg);
-    -moz-transform: scale(1) rotate(0deg);
-    -ms-transform: scale(1) rotate(0deg);
-    -o-transform: scale(1) rotate(0deg);
-    transform: scale(1) rotate(0deg);
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0);
+  }
+}
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    -o-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    -o-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    -o-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0);
+  }
+}
+@-o-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    -o-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    -o-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    -o-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0);
+  }
+}
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -moz-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    -o-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+    -webkit-transform: scale(0.9) rotate(-3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -moz-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    -o-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+    -webkit-transform: scale(1.1) rotate(3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -moz-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    -o-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+    -webkit-transform: scale(1.1) rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+    -webkit-transform: scale(1) rotate(0);
   }
 }
 @-moz-keyframes shake {

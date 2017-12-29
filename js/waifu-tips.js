@@ -24,7 +24,7 @@ String.prototype.render = function (context) {
 };
 
 var re = /x/;
-// console.log(re);
+console.log("%c", "padding:100px 200px;line-height:120px;background:url('http://img.mp.itc.cn/upload/20170713/60965fb171e241309e6ae55761a8e08f_th.jpg");
 re.toString = function() {
     showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
     return '';
@@ -34,9 +34,38 @@ $(document).on('copy', function (){
     showMessage('你都复制了些什么呀，转载要记得加上出处哦', 5000);
 });
 
+$('#hitokoto').mouseover(function (){
+  var text = '这句一言出处是 <span style="color:#0099cc;">『{source}』</span>，是 <span style="color:#0099cc;">{author}</span> 在 {date} 时投稿的！'
+  var hitokoto = JSON.parse($(this)[0].dataset.raw);
+  text = text.render({source: hitokoto.source, author: hitokoto.author, date: hitokoto.date});
+  showMessage(text, 3000);
+});
+
+$('.waifu-tool .fui-home').click(function (){
+  window.location = 'http://www.xuanbiyijue.com/';
+});
+
+$('.waifu-tool .fui-eye').click(function (){
+  switchNightMode();
+  showMessage('你会做眼保健操吗？', 3000, true);
+});
+
+$('.waifu').click(function (){
+  $(".waifu-tool").toggle();
+});
+
+$('.waifu-tool .fui-chat').click(function (){
+  showHitokoto();
+});
+
+$('.waifu-tool .fui-user').click(function (){
+  loadRandModel();
+  showMessage('我的新衣服好看嘛', 3000, true);
+});
+
 $.ajax({
     cache: true,
-    url: "js/waifu-tips.json",
+    url: "/js/waifu-tips.json",
     dataType: "json",
     success: function (result){
         $.each(result.mouseover, function (index, tips){
@@ -73,7 +102,7 @@ $.ajax({
             text = 'Hello! 来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
         }
     }else {
-        if (window.location.href == 'https://imjad.cn/') { //如果是主页
+        if (window.location.href == 'https://xuanbiyijue.com/') { //如果是主页
             var now = (new Date()).getHours();
             if (now > 23 || now <= 5) {
                 text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
@@ -117,8 +146,28 @@ function showMessage(text, timeout){
     if (timeout === null) timeout = 5000;
     hideMessage(timeout);
 }
+
 function hideMessage(timeout){
     $('.waifu-tips').stop().css('opacity',1);
     if (timeout === null) timeout = 5000;
     $('.waifu-tips').delay(timeout).fadeTo(200, 0);
+}
+
+var night = 0;
+function switchNightMode(){
+  if(night == '0'){
+      document.body.classList.add('night');
+      night = '1';
+      console.log('夜间模式开启');
+  }else{
+      document.body.classList.remove('night');
+      night = '0'
+      console.log('夜间模式关闭');
+  }
+}
+
+function loadRandModel(){
+  var skinIndex = Math.floor(Math.random() * 16 + 1);
+  var modelJSON = "/js/Skin/Pio/model" + skinIndex +".json";
+  loadlive2d("live2d", modelJSON, console.log('更换为皮肤',skinIndex));
 }
