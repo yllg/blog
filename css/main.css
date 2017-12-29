@@ -1915,7 +1915,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e2daac;
+  background: #867f1a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3098,7 +3098,7 @@ a {
 .waifu {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 3%;
   z-index: 2;
   font-size: 0;
   transition: all 0.3s ease-in-out;
@@ -3116,6 +3116,11 @@ a {
   -o-transform: translateY(0);
   transform: translateY(0);
   -webkit-transform: translateY(0);
+}
+@media (max-width: 991px) {
+  .waifu {
+    right: 15%;
+  }
 }
 .waifu-tips {
   position: absolute;
