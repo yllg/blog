@@ -1615,30 +1615,30 @@ pre .javascript .function {
   border: none;
 }
 #rewardButton {
-  cursor: pointer;
-  border: 0;
-  outline: 0;
-  border-radius: 5px;
-  padding: 0;
   margin: 0;
-  letter-spacing: normal;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  text-indent: 0;
   text-transform: none;
-  text-indent: 0px;
   text-shadow: none;
+  letter-spacing: normal;
+  cursor: pointer;
 }
 #rewardButton span {
   display: inline-block;
   width: 80px;
   height: 35px;
   border-radius: 5px;
+  background: #f44336;
   color: #fff;
   font-weight: 400;
   font-style: normal;
   font-variant: normal;
   font-stretch: normal;
   font-size: 18px;
-  font-family: "Microsoft Yahei";
-  background: #f44336;
+  font-family: 'Microsoft Yahei';
 }
 #rewardButton span:hover {
   background: #f7877f;
@@ -1650,10 +1650,20 @@ pre .javascript .function {
   border: 0;
 }
 #QR img {
-  width: 180px;
-  max-width: 100%;
   display: inline-block;
-  margin: 0.8em 2em 0 2em;
+  margin: 0.8em 2em 0;
+  max-width: 100%;
+  width: 180px;
+}
+#donateImg {
+  width: 620px;
+  height: 390px;
+}
+@media (max-width: 991px) {
+  #donateImg {
+    width: 250px;
+    height: 160px;
+  }
 }
 #wechat:hover p {
   animation: roll 0.1s infinite linear;
@@ -1915,7 +1925,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a2b0ff;
+  background: #7f46c6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3147,7 +3157,7 @@ body.night .waifu {
   .waifu-tool {
     top: 35px;
   }
-  .waifu-tool .fui-user,
+  .waifu-tool .fui-chat,
   .waifu-tool .fui-photo,
   .waifu-tool .fui-info-circle {
     display: none;

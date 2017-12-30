@@ -25,6 +25,7 @@ String.prototype.render = function (context) {
 
 var re = /x/;
 console.log("%c", "padding:100px 200px;line-height:120px;background:url('http://img.mp.itc.cn/upload/20170713/60965fb171e241309e6ae55761a8e08f_th.jpg");
+console.log(re);
 re.toString = function() {
     showMessage('你打开了控制台，是想要看看我的秘密吗？', 5000);
     return '';
