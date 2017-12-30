@@ -26,7 +26,7 @@ String.prototype.render = function (context) {
 var re = /x/;
 console.log("%c", "padding:100px 200px;line-height:120px;background:url('http://img.mp.itc.cn/upload/20170713/60965fb171e241309e6ae55761a8e08f_th.jpg");
 re.toString = function() {
-    showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
+    showMessage('你打开了控制台，是想要看看我的秘密吗？', 5000);
     return '';
 };
 
@@ -47,7 +47,7 @@ $('.waifu-tool .fui-home').click(function (){
 
 $('.waifu-tool .fui-eye').click(function (){
   switchNightMode();
-  showMessage('你会做眼保健操吗？', 3000, true);
+  showMessage('注意休息，不要用眼过度哦~', 3000, true);
 });
 
 $('.waifu').click(function (){
@@ -62,6 +62,23 @@ $('.waifu-tool .fui-user').click(function (){
   loadRandModel();
   showMessage('我的新衣服好看嘛', 3000, true);
 });
+
+$('.waifu-tool .fui-photo').click(function (){
+  showMessage('照好了，是不是很可爱呢？', 5000, true);
+  window.Live2D.captureName = 'Pio.png';
+  window.Live2D.captureFrame = true;
+});
+
+$('.waifu-tool .fui-info-circle').click(function (){
+  showMessage('关注公众号或者加QQ群，让我主人告诉你，我是怎么诞生的吧~😝', 5000, true);
+});
+
+$('.waifu-tool .fui-cross').click(function (){
+  sessionStorage.setItem('waifu-dsiplay', 'none');
+  showMessage('刷新我就会出来的，一会见~', 3000, true);
+  window.setTimeout(function() {$('.waifu').hide();}, 3000);
+});
+
 
 $.ajax({
     cache: true,
@@ -99,10 +116,10 @@ $.ajax({
         }else if (domain == 'so') {
             text = 'Hello! 来自 360搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
         }else if (domain == 'google') {
-            text = 'Hello! 来自 谷歌搜索 的朋友<br>欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+            text = 'Hello! 来自 谷歌搜索 的朋友<br>欢迎访问<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
         }
     }else {
-        if (window.location.href == 'https://xuanbiyijue.com/') { //如果是主页
+        if (window.location.href == 'http://www.xuanbiyijue.com/') { //如果是主页
             var now = (new Date()).getHours();
             if (now > 23 || now <= 5) {
                 text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
@@ -124,7 +141,7 @@ $.ajax({
                 text = '嗨~ 快来逗我玩吧！';
             }
         }else {
-            text = '欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+            text = '欢迎访问<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
         }
     }
     showMessage(text, 6000);
