@@ -114,17 +114,17 @@
 
 
 
-<meta name="description" content="音乐页，本页放进全部的5个音乐播放器哦~">
+<meta name="description" content="音乐           云音乐飙升榜                新歌榜                原创榜                热歌榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting">
 <meta property="og:type" content="website">
-<meta property="og:title" content="音乐">
+<meta property="og:title" content="悬笔e绝">
 <meta property="og:url" content="http://www.xuanbiyijue.com/Music/index.html">
 <meta property="og:site_name" content="悬笔e绝">
-<meta property="og:description" content="音乐页，本页放进全部的5个音乐播放器哦~">
+<meta property="og:description" content="音乐           云音乐飙升榜                新歌榜                原创榜                热歌榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-12-30T08:10:52.915Z">
+<meta property="og:updated_time" content="2017-12-31T09:04:23.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="音乐">
-<meta name="twitter:description" content="音乐页，本页放进全部的5个音乐播放器哦~">
+<meta name="twitter:title" content="悬笔e绝">
+<meta name="twitter:description" content="音乐           云音乐飙升榜                新歌榜                原创榜                热歌榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting">
 
 
 
@@ -185,7 +185,7 @@
 
 
 
-  <title>音乐 | 悬笔e绝</title>
+  <title> | 悬笔e绝</title>
   
 
 
@@ -229,6 +229,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -284,13 +294,14 @@
       
 
       
+
       <li class="menu-item search">
           <form class="search-form">
             <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
             <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
           </form>
       </li>
-      <li class="menu-item online"><span id="online-count">?</span>人在线</li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
     </ul>
   
 
@@ -349,7 +360,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">音乐</h1>
+	<h1 class="post-title" itemprop="name headline"></h1>
 
 
 
@@ -361,8 +372,122 @@
       <div class="post-body">
         
         
-          <p>音乐页，本页放进全部的5个音乐播放器哦~</p>
+          <style>
 
+</style>
+
+<h1 class="post-title" itemprop="name headline">音乐</h1>
+<div class="category-all-page">
+    
+    <h3>云音乐飙升榜</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer1">
+    </div>
+
+    <h3>新歌榜</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer2">
+    </div>
+
+    <h3>原创榜</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer3">
+    </div>
+
+    <h3>热歌榜</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer4">
+    </div>
+
+    <h3>我的收藏</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer5">
+    </div>
+
+</div>
+
+<script>
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=19723756",
+            success: function (e) {
+                var a = new APlayer({
+                    element: document.getElementById("aplayer1"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "circulation",
+                    music: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=3779629",
+            success: function (e) {
+                var a = new APlayer({
+                    element: document.getElementById("aplayer2"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "circulation",
+                    music: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=2884035",
+            success: function (e) {
+                var a = new APlayer({
+                    element: document.getElementById("aplayer3"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "circulation",
+                    music: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=3778678",
+            success: function (e) {
+                var a = new APlayer({
+                    element: document.getElementById("aplayer4"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "circulation",
+                    music: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=626708643",
+            success: function (e) {
+                var a = new APlayer({
+                    element: document.getElementById("aplayer5"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "random",
+                    music: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+</script>
         
       </div>
       
@@ -405,7 +530,7 @@
           var disqus_config = function () {
             this.page.url = 'http://www.xuanbiyijue.com/Music/index.html';
             this.page.identifier = 'Music/index.html';
-            this.page.title = '音乐';
+            this.page.title = '';
           };
           if (window.DISQUS) {
             $('.disqus-loading').remove();
@@ -414,7 +539,7 @@
               config: function () {
                 this.page.url = 'http://www.xuanbiyijue.com/Music/index.html';
                 this.page.identifier = 'Music/index.html';
-                this.page.title = '音乐';
+                this.page.title = '';
               }
             });
           }
@@ -423,7 +548,7 @@
           var disqus_config = function () {
             this.page.url = 'http://www.xuanbiyijue.com/Music/index.html';
             this.page.identifier = 'Music/index.html';
-            this.page.title = '音乐';
+            this.page.title = '';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://diygod-me.disqus.com/embed.js';
@@ -479,8 +604,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -538,15 +672,21 @@
             
 
             
-              
-              
               <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">18</span>
+                <a href="/categories">
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="/tags">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
           </nav>
 
@@ -573,12 +713,46 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">&#x97F3;&#x4E50;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">&#x4E91;&#x97F3;&#x4E50;&#x98D9;&#x5347;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">&#x65B0;&#x6B4C;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">&#x539F;&#x521B;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.4.</span> <span class="nav-text">&#x70ED;&#x6B4C;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.5.</span> <span class="nav-text">&#x6211;&#x7684;&#x6536;&#x85CF;</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -648,7 +822,7 @@
   <script type="text/javascript">
       loadlive2d("live2d", "/js/Skin/Pio/model1.json");
   </script>
-
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
 
   
 

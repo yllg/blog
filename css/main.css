@@ -1744,6 +1744,13 @@ pre .javascript .function {
     transform: rotateZ(-30deg);
   }
 }
+.post-copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+  list-style: none;
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1925,7 +1932,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4aa4a4;
+  background: #94f6dd;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3128,7 +3135,7 @@ body.night .waifu {
   height: 70px;
   border: 1px solid rgba(224,186,140,0.62);
   border-radius: 12px;
-  background-color: rgba(151,224,251,0.7);
+  background-color: rgba(148,0,211,0.7);
   box-shadow: 0 3px 15px 2px rgba(191,158,118,0.2);
   color: #fff;
   text-overflow: ellipsis;
@@ -4923,10 +4930,10 @@ body.night .comments {
   font-family: SERIF;
 }
 .site-nav {
-  left: 0;
-  right: 0;
-  top: 0;
   position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: 3;
   background: #000;
   background: rgba(40,42,44,0.6);
@@ -4943,10 +4950,10 @@ body.night .comments {
   }
 }
 .menu {
-  margin-top: 0;
-  margin: 0 auto;
-  width: 1150px;
   position: relative;
+  margin: 0 auto;
+  margin-top: 0;
+  width: 1150px;
   text-align: left;
 }
 @media (max-width: 991px) {
@@ -4955,21 +4962,29 @@ body.night .comments {
     width: 100%;
   }
 }
+@media (max-width: 991px) {
+  .menu li:nth-child(3) {
+    display: none;
+  }
+  .menu li:nth-child(7) {
+    display: none;
+  }
+}
 .menu .menu-item {
-  border: 0;
-  display: inline-block;
-  height: 38px;
-  line-height: 38px;
   position: relative;
-  text-align: left;
+  display: inline-block;
   margin: 0 20px 0 0;
+  height: 38px;
+  border: 0;
   color: #fff;
+  text-align: left;
+  line-height: 38px;
 }
 @media (max-width: 991px) {
   .menu .menu-item {
     flex: 1;
-    -webkit-box-flex: 1;
     margin: 0;
+    -webkit-box-flex: 1;
   }
 }
 .menu .menu-item a {
@@ -4986,14 +5001,14 @@ body.night .comments {
 }
 @media (max-width: 991px) {
   .menu .menu-item a {
-    text-align: center;
     padding: 0;
+    text-align: center;
   }
 }
 .menu .menu-item a:hover,
 .menu .menu-item.menu-item-active a {
-  background: #f9f9f9;
   border-bottom: none;
+  background: #f9f9f9;
   color: #555;
 }
 .menu .menu-item a .fa {
@@ -5009,8 +5024,8 @@ body.night .comments {
 }
 .menu .menu-item.online {
   float: right;
-  font-size: 12px;
   margin: 0;
+  font-size: 12px;
 }
 @media (max-width: 991px) {
   .menu .menu-item.online {
@@ -5026,39 +5041,39 @@ body.night .comments {
   width: 100px;
 }
 .menu .menu-item.search .search-input {
+  padding: 3px 0;
+  width: 0;
+  outline: none;
   border: none;
   border-radius: 2px;
   color: #555;
   font-size: 12px;
-  outline: none;
-  width: 0;
-  padding: 3px 0;
   transition: all 0.5s ease-in-out;
 }
 .menu .menu-item.search .search-submit {
-  cursor: pointer;
   margin-left: 5px;
-  background: none;
   padding: 0;
-  border: none;
   outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 .menu .menu-item.search .search-submit i {
-  font-size: 17px;
   margin: 0;
+  font-size: 17px;
 }
 .btn-bar {
   background-color: #fff;
 }
 .site-nav-toggle {
-  left: 20px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
+  left: 20px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
 }
 @media (max-width: 0px) {
   .site-nav-toggle {
@@ -5066,25 +5081,25 @@ body.night .comments {
   }
 }
 .site-subtitle {
+  color: #fff;
   text-align: center;
   text-shadow: 0 1px 1px #47456d;
-  color: #fff;
   font-size: 30px;
 }
 .site-master {
-  text-align: center;
-  width: 70%;
-  margin: auto;
+  position: relative;
   top: -170px;
+  z-index: 1;
+  margin: auto;
   padding: 40px 0;
   padding-bottom: 40px;
+  width: 70%;
+  border-radius: 5px;
+  background: rgba(230,244,249,0.8);
+  text-align: center;
   font-size: 16px;
   opacity: 0.98;
-  background: rgba(230,244,249,0.8);
-  z-index: 1;
   animation: b 1s ease-out;
-  position: relative;
-  border-radius: 5px;
 }
 @media (max-width: 991px) {
   .site-master {

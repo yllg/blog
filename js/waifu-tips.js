@@ -142,7 +142,7 @@ $.ajax({
                 text = '嗨~ 快来逗我玩吧！';
             }
         }else {
-            text = '欢迎访问<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+            text = '欢迎访问<span style="color:#E0BA8C;">『' + document.title.split(' - ')[0] + '』</span>';
         }
     }
     showMessage(text, 6000);

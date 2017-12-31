@@ -236,6 +236,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-归档">
           <a href="/archives/" rel="section">
             
@@ -287,13 +297,14 @@
       
 
       
+
       <li class="menu-item search">
           <form class="search-form">
             <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
             <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
           </form>
       </li>
-      <li class="menu-item online"><span id="online-count">?</span>人在线</li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
     </ul>
   
 
@@ -536,44 +547,29 @@
     
 
     
-      <div class="post-share">分享到：</div>
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>Donate</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    <div id="donateImg">
-        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
-    </div>
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
-        <p>WeChat Pay</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
-        <p>Alipay</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
+      <div class="post-share" style="display: block !important;">分享到：
 
       </div>
     
 
+    
+      <div class="post-copyrightwrap">
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    悬笔e绝
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.xuanbiyijue.com/2017/12/31/vueApp/" title="vueApp">http://www.xuanbiyijue.com/2017/12/31/vueApp/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -613,6 +609,42 @@
         </div>
       
     </footer>
+
+     
+      <div class="post-donate">
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    <div id="donateImg">
+        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
+    </div>
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
   </div>
   
   
@@ -799,15 +831,21 @@
             
 
             
-              
-              
               <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">18</span>
+                <a href="/categories">
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="/tags">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
           </nav>
 
@@ -833,6 +871,24 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -925,7 +981,7 @@
   <script type="text/javascript">
       loadlive2d("live2d", "/js/Skin/Pio/model1.json");
   </script>
-
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
 
   
 
