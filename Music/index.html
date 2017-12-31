@@ -6,6 +6,7 @@
 <html class="theme-next pisces" lang="default">
 <head>
   <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -114,17 +115,17 @@
 
 
 
-<meta name="description" content="音乐           云音乐飙升榜                新歌榜                原创榜                热歌榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting">
+<meta name="description" content="音乐           云音乐飙升榜                新歌榜                原创榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting/api?server=netease">
 <meta property="og:type" content="website">
 <meta property="og:title" content="悬笔e绝">
 <meta property="og:url" content="http://www.xuanbiyijue.com/Music/index.html">
 <meta property="og:site_name" content="悬笔e绝">
-<meta property="og:description" content="音乐           云音乐飙升榜                新歌榜                原创榜                热歌榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting">
+<meta property="og:description" content="音乐           云音乐飙升榜                新歌榜                原创榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting/api?server=netease">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-12-31T09:04:23.555Z">
+<meta property="og:updated_time" content="2017-12-31T11:40:20.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="悬笔e绝">
-<meta name="twitter:description" content="音乐           云音乐飙升榜                新歌榜                原创榜                热歌榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting">
+<meta name="twitter:description" content="音乐           云音乐飙升榜                新歌榜                原创榜                我的收藏                    $(function () {         $.ajax({             url: &quot;https://api.i-meto.com/meting/api?server=netease">
 
 
 
@@ -391,10 +392,6 @@
     <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer3">
     </div>
 
-    <h3>热歌榜</h3>
-    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer4">
-    </div>
-
     <h3>我的收藏</h3>
     <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer5">
     </div>
@@ -443,23 +440,6 @@
             success: function (e) {
                 var a = new APlayer({
                     element: document.getElementById("aplayer3"),
-                    showlrc: 3,
-                    theme: "red",
-                    listmaxheight: "280px",
-                    mode: "circulation",
-                    music: JSON.parse(e)
-                });
-                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
-            }
-        })
-    })
-
-    $(function () {
-        $.ajax({
-            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=3778678",
-            success: function (e) {
-                var a = new APlayer({
-                    element: document.getElementById("aplayer4"),
                     showlrc: 3,
                     theme: "red",
                     listmaxheight: "280px",
@@ -674,7 +654,7 @@
             
               <div class="site-state-item site-state-categories">
                 <a href="/categories">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -682,7 +662,7 @@
 
             
               <div class="site-state-item site-state-tags">
-                <a href="/tags">
+                <a href="javascript:void(0)">
                   <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -747,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">&#x97F3;&#x4E50;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">&#x4E91;&#x97F3;&#x4E50;&#x98D9;&#x5347;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">&#x65B0;&#x6B4C;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">&#x539F;&#x521B;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.4.</span> <span class="nav-text">&#x70ED;&#x6B4C;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.5.</span> <span class="nav-text">&#x6211;&#x7684;&#x6536;&#x85CF;</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">&#x97F3;&#x4E50;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">&#x4E91;&#x97F3;&#x4E50;&#x98D9;&#x5347;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">&#x65B0;&#x6B4C;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">&#x539F;&#x521B;&#x699C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.4.</span> <span class="nav-text">&#x6211;&#x7684;&#x6536;&#x85CF;</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -823,6 +803,7 @@
       loadlive2d("live2d", "/js/Skin/Pio/model1.json");
   </script>
   <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
 
   
 
