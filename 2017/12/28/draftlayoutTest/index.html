@@ -143,7 +143,7 @@
     onlineAPI: '',
     site: {
       title: '火の意志',
-      subtitle: '火の意志',
+      subtitle: '',
       author: '悬笔e绝'
     },
     duoshuo: {
@@ -206,6 +206,7 @@
 
 
 
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -309,37 +310,70 @@
   
 </nav>
 
-<div class="site-brand-wrapper" style="background-image: url(/images/header-sagiri.jpg)">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <div class="brand">
-        <span class="logo-line-before"><i></i></span>
-        <div class="site-title">
-          <div id="animate" class="animate">
-            <span>悬</span><span>笔</span><span>e</span><span>绝</span>
-          </div>
-          <div id="guide" class="guide">
-            <span>悬</span><span>笔</span><span>e</span><span>绝</span>
-          </div>
-        </div>
-        <span class="logo-line-after"><i></i></span>
-      </div>
-    </div>
-      
-        <p class="site-subtitle">火の意志</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
 </div>
+
 <div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
 </div>
@@ -985,6 +1019,11 @@
     
 
   </div>
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
 
   <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.1"></script>
   <script type="text/javascript" src="/js/waifu-tips.js"></script>

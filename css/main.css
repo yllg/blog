@@ -1928,7 +1928,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #79b458;
+  background: #4bf449;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2934,7 +2934,7 @@ body {
   position: relative;
   padding: 0;
   width: 100%;
-  height: 750px;
+  height: 830px;
   border-radius: initial;
   box-shadow: initial;
 }
@@ -2968,6 +2968,11 @@ body {
 }
 .main:after {
   clear: both;
+}
+@media (max-width: 991px) {
+  .main {
+    padding-bottom: 150px;
+  }
 }
 .container .main-inner {
   width: 1150px;
@@ -4892,7 +4897,7 @@ body.night .comments {
 }
 @media (max-width: 991px) {
   .site-brand-wrapper {
-    height: 260px;
+    height: 222px;
   }
 }
 .site-meta {
@@ -5097,7 +5102,7 @@ body.night .comments {
 }
 .site-master {
   position: relative;
-  top: -170px;
+  top: 0px;
   z-index: 1;
   margin: auto;
   padding: 40px 0;
