@@ -379,9 +379,6 @@ kbd {
   margin-left: 10px;
   margin-right: 5px;
 }
-.affix.affix.affix {
-  position: fixed;
-}
 .translation {
   margin-top: -20px;
   font-size: 14px;
@@ -1928,7 +1925,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #04ffdb;
+  background: #3299ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3012,7 +3009,7 @@ body {
 }
 .sidebar {
   position: static;
-  float: left;
+  float: right;
   margin-top: 300px;
   width: 345px;
   background: #f5f7f9;
@@ -4945,6 +4942,7 @@ body.night .comments {
   font-family: SERIF;
 }
 .site-nav {
+  display: none !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -5106,11 +5104,11 @@ body.night .comments {
   top: 0px;
   z-index: 1;
   margin: auto;
-  padding: 40px 0;
+  padding: 30px 0;
   padding-bottom: 40px;
   width: 70%;
   border-radius: 5px;
-  background: rgba(230,244,249,0.8);
+  background: #85e0ff;
   text-align: center;
   font-size: 16px;
   opacity: 0.98;
@@ -5122,6 +5120,7 @@ body.night .comments {
   }
 }
 .site-master .site-master-avatar {
+  display: inline-block;
   width: 100px;
   height: 100px;
   border-radius: 100%;
@@ -5147,7 +5146,6 @@ body.night .comments {
   z-index: 2;
 }
 .sidebar-inner.affix {
-  position: fixed;
   top: 52px;
   width: 345px;
 }

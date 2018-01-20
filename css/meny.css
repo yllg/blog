@@ -1,0 +1,121 @@
+
+
+html {
+	/* height: 100%; */
+	/* overflow: hidden; */
+}
+
+body {
+	background-color: #222;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+	background-repeat: repeat;
+}
+
+.meny {
+  display: none;
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  left: 0;
+  top: 0;
+	padding: 20px;
+	background: #333;
+	color: #eee;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.meny a {
+	color: #c2575b;
+	text-decoration: none;
+
+	-webkit-transition: 0.15s color ease;
+	   -moz-transition: 0.15s color ease;
+	    -ms-transition: 0.15s color ease;
+	     -o-transition: 0.15s color ease;
+	        transition: 0.15s color ease;
+}
+
+.meny a:hover {
+	color: #f76f76;
+}
+
+.meny ul {
+	margin-top: 10px;
+}
+
+.meny ul li {
+	display: inline-block;
+	width: 200px;
+	list-style: none;
+	font-size: 20px;
+	padding: 3px 10px;
+}
+
+.meny-arrow {
+	position: absolute;
+	z-index: 10;
+
+	border: 10px solid transparent;
+
+	-webkit-transition: opacity 0.4s ease 0.4s;
+	   -moz-transition: opacity 0.4s ease 0.4s;
+	    -ms-transition: opacity 0.4s ease 0.4s;
+	     -o-transition: opacity 0.4s ease 0.4s;
+	        transition: opacity 0.4s ease 0.4s;
+}
+.meny-arrow {
+  position: fixed;
+	left: 14px;
+	top: 50%;
+	margin-top: -16px;
+	border-left: 16px solid #333;
+}
+
+.meny-active .meny-arrow {
+	opacity: 0;
+
+	-webkit-transition: opacity 0.2s ease;
+		-moz-transition: opacity 0.2s ease;
+		-ms-transition: opacity 0.2s ease;
+			-o-transition: opacity 0.2s ease;
+			transition: opacity 0.2s ease;
+}
+
+/**
+ * Main contents area
+ */
+.meny-contents {
+	background: #eee;
+	/* width: 100%;
+  height: 100%; */
+
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform-style: preserve-3d;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+@media screen and (max-width: 991px) {
+  .meny{
+    width: 100px !important;
+    padding: 0;
+  }
+  .meny a{
+    font-size: 8px;
+  }
+  .meny ul{
+    padding: 0px;
+  }
+  .meny ul li{
+    width: 100%;
+  }
+  .meny-contents.menu-open{
+    transform: translateX(100px) rotateY(15deg) !important;
+  }
+}
+

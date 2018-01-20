@@ -89,16 +89,16 @@
 
 <link href="https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.0.2" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.2">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.2">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=0.0.1" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.2" color="#222">
 
 
 
@@ -137,7 +137,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '0.0.1',
+    version: '0.0.2',
     sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -210,18 +210,27 @@
 
 
   <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-  
-  
-    
-  
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
 
-  <div class="container sidebar-position-right page-post-detail">
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><nav class="site-nav">
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
   
 
   
@@ -378,18 +387,25 @@
 </div>
 
 <div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
 </div>
 
 
  </div>
-    </header>
+        </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
 
   <div id="posts" class="posts-expand">
     
@@ -716,11 +732,11 @@
   </div>
 
 
-          </div>
-          
+              </div>
+              
 
 
-          
+              
 
   
     <div class="comments" id="comments">
@@ -801,9 +817,9 @@
 
 
 
-        </div>
-        
-          
+            </div>
+            
+              
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -984,23 +1000,23 @@
   </aside>
 
 
-        
-      </div>
-    </main>
+            
+          </div>
+        </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-image"></div>
-      <div class="footer-inner">
-        <p>网站已运行：<span id="since"></span></p>
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
 <p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
 
 <p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
     由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
-    版本号:v0.0.1.
+    版本号:v0.0.2.
 </p>
 <p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
 
-        
+            
 <div class="busuanzi-count">
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
@@ -1028,38 +1044,79 @@
 
 
 
+            
+          </div>
+        </footer>
+
         
+
+        
+
       </div>
-    </footer>
 
-    
+      
 
-    <canvas id="evanyou"></canvas>
 
-    <div class="waifu">
-        <div class="waifu-tips"></div>
-        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-        <div class="waifu-tool">
-            <span class="fui-home"></span>
-            <span class="fui-eye"></span>
-            <span class="fui-chat"></span>
-            <span class="fui-user"></span>
-            <span class="fui-photo"></span>
-            <span class="fui-info-circle"></span>
-            <span class="fui-cross"></span>
-        </div>
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+<!-- 需要fixed的单独拿出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
     </div>
-
-    
-
+</div>
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
   </div>
+</div>
+
+
 
   <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
   <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
   <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
   <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
 
-  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.1"></script>
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.2"></script>
   <script type="text/javascript" src="/js/waifu-tips.js"></script>
   <script type="text/javascript" src="/js/live2d.js"></script>
   <script type="text/javascript">
@@ -1068,22 +1125,18 @@
   <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
   <script type="text/javascript" src="/js/DPlayer.min.js"></script>
 
-  
-
-
-
-
-
-  
-
-  
-  
-
-  
-
-  
-
-  
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: true
+    });
+  </script>
 
 </body>
 </html>
