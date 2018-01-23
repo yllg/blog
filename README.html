@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="default">
+<head>
+  <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.2" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="悬笔e绝,个人博客,blog, web前端,大前端,学习,笔记,UNSLEEP" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;                             blog/README.md at gh-pages · yllg/blog                                                                                                  Skip to conten">
+<meta property="og:type" content="website">
+<meta property="og:title" content="悬笔e绝">
+<meta property="og:url" content="http://www.xuanbiyijue.com/README.html">
+<meta property="og:site_name" content="悬笔e绝">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;                             blog/README.md at gh-pages · yllg/blog                                                                                                  Skip to conten">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/29888368?s=40&v=4">
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/29888368?s=40&v=4">
+<meta property="og:image" content="https://avatars2.githubusercontent.com/u/29888368?s=48&v=4">
+<meta property="og:image" content="https://camo.githubusercontent.com/1d1f49399f104fce3034e286ad694b5d3b6d9f90/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d383033623437343366333731333236312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
+<meta property="og:image" content="https://camo.githubusercontent.com/e7a75078814e4a5ae81cb54192f90ba473d70a87/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d373033323139396336363764663566332e6769663f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
+<meta property="og:image" content="https://camo.githubusercontent.com/c2bac69d9962c04d2968430ede308b39efd35ff7/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d613937613561383164363839326238302e6769663f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
+<meta property="og:image" content="https://camo.githubusercontent.com/b18b59ddd79f151d11b5793dfa742173ea152b4d/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d313263323938656530396662343434363f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
+<meta property="og:image" content="https://camo.githubusercontent.com/d4f7294c5618ae0e70d7b981b36ca76a8da6d5d9/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d326239653538316564343939376438393f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
+<meta property="og:image" content="https://camo.githubusercontent.com/60c15ccd0f2780d6dc8127448315fc49d401624f/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d663731306636373538333830353331643f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
+<meta property="og:image" content="https://camo.githubusercontent.com/f629213937fcd6d00ef95f08c8c40c59b9190454/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d653330623864666265393265656635393f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
+<meta property="og:updated_time" content="2018-01-20T15:34:43.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="悬笔e绝">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;                             blog/README.md at gh-pages · yllg/blog                                                                                                  Skip to conten">
+<meta name="twitter:image" content="https://avatars3.githubusercontent.com/u/29888368?s=40&v=4">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.2',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '12/12/2017 2:00:00',
+    onlineAPI: '',
+    site: {
+      title: '火の意志',
+      subtitle: '',
+      author: '悬笔e绝'
+    },
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '6yIOhn3kOO9PP9MGXP84RkNU-gzGzoHsz',
+      appKey: 'Ar2z70S83F1nVkRGH4Ifodrn'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)欢迎回来！',
+      hide_text: '哎哎，别走啊！'
+    }
+  };
+</script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="canonical" href="http://www.xuanbiyijue.com/README.html"/>
+
+
+
+
+
+  <title> | 悬笔e绝</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://cdn.bootcss.com/analytics.js/2.9.1/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
+
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-实验室">
+          <a href="/categories/实验室/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-音乐">
+          <a href="/Music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-unsleep">
+          <a href="/UNSLEEP/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            UNSLEEP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/Message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
+</div>
+
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
+</div>
+
+
+ </div>
+        </header>
+
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
+
+  <div id="posts" class="post posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <p>&lt;!DOCTYPE html&gt;</p>
+<html lang="en"><br>  <head><br>    <meta charset="utf-8"><br>  <link rel="dns-prefetch" href="https://assets-cdn.github.com"><br>  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com"><br>  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com"><br>  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com"><br>  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com"><br>  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com"><br>  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/"><br><br><br><br>  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-98cac35b43fab8341490a2623fdaa7b696bbaea87bccf8f485fd5cdb4996cd9b52bdb24709fb3bab0a0dcff4a29187d65028ee693d609ce5c0c3283c77a247a9.css" integrity="sha512-mMrDW0P6uDQUkKJiP9qntpa7rqh7zPj0hf1c20mWzZtSvbJHCfs7qwoNz/SikYfWUCjuaT1gnOXAwyg8d6JHqQ==" media="all" rel="stylesheet"><br>  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d122f247b04e73694d15c9789bd476e1f2f072abb00047f451c7899f283a6145ab0bef9d8fbc53e923576d0af763e868bb927d9435c6f36077d9029f211e0987.css" integrity="sha512-0SLyR7BOc2lNFcl4m9R24fLwcquwAEf0UceJnyg6YUWrC++dj7xT6SNXbQr3Y+hou5J9lDXG82B32QKfIR4Jhw==" media="all" rel="stylesheet"><br><br><br><br><br><br>  <meta name="viewport" content="width=device-width"><br><br>  <title>blog/README.md at gh-pages · yllg/blog</title><br>  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub"><br>  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub"><br>  <meta property="fb:app_id" content="1401488693436528"><br><br><br>    <meta content="https://avatars1.githubusercontent.com/u/29888368?s=400&amp;v=4" property="og:image"><meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="yllg/blog" property="og:title"><meta content="https://github.com/yllg/blog" property="og:url"><meta content="blog - 😈  📝  🎵  📺   我的个人博客网站" property="og:description"><br><br>  <link rel="assets" href="https://assets-cdn.github.com/"><br>  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MjExNzc4MDM2OjU1NGNlZmM1OGI2NzY5NDM1MGZjYzU4NDdlOWUxNmNlMjE5YWFkMTAzMjA4ZmRmZWZmNjE2MGMyMWFiNWQzNzA=--16bc3e0e4670733df13c0b9f17e6e7d784236eab"><br>  <meta name="pjax-timeout" content="1000"><br>  <link rel="sudo-modal" href="/sessions/sudo_modal"><br>  <meta name="request-id" content="684F:2535A:3BBB158:573001C:5A636192" data-pjax-transient=""><br><br><br>  <meta name="selected-link" value="repo_source" data-pjax-transient=""><br><br>    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU"><br>  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA"><br>  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc"><br>    <meta name="google-analytics" content="UA-3769691-2"><br><br><meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url"><meta content="684F:2535A:3BBB158:573001C:5A636192" name="octolytics-dimension-request_id"><meta content="sea" name="octolytics-dimension-region_edge"><meta content="iad" name="octolytics-dimension-region_render"><meta content="29888368" name="octolytics-actor-id"><meta content="yllg" name="octolytics-actor-login"><meta content="6080e2a73a38e824534f9e72be254204a3a8d0171f3e0a02011113c9b77add2b" name="octolytics-actor-hash"><br><meta content="https://github.com/hydro_browser_events" name="hydro-events-url"><br><meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location"><br><br><br><br><br>  <meta class="js-ga-set" name="dimension1" content="Logged In"><br><br><br><br><br>      <meta name="hostname" content="github.com"><br>  <meta name="user-login" content="yllg"><br><br>      <meta name="expected-hostname" content="github.com"><br>    <meta name="js-proxy-site-detection-payload" content="ZTNmMWY4Nzc3YjAxYzg5ZjgxYzkxNTllOTVmOTQ5MTAzMzUxMzgzMTExNTkzMGZmZmM4MDNhZmVhOWJkZTkxYnx7InJlbW90ZV9hZGRyZXNzIjoiMTgzLjI0MC4xOTguMjMxIiwicmVxdWVzdF9pZCI6IjY4NEY6MjUzNUE6M0JCQjE1ODo1NzMwMDFDOjVBNjM2MTkyIiwidGltZXN0YW1wIjoxNTE2NDYyNDgzLCJob3N0IjoiZ2l0aHViLmNvbSJ9"><br><br>    <meta name="enabled-features" content="UNIVERSE_BANNER,FREE_TRIALS"><br><br>  <meta name="html-safe-nonce" content="6bc0a9300ff3ba6d4f49e04fbd38bc42fe28d1c2"><br><br>  <meta http-equiv="x-pjax-version" content="0505e76be9daad796e3d8a4b70eaeedb"><br><br><br>      <link href="https://github.com/yllg/blog/commits/gh-pages.atom" rel="alternate" title="Recent Commits to blog:gh-pages" type="application/atom+xml"><br><br>  <meta name="description" content="blog - 😈  📝  🎵  📺   我的个人博客网站"><br>  <meta name="go-import" content="github.com/yllg/blog git https://github.com/yllg/blog.git"><br><br>  <meta content="29888368" name="octolytics-dimension-user_id"><meta content="yllg" name="octolytics-dimension-user_login"><meta content="113601111" name="octolytics-dimension-repository_id"><meta content="yllg/blog" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="113601111" name="octolytics-dimension-repository_network_root_id"><meta content="yllg/blog" name="octolytics-dimension-repository_network_root_nwo"><meta content="false" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown"><br><br><br>    <link rel="canonical" href="https://github.com/yllg/blog/blob/gh-pages/README.md" data-pjax-transient=""><br><br><br>  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats"><br><br>  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors"><br><br>  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000"><br>  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico"><br><br><meta name="theme-color" content="#1e2327"><br><br><br>  <meta name="u2f-support" content="true"><br><br>  </head><br><br>  <body class="logged-in env-production emoji-size-boost page-blob"><br><br><br>  <div class="position-relative js-header-wrapper "><br>    <a href="#start-of-content" tabindex="1" class="bg-black text-white p-3 show-on-focus js-skip-to-content">Skip to content</a><br>    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div><br><br><br><br><br><br><br><br><br><header class="Header  f5" role="banner"><br>  <div class="d-flex px-3 flex-justify-between container-lg"><br>    <div class="d-flex flex-justify-between"><br>      <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo" target="_blank" rel="noopener"><br>  <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewbox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><br></a><br><br><br>    </div><br><br>    <div class="HeaderMenu d-flex flex-justify-between flex-auto"><br>      <div class="d-flex"><br>            <div class=""><br>              <div class="header-search scoped-search site-scoped-search js-site-search" role="search"><br>  <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/yllg/blog/search" class="js-site-search-form" data-scoped-search-url="/yllg/blog/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"></div><br>    <label class="form-control header-search-wrapper js-chromeless-input-container"><br>        <a href="/yllg/blog/blob/gh-pages/README.md" class="header-search-scope no-underline">This repository</a><br>      <input type="text" class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable" data-hotkey="s" name="q" value="" placeholder="Search" aria-label="Search this repository" data-unscoped-placeholder="Search GitHub" data-scoped-placeholder="Search" autocapitalize="off"><br>        <input type="hidden" class="js-site-search-type-field" name="type"><br>    </label><br></form></div><br><br>            </div><br><br>          <ul class="d-flex pl-2 flex-items-center text-bold list-style-none" role="navigation"><br>            <li><br>              <a href="/pulls" aria-label="Pull requests you created" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls"><br>                Pull requests<br></a>            </li><br>            <li><br>              <a href="/issues" aria-label="Issues you created" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues"><br>                Issues<br></a>            </li><br>                <li><br>                  <a href="/marketplace" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-selected-links=" /marketplace"><br>                    Marketplace<br></a>                </li><br>            <li><br>              <a href="/explore" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore"><br>                Explore<br></a>            </li><br>          </ul><br>      </div><br><br>      <div class="d-flex"><br><br><ul class="user-nav d-flex flex-items-center list-style-none" id="user-links"><br>  <li class="dropdown js-menu-container"><br>    <span class="d-inline-block  px-2"><br><br><br>    </span><br>  </li><br><br>  <li class="dropdown js-menu-container"><br>    <details class="dropdown-details details-reset js-dropdown-details d-flex px-2 flex-items-center"><br>      <summary class="HeaderNavlink" aria-label="Create new…" data-ga-click="Header, create new, icon:add"><br>        <svg aria-hidden="true" class="octicon octicon-plus float-left mr-1 mt-1" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"/></svg><br>        <span class="dropdown-caret mt-1"></span><br>      </summary><br><br>      <ul class="dropdown-menu dropdown-menu-sw"><br><br><a class="dropdown-item" href="/new" data-ga-click="Header, create new repository"><br>  New repository<br></a><br><br>  <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository"><br>    Import repository<br>  </a><br><br><a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist" target="_blank" rel="noopener"><br>  New gist<br></a><br><br>  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization"><br>    New organization<br>  </a><br><br><br><br>  <div class="dropdown-divider"></div><br>  <div class="dropdown-header"><br>    <span title="yllg/blog">This repository</span><br>  </div><br>    <a class="dropdown-item" href="/yllg/blog/issues/new" data-ga-click="Header, create new issue"><br>      New issue<br>    </a><br><br>      </ul><br>    </details><br>  </li><br><br>  <li class="dropdown js-menu-container"><br><br>    <details class="dropdown-details details-reset js-dropdown-details d-flex pl-2 flex-items-center"><br>      <summary class="HeaderNavlink name mt-1" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar"><br>        <img alt="@yllg" class="avatar float-left mr-1" src="https://avatars3.githubusercontent.com/u/29888368?s=40&amp;v=4" height="20" width="20"><br>        <span class="dropdown-caret"></span><br>      </summary><br><br>      <ul class="dropdown-menu dropdown-menu-sw"><br>        <li class="dropdown-header header-nav-current-user css-truncate"><br>          Signed in as <strong class="css-truncate-target">yllg</strong><br>        </li><br><br>        <li class="dropdown-divider"></li><br><br>        <li><a class="dropdown-item" href="/yllg" data-ga-click="Header, go to profile, text:your profile"><br>          Your profile<br>        </a></li><br>        <li><a class="dropdown-item" href="/yllg?tab=stars" data-ga-click="Header, go to starred repos, text:your stars"><br>          Your stars<br>        </a></li><br>          <li><a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, your gists, text:your gists" target="_blank" rel="noopener">Your Gists</a></li><br><br>        <li class="dropdown-divider"></li><br><br>        <li><a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help" target="_blank" rel="noopener"><br>          Help<br>        </a></li><br><br>        <li><a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings"><br>          Settings<br>        </a></li><br><br>        <li><!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="ZK66inURXKSm4Gkd6W3G5B+8nSNg7YqQY/oX5ZZcqgOlODWysH7LyPMmhYURtSw0okQ9HaVFJt1gHwR4HfqZ2A=="></div><br>          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout"><br>            Sign out<br>          </button><br>        </form></li><br>      </ul><br>    </details><br>  </li><br></ul><br><br><br>        <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="VT9oBirGyIUUrzGD98pSXVRQIvKprZz0twUi+c2irbyUqec+76lf6UFp3RsPEriN6aiCzGwFMLm04DFkRgSeZw=="></div><br>          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout"><br>            Sign out<br>          </button><br></form>      </div><br>    </div><br>  </div><br></header><br><br><br><br>  </div><br><br>  <div id="start-of-content" class="show-on-focus"></div><br><br>    <div id="js-flash-container"><br></div><br><br><br><br>  <div role="main"><br>        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class=""><br>    <div id="js-repo-pjax-container" data-pjax-container=""><br><br><br><br><br><br><br><br>  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  "><br>    <div class="repohead-details-container clearfix container"><br><br>      <ul class="pagehead-actions"><br>  <li><br>        <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="bYjIRcdSGXthV+FqC/smLGTyN2BdarHBcP6NrpJ3Hs89BJfag5b5vsyi4gzvu6ZYWN6NzSfYamBw1QnV5S+gLw=="></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="113601111"><br><br>        <div class="select-menu js-menu-container js-select-menu"><br>          <a href="/yllg/blog/subscription" class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Toggle repository notifications menu" data-ga-click="Repository, click Watch settings, action:blob#show"><br>            <span class="js-select-button"><br>                <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg><br>                Watch<br>            </span><br>          </a><br>          <a class="social-count js-social-count" href="/yllg/blog/watchers" aria-label="0 users are watching this repository"><br>            0<br>          </a><br><br>        <div class="select-menu-modal-holder"><br>          <div class="select-menu-modal subscription-menu-modal js-menu-content"><br>            <div class="select-menu-header js-navigation-enable" tabindex="-1"><br>              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg><br>              <span class="select-menu-title">Notifications</span><br>            </div><br><br>              <div class="select-menu-list js-navigation-container" role="menu"><br><br>                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0"><br>                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg><br>                  <div class="select-menu-item-text"><br>                    <input checked="checked" id="do_included" name="do" type="radio" value="included"><br>                    <span class="select-menu-item-heading">Not watching</span><br>                    <span class="description">Be notified when participating or @mentioned.</span><br>                    <span class="js-select-button-text hidden-select-button-text"><br>                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg><br>                      Watch<br>                    </span><br>                  </div><br>                </div><br><br>                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0"><br>                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg><br>                  <div class="select-menu-item-text"><br>                    <input id="do_subscribed" name="do" type="radio" value="subscribed"><br>                    <span class="select-menu-item-heading">Watching</span><br>                    <span class="description">Be notified of all conversations.</span><br>                    <span class="js-select-button-text hidden-select-button-text"><br>                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg><br>                        Unwatch<br>                    </span><br>                  </div><br>                </div><br><br>                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0"><br>                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg><br>                  <div class="select-menu-item-text"><br>                    <input id="do_ignore" name="do" type="radio" value="ignore"><br>                    <span class="select-menu-item-heading">Ignoring</span><br>                    <span class="description">Never be notified.</span><br>                    <span class="js-select-button-text hidden-select-button-text"><br>                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg><br>                        Stop ignoring<br>                    </span><br>                  </div><br>                </div><br><br>              </div><br><br>            </div><br>          </div><br>        </div><br></form><br>  </li><br><br>  <li><br><br>  <div class="js-toggler-container js-social-container starring-container on"><br>    <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/yllg/blog/unstar" class="starred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="1JNxrgmumHPk9vtn0gkdEr8OQv26hCblEzMu4e51H1474ovJwLDfYXPtVxIYheKVpo23sFf9RJK3h9WJVK7qHg=="></div><br>      <input type="hidden" name="context" value="repository"><br>      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar yllg/blog" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar"><br>        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewbox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg><br>        Unstar<br>      </button><br>        <a class="social-count js-social-count" href="/yllg/blog/stargazers" aria-label="2 users starred this repository"><br>          2<br>        </a><br></form><br>    <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/yllg/blog/star" class="unstarred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="HxUNgLq1g2iPKxCDyxi0oKq18MVSeIp/oNwupVBINR8xFmewmsj82JI8hUFavFA6azVsqbn8giRnixhFpQ2U/Q=="></div><br>      <input type="hidden" name="context" value="repository"><br>      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Star this repository" title="Star yllg/blog" data-ga-click="Repository, click star button, action:blob#show; text:Star"><br>        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewbox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg><br>        Star<br>      </button><br>        <a class="social-count js-social-count" href="/yllg/blog/stargazers" aria-label="2 users starred this repository"><br>          2<br>        </a><br></form>  </div><br><br>  </li><br><br>  <li><br>          <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/yllg/blog/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="SvupNFt/W/5q6efbyKFw3OLnIACsMDrbdiOj+UybsSKlHKjFiXdggboUXdyCcL9GkSa+JOLZyACcdRicaRA6KQ=="></div><br>            <button type="submit" class="btn btn-sm btn-with-count" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" title="Fork your own copy of yllg/blog to your account" aria-label="Fork your own copy of yllg/blog to your account"><br>              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewbox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg><br>              Fork<br>            </button><br></form><br>    <a href="/yllg/blog/network" class="social-count" aria-label="0 users forked this repository"><br>      0<br>    </a><br>  </li><br></ul><br><br>      <h1 class="public "><br>  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg><br>  <span class="author" itemprop="author"><a href="/yllg" class="url fn" rel="author">yllg</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/yllg/blog" data-pjax="#js-repo-pjax-container">blog</a></strong><br><br></h1><br><br>    </div><br><br><nav class="reponav js-repo-nav js-sidenav-container-pjax container" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" data-pjax="#js-repo-pjax-container"><br><br>  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement"><br>    <a href="/yllg/blog" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /yllg/blog" itemprop="url"><br>      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewbox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg><br>      <span itemprop="name">Code</span><br>      <meta itemprop="position" content="1"><br></a>  </span><br><br>    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement"><br>      <a href="/yllg/blog/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /yllg/blog/issues" itemprop="url"><br>        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewbox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg><br>        <span itemprop="name">Issues</span><br>        <span class="Counter">0</span><br>        <meta itemprop="position" content="2"><br></a>    </span><br><br>  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement"><br>    <a href="/yllg/blog/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /yllg/blog/pulls" itemprop="url"><br>      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg><br>      <span itemprop="name">Pull requests</span><br>      <span class="Counter">0</span><br>      <meta itemprop="position" content="3"><br></a>  </span><br><br>    <a href="/yllg/blog/projects" class="js-selected-navigation-item reponav-item" data-hotkey="g b" data-selected-links="repo_projects new_repo_project repo_project /yllg/blog/projects"><br>      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewbox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg><br>      Projects<br>      <span class="Counter">0</span><br></a><br>    <a href="/yllg/blog/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /yllg/blog/wiki"><br>      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg><br>      Wiki<br></a><br><br>  <a href="/yllg/blog/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /yllg/blog/pulse"><br>    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg><br>    Insights<br></a><br>    <a href="/yllg/blog/settings" class="js-selected-navigation-item reponav-item" data-selected-links="repo_settings repo_branch_settings hooks integration_installations repo_keys_settings /yllg/blog/settings"><br>      <svg aria-hidden="true" class="octicon octicon-gear" height="16" version="1.1" viewbox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg><br>      Settings<br></a><br></nav><br><br><br>  </div><br><br><div class="container new-discussion-timeline experiment-repo-nav "><br>  <div class="repository-content "><br><br><br>  <a href="/yllg/blog/blob/bfa91534f2970564b87debcd33b24aff0bdabcc2/README.md" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a><br><br>  <!-- blob contrib key: blob_contributors:v21:cb658f5fdae3647934f1137d668f7f56 --><br><br>  <div class="file-navigation js-zeroclipboard-container"><br><br><div class="select-menu branch-select-menu js-menu-container js-select-menu float-left"><br>  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true"><br>      <i>Branch:</i><br>      <span class="js-select-button css-truncate-target">gh-pages</span><br>  </button><br><br>  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax=""><br><br>    <div class="select-menu-modal"><br>      <div class="select-menu-header"><br>        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg><br>        <span class="select-menu-title">Switch branches/tags</span><br>      </div><br><br>      <div class="select-menu-filters"><br>        <div class="select-menu-text-filter"><br>          <input type="text" aria-label="Find or create a branch…" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Find or create a branch…"><br>        </div><br>        <div class="select-menu-tabs"><br>          <ul><br>            <li class="select-menu-tab"><br>              <a href="#" data-tab-filter="branches" data-filter-placeholder="Find or create a branch…" class="js-select-menu-tab" role="tab">Branches</a><br>            </li><br>            <li class="select-menu-tab"><br>              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a><br>            </li><br>          </ul><br>        </div><br>      </div><br><br>      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu"><br><br>        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring"><br><br><br>            <a class="select-menu-item js-navigation-item js-navigation-open selected" href="/yllg/blog/blob/gh-pages/README.md" data-name="gh-pages" data-skip-pjax="true" rel="nofollow"><br>              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg><br>              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text"><br>                gh-pages<br>              </span><br>            </a><br>            <a class="select-menu-item js-navigation-item js-navigation-open " href="/yllg/blog/blob/master/README.md" data-name="master" data-skip-pjax="true" rel="nofollow"><br>              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg><br>              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text"><br>                master<br>              </span><br>            </a><br>        </div><br><br>          <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/yllg/blog/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="08/SeypRbxUDKYNMorlaad/5IT3Ia6PDJd0MC37DjHMwc9Kq4tyiqhgkxp4KyLjmIBeEH3I/U8w7yUa7IsUUpQ=="></div><br>          <svg aria-hidden="true" class="octicon octicon-git-branch select-menu-item-icon" height="16" version="1.1" viewbox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg><br>            <div class="select-menu-item-text"><br>              <span class="select-menu-item-heading">Create branch: <span class="js-new-item-name"></span></span><br>              <span class="description">from ‘gh-pages’</span><br>            </div><br>            <input type="hidden" name="name" id="name" class="js-new-item-value"><br>            <input type="hidden" name="branch" id="branch" value="gh-pages"><br>            <input type="hidden" name="path" id="path" value="README.md"><br></form><br>      </div><br><br>      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags"><br>        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring"><br><br><br>        </div><br><br>        <div class="select-menu-no-results">Nothing to show</div><br>      </div><br><br>    </div><br>  </div><br></div><br><br>    <div class="BtnGroup float-right"><br>      <a href="/yllg/blog/find/gh-pages" class="js-pjax-capture-input btn btn-sm BtnGroup-item" data-pjax="" data-hotkey="t"><br>        Find file<br>      </a><br>      <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button><br>    </div><br>    <div class="breadcrumb js-zeroclipboard-target"><br>      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/yllg/blog"><span>blog</span></a></span></span><span class="separator">/</span><strong class="final-path">README.md</strong><br>    </div><br>  </div><br><br><br><br>  <div class="commit-tease"><br>      <span class="float-right"><br>        <a class="commit-tease-sha" href="/yllg/blog/commit/bfa91534f2970564b87debcd33b24aff0bdabcc2" data-pjax=""><br>          bfa9153<br>        </a><br>        <relative-time datetime="2018-01-20T15:32:29Z">Jan 20, 2018</relative-time><br>      </span><br>      <div><br>        <img alt="@yllg" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/29888368?s=40&amp;v=4" width="20"><br>        <a href="/yllg" class="user-mention" rel="author">yllg</a><br>          <a href="/yllg/blog/commit/bfa91534f2970564b87debcd33b24aff0bdabcc2" class="message" data-pjax="true" title="Update README.md">Update README.md</a><br>      </div><br><br>    <div class="commit-tease-contributors"><br>      <button type="button" class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box"><br>        <strong>1</strong><br>         contributor<br>      </button><br><br>    </div><br><br>    <div id="blob_contributors_box" style="display:none"><br>      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2><br>      <ul class="facebox-user-list" data-facebox-id="facebox-description"><br>          <li class="facebox-user-list-item"><br>            <img alt="@yllg" height="24" src="https://avatars2.githubusercontent.com/u/29888368?s=48&amp;v=4" width="24"><br>            <a href="/yllg">yllg</a><br>          </li><br>      </ul><br>    </div><br>  </div><br><br><br>  <div class="file"><br>    <div class="file-header"><br>  <div class="file-actions"><br><br>    <div class="BtnGroup"><br>      <a href="/yllg/blog/raw/gh-pages/README.md" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a><br>        <a href="/yllg/blog/blame/gh-pages/README.md" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a><br>      <a href="/yllg/blog/commits/gh-pages/README.md" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a><br>    </div><br><br>        <a class="btn-octicon tooltipped tooltipped-nw" href="https://desktop.github.com" aria-label="Open this file in GitHub Desktop" data-ga-click="Repository, open with desktop, type:mac" target="_blank" rel="noopener"><br>            <svg aria-hidden="true" class="octicon octicon-device-desktop" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg><br>        </a><br><br>          <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/yllg/blog/edit/gh-pages/README.md" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="SSRjILIiboDPvoJGKeltE0f8g7R84epXX8f6p0FrB0Y6MAa1tawhAdlNmElPo8VbYeL8HhpUxhyqYzgGlNB8KQ=="></div><br>            <button class="btn-octicon tooltipped tooltipped-nw" type="submit" aria-label="Edit this file" data-hotkey="e" data-disable-with=""><br>              <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewbox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg><br>            </button><br></form><br>        <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="/yllg/blog/delete/gh-pages/README.md" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"><input name="authenticity_token" type="hidden" value="8Lg375Ho6cill6UbqZUFt0jf2cLT4N286xg0IlBBORNznG8zchXisZJT2I/hEwf6HvwbDDR+aF/G/aVeOw4Ptg=="></div><br>          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit" aria-label="Delete this file" data-disable-with=""><br>            <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg><br>          </button><br></form>  </div><br><br>  <div class="file-info"><br>      37 lines (22 sloc)<br>      <span class="file-info-divider"></span><br>    1.47 KB<br>  </div><br></div><br><br><br>  <div id="readme" class="readme blob instapaper_body"><br>    <article class="markdown-body entry-content" itemprop="text"><h1><a href="#blog" aria-hidden="true" class="anchor" id="user-content-blog"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>blog</h1><br><p><g-emoji alias="smiling_imp" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f608.png" ios-version="6.0">😈</g-emoji>  <g-emoji alias="memo" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4dd.png" ios-version="6.0">📝</g-emoji>  <g-emoji alias="musical_note" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3b5.png" ios-version="6.0">🎵</g-emoji>  <g-emoji alias="tv" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4fa.png" ios-version="6.0">📺</g-emoji>   我的个人博客网站<br><br>早就想弄个人博客网站，一直拖到现在。。。事情总是忙不完的，想能力提升的快，只能挤时间多练多写了，Keep On Unsleeping<a href="https://camo.githubusercontent.com/1d1f49399f104fce3034e286ad694b5d3b6d9f90/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d383033623437343366333731333236312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" target="_blank"><img src="https://camo.githubusercontent.com/1d1f49399f104fce3034e286ad694b5d3b6d9f90/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d383033623437343366333731333236312e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="image" data-canonical-src="http://upload-images.jianshu.io/upload_images/5716959-803b4743f3713261.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="max-width:100%;"></a></p><br><p>网站效果图如下，地址：<a href="http://www.xuanbiyijue.com/" title="悬笔e绝" rel="nofollow">www.xuanbiyijue.com</a><br><br><br><br><br><br><br><br><br><strong>1.一月20号新增</strong><br><br><br>（1）头部大图特效+各种IT的名言警句<br><a href="https://camo.githubusercontent.com/e7a75078814e4a5ae81cb54192f90ba473d70a87/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d373033323139396336363764663566332e6769663f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" target="_blank"><img src="https://camo.githubusercontent.com/e7a75078814e4a5ae81cb54192f90ba473d70a87/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d373033323139396336363764663566332e6769663f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="头部大图特效.gif" data-canonical-src="http://upload-images.jianshu.io/upload_images/5716959-7032199c667df5f3.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="max-width:100%;"></a></p><br><p>（2）3D菜单栏特效<br><a href="https://camo.githubusercontent.com/c2bac69d9962c04d2968430ede308b39efd35ff7/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d613937613561383164363839326238302e6769663f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" target="_blank"><img src="https://camo.githubusercontent.com/c2bac69d9962c04d2968430ede308b39efd35ff7/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d613937613561383164363839326238302e6769663f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="3D菜单特效.gif" data-canonical-src="http://upload-images.jianshu.io/upload_images/5716959-a97a5a81d6892b80.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="max-width:100%;"></a></p><br><p>2.笔记分类，开启夜间模式</p><br><p><a href="https://camo.githubusercontent.com/b18b59ddd79f151d11b5793dfa742173ea152b4d/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d313263323938656530396662343434363f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" target="_blank"><img src="https://camo.githubusercontent.com/b18b59ddd79f151d11b5793dfa742173ea152b4d/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d313263323938656530396662343434363f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="image" data-canonical-src="http://upload-images.jianshu.io/upload_images/5716959-12c298ee09fb4446?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="max-width:100%;"></a></p><br><p>3.sidebar</p><br><p><a href="https://camo.githubusercontent.com/d4f7294c5618ae0e70d7b981b36ca76a8da6d5d9/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d326239653538316564343939376438393f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" target="_blank"><img src="https://camo.githubusercontent.com/d4f7294c5618ae0e70d7b981b36ca76a8da6d5d9/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d326239653538316564343939376438393f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="image" data-canonical-src="http://upload-images.jianshu.io/upload_images/5716959-2b9e581ed4997d89?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="max-width:100%;"></a></p><br><p>4.音乐页</p><br><p><a href="https://camo.githubusercontent.com/60c15ccd0f2780d6dc8127448315fc49d401624f/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d663731306636373538333830353331643f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" target="_blank"><img src="https://camo.githubusercontent.com/60c15ccd0f2780d6dc8127448315fc49d401624f/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d663731306636373538333830353331643f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="image" data-canonical-src="http://upload-images.jianshu.io/upload_images/5716959-f710f6758380531d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="max-width:100%;"></a></p><br><p>5.视频页</p><br><p><a href="https://camo.githubusercontent.com/f629213937fcd6d00ef95f08c8c40c59b9190454/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d653330623864666265393265656635393f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" target="_blank"><img src="https://camo.githubusercontent.com/f629213937fcd6d00ef95f08c8c40c59b9190454/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f353731363935392d653330623864666265393265656635393f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430" alt="image" data-canonical-src="http://upload-images.jianshu.io/upload_images/5716959-e30b8dfbe92eef59?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="max-width:100%;"></a></p><br></article><br>  </div><br><br>  </div><br><br>  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button><br>  <div id="jump-to-line" style="display:none"><br>    <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"></div><br>      <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus><br>      <button type="submit" class="btn">Go</button><br></form>  </div><br><br><br>  </div><br>  <div class="modal-backdrop js-touch-events"></div><br></div><br><br>    </div><br>  </div><br><br>  </div><br><br><br><div class="footer container-lg px-3" role="contentinfo"><br>  <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light "><br>    <ul class="list-style-none d-flex flex-wrap "><br>      <li class="mr-3">&copy; 2018 <span title="0.18145s from unicorn-1498252143-kz98z">GitHub</span>, Inc.</li><br>        <li class="mr-3"><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms" target="_blank" rel="noopener">Terms</a></li><br>        <li class="mr-3"><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy" target="_blank" rel="noopener">Privacy</a></li><br>        <li class="mr-3"><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security" target="_blank" rel="noopener">Security</a></li><br>        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status" target="_blank" rel="noopener">Status</a></li><br>        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help" target="_blank" rel="noopener">Help</a></li><br>    </ul><br><br>    <a href="https://github.com" aria-label="Homepage" class="footer-octicon" title="GitHub" target="_blank" rel="noopener"><br>      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewbox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><br></a><br>    <ul class="list-style-none d-flex flex-wrap "><br>        <li class="mr-3"><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact" target="_blank" rel="noopener">Contact GitHub</a></li><br>      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api" target="_blank" rel="noopener">API</a></li><br>      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training" target="_blank" rel="noopener">Training</a></li><br>      <li class="mr-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop" target="_blank" rel="noopener">Shop</a></li><br>        <li class="mr-3"><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog" target="_blank" rel="noopener">Blog</a></li><br>        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about" target="_blank" rel="noopener">About</a></li><br><br>    </ul><br>  </div><br></div><br><br><br><br>  <div id="ajax-error-message" class="ajax-error-message flash flash-error"><br>    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg><br>    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error"><br>      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg><br>    </button><br>    You can’t perform that action at this time.<br>  </div><br><br><br><br>    <script crossorigin="anonymous" integrity="sha512-rNPkgrbFhlwMfnJ4O76gKXFGlO/HIhK4UdFEEpAdnsyGk32ENh/sNI2JA6cvTyDAsMbaisvlHQOkBNFV4+lV8A==" src="https://assets-cdn.github.com/assets/frameworks-acd3e482b6c5865c0c7e72783bbea029714694efc72212b851d14412901d9ecc86937d84361fec348d8903a72f4f20c0b0c6da8acbe51d03a404d155e3e955f0.js"></script><br><br>    <script async="async" crossorigin="anonymous" integrity="sha512-K4LkU2yEbjhbNefmStKDT2KDn0NqJpiXMGOVKGzLmk3ezuEFAbB7U3pBaPQ6guReL8MYeJrrfs1PqsOIyJitpg==" src="https://assets-cdn.github.com/assets/github-2b82e4536c846e385b35e7e64ad2834f62839f436a269897306395286ccb9a4ddecee10501b07b537a4168f43a82e45e2fc318789aeb7ecd4faac388c898ada6.js"></script><br><br><br><br><br>  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none"><br>    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg><br>    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span><br>    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span><br>  </div><br>  <div class="facebox" id="facebox" style="display:none;"><br>  <div class="facebox-popup"><br>    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description"><br>    </div><br>    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal"><br>      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg><br>    </button><br>  </div><br></div><br><br><br>  </body><br></html>
+
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+              </div>
+              
+
+
+              
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div class="disqus-loading">
+          <strong>Disqus 加载中...</strong>
+          <p>如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        if (disqus_config) {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/README.html';
+            this.page.identifier = 'README.html';
+            this.page.title = '';
+          };
+          if (window.DISQUS) {
+            $('.disqus-loading').remove();
+            window.DISQUS.reset({
+              reload: true,
+              config: function () {
+                this.page.url = 'http://www.xuanbiyijue.com/README.html';
+                this.page.identifier = 'README.html';
+                this.page.title = '';
+              }
+            });
+          }
+        }
+        else {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/README.html';
+            this.page.identifier = 'README.html';
+            this.page.title = '';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://diygod-me.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+
+        }
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+              
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/card.jpg"
+                alt="悬笔e绝" />
+            
+              <p class="site-author-name" itemprop="name">悬笔e绝</p>
+              <p class="site-description motion-element" itemprop="description">敲代码最溜的BBOY🏃 Breaking最炸的程序猿👨‍💻‍~</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yllg" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/WeChat.jpeg" target="_blank" title="微信公众号" data-balloon="微信公众号" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-wechat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq.png" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="javascript:void(0)" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="javascript:void(0)">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          <nav class="site-state motion-element wordcount">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-file-word-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">全站字数统计&#58;</span>
+            
+            <span title="全站字数统计 ">
+              774
+            </span>
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text"><br>  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewbox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg><br>  <span class="author" itemprop="author"><a href="/yllg" class="url fn" rel="author">yllg</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/yllg/blog" data-pjax="#js-repo-pjax-container">blog</a></strong><br><br></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">Users who have contributed to this file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text"><a href="#blog" aria-hidden="true" class="anchor" id="user-content-blog"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg></a>blog</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+            
+          </div>
+        </main>
+
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
+<p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
+
+<p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    版本号:v0.0.2.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
+
+            
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+
+        
+
+        
+
+      </div>
+
+      
+
+
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+<!-- 需要fixed的单独拿出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
+
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.2"></script>
+  <script type="text/javascript" src="/js/waifu-tips.js"></script>
+  <script type="text/javascript" src="/js/live2d.js"></script>
+  <script type="text/javascript">
+      loadlive2d("live2d", "/js/Skin/Pio/model1.json");
+  </script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
+
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: true
+    });
+  </script>
+
+</body>
+</html>
