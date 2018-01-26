@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="default">
+<head>
+  <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.2" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="FP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="原文链接   fanshunkai的博客 范畴论函数式编程的起源是范畴论（Category Theory）。范畴论认为世界上所有的概念体系，都可以抽象成一个个的‘范畴’。 范畴维基百科： 范畴是使用箭头链接的物体，一切事物，找出对应的关系，就能构成一个范畴范畴包括事物和事物之间对应的关系箭头表示范畴成员之间的关系，正式的名称叫做‘态射’。范畴论认为，同一个范畴的所有成员，就是不同状态的变形，通过‘">
+<meta name="keywords" content="FP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数式编程入门">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/index.html">
+<meta property="og:site_name" content="悬笔e绝">
+<meta property="og:description" content="原文链接   fanshunkai的博客 范畴论函数式编程的起源是范畴论（Category Theory）。范畴论认为世界上所有的概念体系，都可以抽象成一个个的‘范畴’。 范畴维基百科： 范畴是使用箭头链接的物体，一切事物，找出对应的关系，就能构成一个范畴范畴包括事物和事物之间对应的关系箭头表示范畴成员之间的关系，正式的名称叫做‘态射’。范畴论认为，同一个范畴的所有成员，就是不同状态的变形，通过‘">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/函数合成结合律.jpg">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/函子.jpg">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/函子2.jpg">
+<meta property="og:updated_time" content="2018-01-26T13:15:32.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数式编程入门">
+<meta name="twitter:description" content="原文链接   fanshunkai的博客 范畴论函数式编程的起源是范畴论（Category Theory）。范畴论认为世界上所有的概念体系，都可以抽象成一个个的‘范畴’。 范畴维基百科： 范畴是使用箭头链接的物体，一切事物，找出对应的关系，就能构成一个范畴范畴包括事物和事物之间对应的关系箭头表示范畴成员之间的关系，正式的名称叫做‘态射’。范畴论认为，同一个范畴的所有成员，就是不同状态的变形，通过‘">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/函数合成结合律.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.2',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '12/12/2017 2:00:00',
+    onlineAPI: '',
+    site: {
+      title: '火の意志',
+      subtitle: '',
+      author: '悬笔e绝'
+    },
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '6yIOhn3kOO9PP9MGXP84RkNU-gzGzoHsz',
+      appKey: 'Ar2z70S83F1nVkRGH4Ifodrn'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)欢迎回来！',
+      hide_text: '哎哎，别走啊！'
+    }
+  };
+</script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/"/>
+
+
+
+
+
+  <title>函数式编程入门 | 悬笔e绝</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://cdn.bootcss.com/analytics.js/2.9.1/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
+
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-实验室">
+          <a href="/categories/实验室/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-音乐">
+          <a href="/Music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-unsleep">
+          <a href="/UNSLEEP/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            UNSLEEP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/Message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
+</div>
+
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
+</div>
+
+
+ </div>
+        </header>
+
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">01月</div>
+			<div class="post-day">26</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/前端工程化与持续构建/" itemprop="url" rel="index">
+          <span itemprop="name">前端工程化与持续构建</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悬笔e绝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/悬笔e绝.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬笔e绝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">函数式编程入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-26T19:26:38+08:00">
+                2018/01/26
+              </time>
+            
+
+            
+              <span class="post-meta-divider">•</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-01-26T21:15:32+08:00">
+                2018/01/26
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">•</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端工程化与持续构建/" itemprop="url" rel="index">
+                    <span itemprop="name">前端工程化与持续构建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">•</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/26/函数式编程入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/26/函数式编程入门/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/26/函数式编程入门/" class="leancloud_visitors" data-flag-title="函数式编程入门">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计 ">
+                  3,134
+                </span>
+              
+
+              
+                <span class="post-meta-divider">•</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13&nbsp;min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>原文链接</strong>   <a href="http://fanshunkai.com" target="_blank" rel="noopener">fanshunkai的博客</a></p>
+<h3 id="范畴论"><a href="#范畴论" class="headerlink" title="范畴论"></a>范畴论</h3><p>函数式编程的起源是范畴论（Category Theory）。<br>范畴论认为世界上所有的概念体系，都可以抽象成一个个的‘范畴’。</p>
+<h4 id="范畴"><a href="#范畴" class="headerlink" title="范畴"></a>范畴</h4><p>维基百科： 范畴是使用箭头链接的物体，一切事物，找出对应的关系，就能构成一个范畴<br>范畴包括事物和事物之间对应的关系<br>箭头表示范畴成员之间的关系，正式的名称叫做‘态射’。<br>范畴论认为，同一个范畴的所有成员，就是不同状态的变形，通过‘态射’,一个成员可以变成另一个成员</p>
+<p><strong>说人话：</strong><br><blockquote><p>集合：一对有共有特点的元素的整体<br>范畴：这个集合+这个集合中元素相互映射的关系</p>
+</blockquote></p>
+<h4 id="数学模型"><a href="#数学模型" class="headerlink" title="数学模型"></a>数学模型</h4><p>所有成员是一个集合；变形关系是函数；<br>范畴论是集合论更上层的抽象，简单的理解就是 “集合+函数” 。<br>理论上通过函数，就可以从范畴的一个成员，算出其他所有成员</p>
+<h5 id="范畴与容器"><a href="#范畴与容器" class="headerlink" title="范畴与容器"></a>范畴与容器</h5><p>我们把范畴想象成一个容器，里面包含两样东西<br><blockquote><p>·值（value）<br>·值得变形关系，也就是函数</p>
+</blockquote></p>
+<p>用代码定义一个范畴<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Category&#123;</span><br><span class="line">    constructor(val)&#123;</span><br><span class="line">        this.val = val</span><br><span class="line">    &#125;</span><br><span class="line">    addOne(x)&#123;</span><br><span class="line">        <span class="built_in">return</span> x+1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，Category是一个类，也是一个容器，里面包含一个值（this.val）和一种变形关系(addOne)。这里的范畴就是彼此之间相差1的数字 这些 “数字” 是一个集合 “相差1”是一个态射 组合起来就是范畴，也叫容器</p>
+<h5 id="范畴论与函数式编程的关系"><a href="#范畴论与函数式编程的关系" class="headerlink" title="范畴论与函数式编程的关系"></a>范畴论与函数式编程的关系</h5><p>范畴论使用函数表达范畴之间的关系<br>范畴论发展出一套函数运算方法，起初只用于数学，后来在计算机上实现了，就叫做函数式编程</p>
+<p><strong>本质上，函数式编程只是范畴论的运算方法，跟数学逻辑、微积分、行列式是同一类的东西，都是数学方法，只是碰巧能用来写程序</strong></p>
+<p>结论：<br><blockquote><p>函数式编程是一种函数之间的数学运算，原始目的就是求值，不做其他事情，否则无法满足函数运算法则<br>在函数式编程里，函数值是一个管道（pipe），进去一个值，出来一个值。无副作用</p>
+</blockquote></p>
+<h3 id="函数的合成与柯里化"><a href="#函数的合成与柯里化" class="headerlink" title="函数的合成与柯里化"></a>函数的合成与柯里化</h3><p>函数式编程有两个最基本的运算法则：合成和柯里化。</p>
+<h4 id="函数的合成"><a href="#函数的合成" class="headerlink" title="函数的合成"></a>函数的合成</h4><h5 id="函数合成的运算"><a href="#函数合成的运算" class="headerlink" title="函数合成的运算"></a>函数合成的运算</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = f(x);</span><br><span class="line">z = g(y);</span><br><span class="line">z = g(f(x))</span><br></pre></td></tr></table></figure>
+<p>这里x通过f和g的两次转化才变成z，把过程中所有步骤合并起来，就叫做 “函数的合成”（compose）<br>其中x和y之间的变形关系是函数f，y和z之间的变形关系是函数g，那么x和z之阿金的关系就是g和f的合成函数g·f。</p>
+<p>合成两个函数的代码如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const compose = <span class="keyword">function</span> (f,g)&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> (x)&#123;</span><br><span class="line">        <span class="built_in">return</span> f(g(x))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="函数合成的结合律"><a href="#函数合成的结合律" class="headerlink" title="函数合成的结合律"></a>函数合成的结合律</h5><img src="/2018/01/26/函数式编程入门/函数合成结合律.jpg" title="函数合成结合律">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compose(f,compose(g,h)) &lt;=&gt;</span><br><span class="line">compose(compose(f,g),h) &lt;=&gt;</span><br><span class="line">compose(f,g,h)</span><br></pre></td></tr></table></figure>
+<h4 id="函数的柯里化"><a href="#函数的柯里化" class="headerlink" title="函数的柯里化"></a>函数的柯里化</h4><p>在函数的合成中，一个参数的函数很好运算 如 f(x)和g(x)合成为f(g(x))。如果被合成函数能接收多个参数如：f(x,y)和g(a,b,c)，合成就非常麻烦了</p>
+<p>针对多参数函数的运算，我们可以使用柯里化，在进行运算</p>
+<h5 id="函数的柯里化运算"><a href="#函数的柯里化运算" class="headerlink" title="函数的柯里化运算"></a>函数的柯里化运算</h5><p>柯里化，就是把一个多参数的函数，转化为单参数的函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> add(x,y)&#123;</span><br><span class="line">    <span class="built_in">return</span> x+y;</span><br><span class="line">&#125;</span><br><span class="line">add(1,2) //3</span><br></pre></td></tr></table></figure>
+<p>对add进行柯里化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> addX(y)&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> (x)&#123;</span><br><span class="line">        <span class="built_in">return</span> x+y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">addX(2)(1) //3</span><br></pre></td></tr></table></figure></p>
+<p><strong>柯里化使所有的函数都只接受一个参数。</strong></p>
+<h5 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h5><p>柯里化使函数分为多步执行，在实际开发中，可以把公共层面的运算和业务层面的运算分开<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="keyword">function</span> abc(x)&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> (json)&#123;</span><br><span class="line">        //<span class="keyword">do</span> something</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>框架工具调用函数abc 会把基础对象返回来，然后跟实际业务数据对接处理，Redux对这个就有很好的实现哦~</p>
+<h3 id="函子"><a href="#函子" class="headerlink" title="函子"></a>函子</h3><p>函数可以作用于同范畴中做值的转换，还可以将一个范畴转成另一个范畴。<br>函子是范畴间转换的基本单位</p>
+<h4 id="什么是函子"><a href="#什么是函子" class="headerlink" title="什么是函子"></a>什么是函子</h4><p>函子是函数式编程里面最重要的数据类型，也是基本的运算单位和功能单位。 函子首先是一种范畴，也就是一个容器，包含了值和变形关系。它的变形关系可以依次作用于每一个值，将当前容器变形成另一个容器。</p>
+<p>讲人话<br><blockquote><p>函子：一个拥有map方法的范畴A，可以用map方法接收一个外部函数f,把自己所有成员按f规则转化成新成员，从而达到把自己转化成范畴B的目的<br>这个范畴A就是函子</p>
+</blockquote></p>
+<img src="/2018/01/26/函数式编程入门/函子.jpg" title="函子">
+<p>上图中，左侧的圆圈就是一个函子，表示人名的范畴。<br>外部传入函数f，会转成右边表示早餐的范畴。</p>
+<img src="/2018/01/26/函数式编程入门/函子2.jpg" title="函子">
+<p>上图中，函数f完成值的转换（a到b），将它传入函子，就可以实现范畴的转换（Fa到Fb）。</p>
+<h4 id="函子的代码实现"><a href="#函子的代码实现" class="headerlink" title="函子的代码实现"></a>函子的代码实现</h4><p>任何有map方法的数据结构都可以当做函子的实现<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Functor &#123;</span><br><span class="line">    constructor(val) &#123;</span><br><span class="line">        this.val = val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    map(f) &#123;</span><br><span class="line">        <span class="built_in">return</span> new Functor(f(this.val));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，Functor是一个函子，他的map方法接收函数f作为参数，然后返回一个新的函子，包含的值是被f处理过的（f(this.val)）<br>下面是具体的例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(new Functor(2)).map(<span class="keyword">function</span> (two) &#123;</span><br><span class="line">    <span class="built_in">return</span> two + 2;</span><br><span class="line">&#125;);</span><br><span class="line">// Functor(4)</span><br><span class="line"></span><br><span class="line">(new Functor(<span class="string">'flamethrowers'</span>)).map(<span class="keyword">function</span>(s) &#123;</span><br><span class="line">    <span class="built_in">return</span> s.toUpperCase();</span><br><span class="line">&#125;);</span><br><span class="line">// Functor(<span class="string">'FLAMETHROWERS'</span>)</span><br><span class="line"></span><br><span class="line">(new Functor(<span class="string">'bombs'</span>)).map(_.concat(<span class="string">' away'</span>)).map(_.prop(<span class="string">'length'</span>));</span><br><span class="line">// Functor(10)</span><br></pre></td></tr></table></figure></p>
+<p>示例说明，函数式编程里面的运算，都是通过函子完成的，即运算不直接针对值，而是针对这个值的容器—函子。 函子本身具有对外接口（map方法），函数就是运算符，通过对接口接入容器，引发容器里面值得变形</p>
+<p>学习函数式编程，就是学习函子的各种运算，由于可以把运算方法封装在函子里面，所以衍生出各种不同函子，有多少运算就有多少种函子</p>
+<h3 id="of方法"><a href="#of方法" class="headerlink" title="of方法"></a>of方法</h3><p>上面的例子生成函子的时候，用了new命令。new命令是面向对象编程的标志</p>
+<p><strong>函数式编程一般约定，函子有一个of方法，用来生成新的容器。</strong></p>
+<p>用of替换new<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Functor.of = <span class="keyword">function</span>(val)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Functor(val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前面的例子可以改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Functor.of(2).map(<span class="keyword">function</span>(two)&#123;</span><br><span class="line">    <span class="built_in">return</span> two+1</span><br><span class="line">&#125;)</span><br><span class="line">//Functor(4)</span><br></pre></td></tr></table></figure></p>
+<p>这么玩就更像函数式编程了</p>
+<h3 id="Maybe函子"><a href="#Maybe函子" class="headerlink" title="Maybe函子"></a>Maybe函子</h3><p>函子的map可以接收各种函数来处理内部的值。如果内部的值为空null，而外部函数同时没有处理空值的机制，就会报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Functor.of(null).map(<span class="keyword">function</span> (s) &#123;</span><br><span class="line">    <span class="built_in">return</span> s.toUpperCase();</span><br><span class="line">&#125;);</span><br><span class="line">// TypeError</span><br></pre></td></tr></table></figure></p>
+<p>null.toUpperCase 报错</p>
+<h4 id="Maybe函子的实现"><a href="#Maybe函子的实现" class="headerlink" title="Maybe函子的实现"></a>Maybe函子的实现</h4><p>Maybe函子在map方法中设置了空值检查机制。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Maybe extends Functor &#123;</span><br><span class="line">    map(f) &#123;</span><br><span class="line">        <span class="built_in">return</span> this.val ? Maybe.of(f(this.val)) : Maybe.of(null);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Maybe.of = <span class="keyword">function</span> (val)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Maybe(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时对Maybe函子就不会报错了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Maybe.of(null).map(<span class="keyword">function</span>(s)&#123;</span><br><span class="line">    <span class="built_in">return</span> s.toUpperCase()</span><br><span class="line">&#125;)</span><br><span class="line">//Maybe(null)</span><br></pre></td></tr></table></figure>
+<h3 id="Either函子"><a href="#Either函子" class="headerlink" title="Either函子"></a>Either函子</h3><p>Either函子是解决函数式编程里的条件运算的<br>Either函子内部有两个值（左值，右值）。右值不存在使用左值，左值是默认值</p>
+<h4 id="Either函子的实现"><a href="#Either函子的实现" class="headerlink" title="Either函子的实现"></a>Either函子的实现</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Either extends Functor&#123;</span><br><span class="line">    constructor(left,right)&#123;</span><br><span class="line">        this.left = left;</span><br><span class="line">        this.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">    map(f)&#123;</span><br><span class="line">        <span class="built_in">return</span> this.right?</span><br><span class="line">        Either.of(this.left,f(this.right)):</span><br><span class="line">        Either.of(f(this.left),this.right)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Either.of = <span class="keyword">function</span> (left,right)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Either(left,right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Either函子的应用"><a href="#Either函子的应用" class="headerlink" title="Either函子的应用"></a>Either函子的应用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var addOne = <span class="keyword">function</span> (x)&#123;</span><br><span class="line">    <span class="built_in">return</span> x+1;</span><br><span class="line">&#125;</span><br><span class="line">Either.of(5,6).map(addOne);</span><br><span class="line">// Either(5,7)</span><br><span class="line">Either.of(1,null).map(addOne);</span><br><span class="line">// Either(2,null)</span><br></pre></td></tr></table></figure>
+<h5 id="Either最常见的用途是提供默认值"><a href="#Either最常见的用途是提供默认值" class="headerlink" title="Either最常见的用途是提供默认值"></a>Either最常见的用途是提供默认值</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Either</span><br><span class="line">.of(&#123;address: <span class="string">'xxx'</span>&#125;, currentUser.address)</span><br><span class="line">.map(updateField);</span><br></pre></td></tr></table></figure>
+<h5 id="用Either函子替代-try-catch"><a href="#用Either函子替代-try-catch" class="headerlink" title="用Either函子替代 try..catch"></a>用Either函子替代 try..catch</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> parseJSON(josn)&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">        <span class="built_in">return</span> Either.of(null,JSON.parse(json))</span><br><span class="line">    &#125;catch(e)&#123;</span><br><span class="line">        <span class="built_in">return</span> Either.of(e, null);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，左值为空，就表示没有出错，否则左值会包含一个错误对象e。一般来说，所有可能出错的运算，都可以返回一个 Either 函子。</p>
+<h3 id="ap函子"><a href="#ap函子" class="headerlink" title="ap函子"></a>ap函子</h3><p>函子里面的值，有可能是函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> addTwo(x) &#123;</span><br><span class="line">    <span class="built_in">return</span> x + 2;</span><br><span class="line">&#125;</span><br><span class="line">const A = Functor.of(2);</span><br><span class="line">const B = Functor.of(addTwo)</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，函子A内部的值是2，函子B内部的值是函数addTwo。</p>
+<h4 id="ap函子的实现"><a href="#ap函子的实现" class="headerlink" title="ap函子的实现"></a>ap函子的实现</h4><p>函子A的值按函子B中的值（函数）进行运算时，就要用到ap（applicative）函子了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Ap extends Functor&#123;</span><br><span class="line">    ap(F)&#123;</span><br><span class="line">        <span class="built_in">return</span> Ap.of(this.val(F.val));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">AP.of = <span class="keyword">function</span> (val)&#123;</span><br><span class="line">    <span class="built_in">return</span> new Ap(val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此处 Functor是val为函数的B函子，F为val为要计算数据的A函子 ap函子接收的不是函数，而是另一个函子。</p>
+<h4 id="ap函子的应用"><a href="#ap函子的应用" class="headerlink" title="ap函子的应用"></a>ap函子的应用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ap.of(addTwo).ap(Functor.of(2))</span><br><span class="line">// Ap(4)</span><br></pre></td></tr></table></figure>
+<p>函子实现链式操作<br>ap函子的意义在于，对多参数的函数，可以从多个容器中取值，实现函子的链式操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> add(x)&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> (y)&#123;</span><br><span class="line">        <span class="built_in">return</span> x+y;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">Ap.of(add).ap(Maybe.of(2)).ap(Maybe.of(3));</span><br></pre></td></tr></table></figure>
+<p>上述代码是add柯里化以后的形式，一共要两个参数，还有另外一种写法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ap.of(add(2)).ap(Maybe.of(3));</span><br></pre></td></tr></table></figure></p>
+<h3 id="Monad函子"><a href="#Monad函子" class="headerlink" title="Monad函子"></a>Monad函子</h3><p>Monad解决函子里面包含函子运算问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Maybe.of(</span><br><span class="line">    Maybe.of(</span><br><span class="line">        Maybe.of(&#123;name: <span class="string">'Mulburry'</span>, number: 8402&#125;)</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>上面的函子嵌套三个Maybe，如果要去之，就要连续取三次this.val 此时出现了Monad<br><strong>Monad的作用是，总是返回一个单层的函子</strong></p>
+<h4 id="Monad函子的实现"><a href="#Monad函子的实现" class="headerlink" title="Monad函子的实现"></a>Monad函子的实现</h4><p>Monad函子有一个flatMap方法，与map的方法作用相同，唯一的区别是的如果生成了嵌套函子，他会取出后者内部的值，保证返回的永远是一个单层容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Monad extends Functor&#123;</span><br><span class="line">    <span class="function"><span class="title">join</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this.val</span><br><span class="line">    &#125;</span><br><span class="line">    flatMap(f)&#123;</span><br><span class="line">        <span class="built_in">return</span> this.map(f).join();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果f返回的是一个函子，this.map(f)就会生成一个嵌套的函子，所以join方法保证了flatMap方法总是返回一个单层的函子。嵌套的函子会被铺平</p>
+<h3 id="IO操作"><a href="#IO操作" class="headerlink" title="IO操作"></a>IO操作</h3><p>Monad函子的重要作用是实现I/O操作<br>I/O是不纯的操作，普通的函数式编程没法做，把IO写成Monad函子，通过它来完成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(<span class="string">'fs'</span>);</span><br><span class="line">var readFile = <span class="keyword">function</span>(filename)&#123;</span><br><span class="line">    <span class="built_in">return</span> new IO(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> fs.readFileSync(filename,<span class="string">'utf-8'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">var <span class="built_in">print</span> = <span class="keyword">function</span> (x)&#123;</span><br><span class="line">    <span class="built_in">return</span> new IO(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        console.log(x)</span><br><span class="line">        <span class="built_in">return</span> x</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码，读文件和打印本身都是不纯的操作，但是readfile和print却是纯函数，因为他们总是返回IO函子。<br>如果IO函子是一个monad，具有flatMap方法，那么我们就可以向下面这样调用函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">readFile(<span class="string">'./user.txt'</span>)</span><br><span class="line">.flatMap(<span class="built_in">print</span>)</span><br></pre></td></tr></table></figure></p>
+<p>如此完成了不纯的操作，flatMap返回的还是一个IO函子，所以表达式是纯的。一个纯的表达式完成了一个带有副作用的操作，这就是Monad的作用<br>返回的还是IO函子，所以可以实现链式操作</p>
+<h3 id="函数式编程比较火的库"><a href="#函数式编程比较火的库" class="headerlink" title="函数式编程比较火的库"></a>函数式编程比较火的库</h3><h4 id="RxJS（建议试用体验）"><a href="#RxJS（建议试用体验）" class="headerlink" title="RxJS（建议试用体验）"></a>RxJS（建议试用体验）</h4><p>Rxjs 从诞生以来一直都不温不火，但它函数响应式编程 (Functional Reactive Programming，FRP)的理念非常先进， 虽然或许对于大部分应用环境来说，外部输入事件并不是 太频繁，并不需要引入一个如此庞大的 FRP 体系，但我们 也可以了解一下它有哪些优秀的特性</p>
+<h4 id="cycleJS"><a href="#cycleJS" class="headerlink" title="cycleJS"></a>cycleJS</h4><p>基于Rxjs ，ERP理念的框架，和React一样支持虚拟dom</p>
+<h4 id="lodashJS（建议试用体验）"><a href="#lodashJS（建议试用体验）" class="headerlink" title="lodashJS（建议试用体验）"></a>lodashJS（建议试用体验）</h4><p>一致接口、模块化、高性能 是underscore的fork</p>
+<h4 id="underscore"><a href="#underscore" class="headerlink" title="underscore"></a>underscore</h4><p>一个js工具库，提供了一整套函数式编程的实用功能，但是没有扩展任何的js内置对象</p>
+<h4 id="Ramdajs"><a href="#Ramdajs" class="headerlink" title="Ramdajs"></a>Ramdajs</h4><p>全部是柯里化的</p>
+<h3 id="实际应用场景"><a href="#实际应用场景" class="headerlink" title="实际应用场景"></a>实际应用场景</h3><p>易调试、热部署、并发<br>单元测试</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div class="post-share" style="display: block !important;">分享到：
+
+      </div>
+    
+
+    
+      <div class="post-copyrightwrap">
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    悬笔e绝
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/" title="函数式编程入门">http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/FP/" rel="tag"># FP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/25/前端自动化测试/" rel="next" title="前端自动化测试">
+                <i class="fa fa-chevron-left"></i> 前端自动化测试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+
+     
+      <div class="post-donate">
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    <div id="donateImg">
+        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
+    </div>
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+              </div>
+              
+
+
+              
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div class="disqus-loading">
+          <strong>Disqus 加载中...</strong>
+          <p>如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        if (disqus_config) {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/';
+            this.page.identifier = '2018/01/26/函数式编程入门/';
+            this.page.title = '函数式编程入门';
+          };
+          if (window.DISQUS) {
+            $('.disqus-loading').remove();
+            window.DISQUS.reset({
+              reload: true,
+              config: function () {
+                this.page.url = 'http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/';
+                this.page.identifier = '2018/01/26/函数式编程入门/';
+                this.page.title = '函数式编程入门';
+              }
+            });
+          }
+        }
+        else {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/01/26/函数式编程入门/';
+            this.page.identifier = '2018/01/26/函数式编程入门/';
+            this.page.title = '函数式编程入门';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://diygod-me.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+
+        }
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+              
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/card.jpg"
+                alt="悬笔e绝" />
+            
+              <p class="site-author-name" itemprop="name">悬笔e绝</p>
+              <p class="site-description motion-element" itemprop="description">敲代码最溜的BBOY🏃 Breaking最炸的程序猿👨‍💻‍~</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yllg" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/WeChat.jpeg" target="_blank" title="微信公众号" data-balloon="微信公众号" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-wechat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq.png" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="javascript:void(0)" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="javascript:void(0)">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          <nav class="site-state motion-element wordcount">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-file-word-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">全站字数统计&#58;</span>
+            
+            <span title="全站字数统计 ">
+              4.3k
+            </span>
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#范畴论"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x8303;&#x7574;&#x8BBA;" class="headerlink" title="&#x8303;&#x7574;&#x8BBA;"></a>&#x8303;&#x7574;&#x8BBA;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#范畴"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x8303;&#x7574;" class="headerlink" title="&#x8303;&#x7574;"></a>&#x8303;&#x7574;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数学模型"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x6570;&#x5B66;&#x6A21;&#x578B;" class="headerlink" title="&#x6570;&#x5B66;&#x6A21;&#x578B;"></a>&#x6570;&#x5B66;&#x6A21;&#x578B;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#范畴与容器"><span class="nav-number">1.2.1.</span> <span class="nav-text"><a href="#&#x8303;&#x7574;&#x4E0E;&#x5BB9;&#x5668;" class="headerlink" title="&#x8303;&#x7574;&#x4E0E;&#x5BB9;&#x5668;"></a>&#x8303;&#x7574;&#x4E0E;&#x5BB9;&#x5668;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#范畴论与函数式编程的关系"><span class="nav-number">1.2.2.</span> <span class="nav-text"><a href="#&#x8303;&#x7574;&#x8BBA;&#x4E0E;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x5173;&#x7CFB;" class="headerlink" title="&#x8303;&#x7574;&#x8BBA;&#x4E0E;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x5173;&#x7CFB;"></a>&#x8303;&#x7574;&#x8BBA;&#x4E0E;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x5173;&#x7CFB;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的合成与柯里化"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x7684;&#x5408;&#x6210;&#x4E0E;&#x67EF;&#x91CC;&#x5316;" class="headerlink" title="&#x51FD;&#x6570;&#x7684;&#x5408;&#x6210;&#x4E0E;&#x67EF;&#x91CC;&#x5316;"></a>&#x51FD;&#x6570;&#x7684;&#x5408;&#x6210;&#x4E0E;&#x67EF;&#x91CC;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的合成"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x7684;&#x5408;&#x6210;" class="headerlink" title="&#x51FD;&#x6570;&#x7684;&#x5408;&#x6210;"></a>&#x51FD;&#x6570;&#x7684;&#x5408;&#x6210;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数合成的运算"><span class="nav-number">2.1.1.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x5408;&#x6210;&#x7684;&#x8FD0;&#x7B97;" class="headerlink" title="&#x51FD;&#x6570;&#x5408;&#x6210;&#x7684;&#x8FD0;&#x7B97;"></a>&#x51FD;&#x6570;&#x5408;&#x6210;&#x7684;&#x8FD0;&#x7B97;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数合成的结合律"><span class="nav-number">2.1.2.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x5408;&#x6210;&#x7684;&#x7ED3;&#x5408;&#x5F8B;" class="headerlink" title="&#x51FD;&#x6570;&#x5408;&#x6210;&#x7684;&#x7ED3;&#x5408;&#x5F8B;"></a>&#x51FD;&#x6570;&#x5408;&#x6210;&#x7684;&#x7ED3;&#x5408;&#x5F8B;</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的柯里化"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;" class="headerlink" title="&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;"></a>&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的柯里化运算"><span class="nav-number">2.2.1.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;&#x8FD0;&#x7B97;" class="headerlink" title="&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;&#x8FD0;&#x7B97;"></a>&#x51FD;&#x6570;&#x7684;&#x67EF;&#x91CC;&#x5316;&#x8FD0;&#x7B97;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用场景"><span class="nav-number">2.2.2.</span> <span class="nav-text"><a href="#&#x5E94;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x5E94;&#x7528;&#x573A;&#x666F;"></a>&#x5E94;&#x7528;&#x573A;&#x666F;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函子"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x51FD;&#x5B50;" class="headerlink" title="&#x51FD;&#x5B50;"></a>&#x51FD;&#x5B50;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是函子"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x4EC0;&#x4E48;&#x662F;&#x51FD;&#x5B50;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;&#x51FD;&#x5B50;"></a>&#x4EC0;&#x4E48;&#x662F;&#x51FD;&#x5B50;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函子的代码实现"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x51FD;&#x5B50;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;" class="headerlink" title="&#x51FD;&#x5B50;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"></a>&#x51FD;&#x5B50;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#of方法"><span class="nav-number">4.</span> <span class="nav-text"><a href="#of&#x65B9;&#x6CD5;" class="headerlink" title="of&#x65B9;&#x6CD5;"></a>of&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maybe函子"><span class="nav-number">5.</span> <span class="nav-text"><a href="#Maybe&#x51FD;&#x5B50;" class="headerlink" title="Maybe&#x51FD;&#x5B50;"></a>Maybe&#x51FD;&#x5B50;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Maybe函子的实现"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#Maybe&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;" class="headerlink" title="Maybe&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;"></a>Maybe&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Either函子"><span class="nav-number">6.</span> <span class="nav-text"><a href="#Either&#x51FD;&#x5B50;" class="headerlink" title="Either&#x51FD;&#x5B50;"></a>Either&#x51FD;&#x5B50;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Either函子的实现"><span class="nav-number">6.1.</span> <span class="nav-text"><a href="#Either&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;" class="headerlink" title="Either&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;"></a>Either&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Either函子的应用"><span class="nav-number">6.2.</span> <span class="nav-text"><a href="#Either&#x51FD;&#x5B50;&#x7684;&#x5E94;&#x7528;" class="headerlink" title="Either&#x51FD;&#x5B50;&#x7684;&#x5E94;&#x7528;"></a>Either&#x51FD;&#x5B50;&#x7684;&#x5E94;&#x7528;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Either最常见的用途是提供默认值"><span class="nav-number">6.2.1.</span> <span class="nav-text"><a href="#Either&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x662F;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x503C;" class="headerlink" title="Either&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x662F;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x503C;"></a>Either&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x662F;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x503C;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用Either函子替代-try-catch"><span class="nav-number">6.2.2.</span> <span class="nav-text"><a href="#&#x7528;Either&#x51FD;&#x5B50;&#x66FF;&#x4EE3;-try-catch" class="headerlink" title="&#x7528;Either&#x51FD;&#x5B50;&#x66FF;&#x4EE3; try..catch"></a>&#x7528;Either&#x51FD;&#x5B50;&#x66FF;&#x4EE3; try..catch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ap函子"><span class="nav-number">7.</span> <span class="nav-text"><a href="#ap&#x51FD;&#x5B50;" class="headerlink" title="ap&#x51FD;&#x5B50;"></a>ap&#x51FD;&#x5B50;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ap函子的实现"><span class="nav-number">7.1.</span> <span class="nav-text"><a href="#ap&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;" class="headerlink" title="ap&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;"></a>ap&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ap函子的应用"><span class="nav-number">7.2.</span> <span class="nav-text"><a href="#ap&#x51FD;&#x5B50;&#x7684;&#x5E94;&#x7528;" class="headerlink" title="ap&#x51FD;&#x5B50;&#x7684;&#x5E94;&#x7528;"></a>ap&#x51FD;&#x5B50;&#x7684;&#x5E94;&#x7528;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Monad函子"><span class="nav-number">8.</span> <span class="nav-text"><a href="#Monad&#x51FD;&#x5B50;" class="headerlink" title="Monad&#x51FD;&#x5B50;"></a>Monad&#x51FD;&#x5B50;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Monad函子的实现"><span class="nav-number">8.1.</span> <span class="nav-text"><a href="#Monad&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;" class="headerlink" title="Monad&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;"></a>Monad&#x51FD;&#x5B50;&#x7684;&#x5B9E;&#x73B0;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO操作"><span class="nav-number">9.</span> <span class="nav-text"><a href="#IO&#x64CD;&#x4F5C;" class="headerlink" title="IO&#x64CD;&#x4F5C;"></a>IO&#x64CD;&#x4F5C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式编程比较火的库"><span class="nav-number">10.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6BD4;&#x8F83;&#x706B;&#x7684;&#x5E93;" class="headerlink" title="&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6BD4;&#x8F83;&#x706B;&#x7684;&#x5E93;"></a>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6BD4;&#x8F83;&#x706B;&#x7684;&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RxJS（建议试用体验）"><span class="nav-number">10.1.</span> <span class="nav-text"><a href="#RxJS&#xFF08;&#x5EFA;&#x8BAE;&#x8BD5;&#x7528;&#x4F53;&#x9A8C;&#xFF09;" class="headerlink" title="RxJS&#xFF08;&#x5EFA;&#x8BAE;&#x8BD5;&#x7528;&#x4F53;&#x9A8C;&#xFF09;"></a>RxJS&#xFF08;&#x5EFA;&#x8BAE;&#x8BD5;&#x7528;&#x4F53;&#x9A8C;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cycleJS"><span class="nav-number">10.2.</span> <span class="nav-text"><a href="#cycleJS" class="headerlink" title="cycleJS"></a>cycleJS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lodashJS（建议试用体验）"><span class="nav-number">10.3.</span> <span class="nav-text"><a href="#lodashJS&#xFF08;&#x5EFA;&#x8BAE;&#x8BD5;&#x7528;&#x4F53;&#x9A8C;&#xFF09;" class="headerlink" title="lodashJS&#xFF08;&#x5EFA;&#x8BAE;&#x8BD5;&#x7528;&#x4F53;&#x9A8C;&#xFF09;"></a>lodashJS&#xFF08;&#x5EFA;&#x8BAE;&#x8BD5;&#x7528;&#x4F53;&#x9A8C;&#xFF09;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#underscore"><span class="nav-number">10.4.</span> <span class="nav-text"><a href="#underscore" class="headerlink" title="underscore"></a>underscore</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ramdajs"><span class="nav-number">10.5.</span> <span class="nav-text"><a href="#Ramdajs" class="headerlink" title="Ramdajs"></a>Ramdajs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实际应用场景"><span class="nav-number">11.</span> <span class="nav-text"><a href="#&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x573A;&#x666F;" class="headerlink" title="&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x573A;&#x666F;"></a>&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x573A;&#x666F;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+            
+          </div>
+        </main>
+
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
+<p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
+
+<p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    版本号:v0.0.2.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
+
+            
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+
+        
+
+        
+
+      </div>
+
+      
+
+
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+<!-- 需要fixed的单独拿出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
+
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.2"></script>
+  <script type="text/javascript" src="/js/waifu-tips.js"></script>
+  <script type="text/javascript" src="/js/live2d.js"></script>
+  <script type="text/javascript">
+      loadlive2d("live2d", "/js/Skin/Pio/model1.json");
+  </script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
+
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: true
+    });
+  </script>
+
+</body>
+</html>
