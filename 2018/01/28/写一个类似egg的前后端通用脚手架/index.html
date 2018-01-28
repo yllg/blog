@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="default">
+<head>
+  <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.2" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="koa2,gulp,webpack3,happypack,ioc,postcss," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="自己写一个类似egg的前后端通用脚手架运行开发环境，npm run build:dev生产环境，npm run build！脚手架搭好，就可以开始尽情表演了 目录结构 用到的包及其作用说明node后台用gulp编译打包（避免用webpack打包node出现过于冗余代码） babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法cro">
+<meta name="keywords" content="koa2,gulp,webpack3,happypack,ioc,postcss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="写一个类似egg的前后端通用脚手架">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/index.html">
+<meta property="og:site_name" content="悬笔e绝">
+<meta property="og:description" content="自己写一个类似egg的前后端通用脚手架运行开发环境，npm run build:dev生产环境，npm run build！脚手架搭好，就可以开始尽情表演了 目录结构 用到的包及其作用说明node后台用gulp编译打包（避免用webpack打包node出现过于冗余代码） babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法cro">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/效果图.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/目录结构.png">
+<meta property="og:updated_time" content="2018-01-28T06:40:11.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="写一个类似egg的前后端通用脚手架">
+<meta name="twitter:description" content="自己写一个类似egg的前后端通用脚手架运行开发环境，npm run build:dev生产环境，npm run build！脚手架搭好，就可以开始尽情表演了 目录结构 用到的包及其作用说明node后台用gulp编译打包（避免用webpack打包node出现过于冗余代码） babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法cro">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/效果图.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.2',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '12/12/2017 2:00:00',
+    onlineAPI: '',
+    site: {
+      title: '火の意志',
+      subtitle: '',
+      author: '悬笔e绝'
+    },
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '6yIOhn3kOO9PP9MGXP84RkNU-gzGzoHsz',
+      appKey: 'Ar2z70S83F1nVkRGH4Ifodrn'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)欢迎回来！',
+      hide_text: ''
+    }
+  };
+</script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/"/>
+
+
+
+
+
+  <title>写一个类似egg的前后端通用脚手架 | 悬笔e绝</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://cdn.bootcss.com/analytics.js/2.9.1/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
+
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-实验室">
+          <a href="/categories/实验室/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-音乐">
+          <a href="/Music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-unsleep">
+          <a href="/UNSLEEP/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            UNSLEEP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/Message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
+</div>
+
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
+</div>
+
+
+ </div>
+        </header>
+
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">01月</div>
+			<div class="post-day">28</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/前端工程化与持续构建/" itemprop="url" rel="index">
+          <span itemprop="name">前端工程化与持续构建</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悬笔e绝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/悬笔e绝.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬笔e绝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">写一个类似egg的前后端通用脚手架</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T14:23:44+08:00">
+                2018/01/28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">•</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-01-28T14:40:11+08:00">
+                2018/01/28
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">•</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端工程化与持续构建/" itemprop="url" rel="index">
+                    <span itemprop="name">前端工程化与持续构建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">•</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/28/写一个类似egg的前后端通用脚手架/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/28/写一个类似egg的前后端通用脚手架/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/01/28/写一个类似egg的前后端通用脚手架/" class="leancloud_visitors" data-flag-title="写一个类似egg的前后端通用脚手架">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计 ">
+                  445
+                </span>
+              
+
+              
+                <span class="post-meta-divider">•</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2&nbsp;min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="自己写一个类似egg的前后端通用脚手架"><a href="#自己写一个类似egg的前后端通用脚手架" class="headerlink" title="自己写一个类似egg的前后端通用脚手架"></a>自己写一个类似egg的前后端通用脚手架</h3><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><h4 id="开发环境，npm-run-build-dev"><a href="#开发环境，npm-run-build-dev" class="headerlink" title="开发环境，npm run build:dev"></a>开发环境，npm run build:dev</h4><h4 id="生产环境，npm-run-build"><a href="#生产环境，npm-run-build" class="headerlink" title="生产环境，npm run build"></a>生产环境，npm run build</h4><h4 id="！脚手架搭好，就可以开始尽情表演了"><a href="#！脚手架搭好，就可以开始尽情表演了" class="headerlink" title="！脚手架搭好，就可以开始尽情表演了"></a>！脚手架搭好，就可以开始尽情表演了</h4><img src="/2018/01/28/写一个类似egg的前后端通用脚手架/效果图.png" title="脚手架效果图">
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><img src="/2018/01/28/写一个类似egg的前后端通用脚手架/目录结构.png" title="目录结构">
+<h3 id="用到的包及其作用说明"><a href="#用到的包及其作用说明" class="headerlink" title="用到的包及其作用说明"></a>用到的包及其作用说明</h3><h4 id="node后台用gulp编译打包"><a href="#node后台用gulp编译打包" class="headerlink" title="node后台用gulp编译打包"></a>node后台用gulp编译打包</h4><p>（避免用webpack打包node出现过于冗余代码）</p>
+<h5 id="babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法"><a href="#babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法" class="headerlink" title="babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法"></a>babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法</h5><h5 id="cross-env-，跨平台的设置和使用环境变量NODE-ENV"><a href="#cross-env-，跨平台的设置和使用环境变量NODE-ENV" class="headerlink" title="cross-env ，跨平台的设置和使用环境变量NODE_ENV"></a>cross-env ，跨平台的设置和使用环境变量NODE_ENV</h5><h5 id="gulp-rollup，tree-shaking-代码清理"><a href="#gulp-rollup，tree-shaking-代码清理" class="headerlink" title="gulp-rollup，tree shaking 代码清理"></a>gulp-rollup，tree shaking 代码清理</h5><h5 id="koa-simple-router-路由中间件"><a href="#koa-simple-router-路由中间件" class="headerlink" title="koa-simple-router, 路由中间件"></a>koa-simple-router, 路由中间件</h5><h5 id="koa-swig-渲染swig模板，koa-v2-x需要co包配合。"><a href="#koa-swig-渲染swig模板，koa-v2-x需要co包配合。" class="headerlink" title="koa-swig, 渲染swig模板，koa v2.x需要co包配合。"></a>koa-swig, 渲染swig模板，koa v2.x需要co包配合。</h5><h5 id="koa-static，设置静态资源文件"><a href="#koa-static，设置静态资源文件" class="headerlink" title="koa-static，设置静态资源文件"></a>koa-static，设置静态资源文件</h5><h5 id="log4js，配合ErrorHandler进行容错处理并打印错误日志。"><a href="#log4js，配合ErrorHandler进行容错处理并打印错误日志。" class="headerlink" title="log4js，配合ErrorHandler进行容错处理并打印错误日志。"></a>log4js，配合ErrorHandler进行容错处理并打印错误日志。</h5><h5 id="awilix，awilix-koa，实现IOC控制反转和DI依赖注入，"><a href="#awilix，awilix-koa，实现IOC控制反转和DI依赖注入，" class="headerlink" title="awilix，awilix-koa，实现IOC控制反转和DI依赖注入，"></a>awilix，awilix-koa，实现IOC控制反转和DI依赖注入，</h5><h5 id="babel-plugin-transform-decorators-legacy，翻译装饰器语法，使用装饰器语法-优雅的定义路由并设置路由守卫。"><a href="#babel-plugin-transform-decorators-legacy，翻译装饰器语法，使用装饰器语法-优雅的定义路由并设置路由守卫。" class="headerlink" title="babel-plugin-transform-decorators-legacy，翻译装饰器语法，使用装饰器语法 优雅的定义路由并设置路由守卫。"></a>babel-plugin-transform-decorators-legacy，翻译装饰器语法，使用装饰器语法 优雅的定义路由并设置路由守卫。</h5><h4 id="前端用webpack打包"><a href="#前端用webpack打包" class="headerlink" title="前端用webpack打包"></a>前端用webpack打包</h4><h5 id="better-npm-run，更方便的运行webpack配置脚本"><a href="#better-npm-run，更方便的运行webpack配置脚本" class="headerlink" title="better-npm-run，更方便的运行webpack配置脚本"></a>better-npm-run，更方便的运行webpack配置脚本</h5><h5 id="lodash，函数式编程的库，克隆两份配置文件，防止开发环境和生产环境配置发生混淆。"><a href="#lodash，函数式编程的库，克隆两份配置文件，防止开发环境和生产环境配置发生混淆。" class="headerlink" title="lodash，函数式编程的库，克隆两份配置文件，防止开发环境和生产环境配置发生混淆。"></a>lodash，函数式编程的库，克隆两份配置文件，防止开发环境和生产环境配置发生混淆。</h5><h5 id="babel-loader：翻译前端ES6语法"><a href="#babel-loader：翻译前端ES6语法" class="headerlink" title="babel-loader：翻译前端ES6语法"></a>babel-loader：翻译前端ES6语法</h5><h5 id="happypack：-webpack好盆友，项目大时可明显提升webpack打包速度"><a href="#happypack：-webpack好盆友，项目大时可明显提升webpack打包速度" class="headerlink" title="happypack： webpack好盆友，项目大时可明显提升webpack打包速度"></a>happypack： webpack好盆友，项目大时可明显提升webpack打包速度</h5><h5 id="postcss，面向未来的下一代css，使用了下面两个"><a href="#postcss，面向未来的下一代css，使用了下面两个" class="headerlink" title="postcss，面向未来的下一代css，使用了下面两个"></a>postcss，面向未来的下一代css，使用了下面两个</h5><h6 id="cssnext：忘掉sass-less-stylus这些旧的预处理器吧。"><a href="#cssnext：忘掉sass-less-stylus这些旧的预处理器吧。" class="headerlink" title="cssnext：忘掉sass,less,stylus这些旧的预处理器吧。"></a>cssnext：忘掉sass,less,stylus这些旧的预处理器吧。</h6><h6 id="cssnano：像JS的tree-shaking一样清理到无用的css，并进行css优化和压缩"><a href="#cssnano：像JS的tree-shaking一样清理到无用的css，并进行css优化和压缩" class="headerlink" title="cssnano：像JS的tree shaking一样清理到无用的css，并进行css优化和压缩"></a>cssnano：像JS的tree shaking一样清理到无用的css，并进行css优化和压缩</h6><h5 id="html-webpack-plugin，webpack中html文件创建的包，用它提供的钩子来扩展我们自己的一个webpack插件，将数据流中的css-js静态文件正确的插入到swig模板的正确位置。"><a href="#html-webpack-plugin，webpack中html文件创建的包，用它提供的钩子来扩展我们自己的一个webpack插件，将数据流中的css-js静态文件正确的插入到swig模板的正确位置。" class="headerlink" title="html-webpack-plugin，webpack中html文件创建的包，用它提供的钩子来扩展我们自己的一个webpack插件，将数据流中的css,js静态文件正确的插入到swig模板的正确位置。"></a>html-webpack-plugin，webpack中html文件创建的包，用它提供的钩子来扩展我们自己的一个webpack插件，将数据流中的css,js静态文件正确的插入到swig模板的正确位置。</h5><h5 id="uglifyjs-webpack-plugin，生产环境一个超给力的压缩插件，"><a href="#uglifyjs-webpack-plugin，生产环境一个超给力的压缩插件，" class="headerlink" title="uglifyjs-webpack-plugin，生产环境一个超给力的压缩插件，"></a>uglifyjs-webpack-plugin，生产环境一个超给力的压缩插件，</h5><h5 id="copy-webpack-plugin，不需要处理的文件直接copy到build下"><a href="#copy-webpack-plugin，不需要处理的文件直接copy到build下" class="headerlink" title="copy-webpack-plugin，不需要处理的文件直接copy到build下"></a>copy-webpack-plugin，不需要处理的文件直接copy到build下</h5><p>GitHub: <a href="https://github.com/yllg/WebFramework" target="_blank" rel="noopener">GitHub</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div class="post-share" style="display: block !important;">分享到：
+
+      </div>
+    
+
+    
+      <div class="post-copyrightwrap">
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    悬笔e绝
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/" title="写一个类似egg的前后端通用脚手架">http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/koa2/" rel="tag"># koa2</a>
+          
+            <a href="/tags/gulp/" rel="tag"># gulp</a>
+          
+            <a href="/tags/webpack3/" rel="tag"># webpack3</a>
+          
+            <a href="/tags/happypack/" rel="tag"># happypack</a>
+          
+            <a href="/tags/ioc/" rel="tag"># ioc</a>
+          
+            <a href="/tags/postcss/" rel="tag"># postcss</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/26/函数式编程入门/" rel="next" title="函数式编程入门">
+                <i class="fa fa-chevron-left"></i> 函数式编程入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+
+     
+      <div class="post-donate">
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    <div id="donateImg">
+        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
+    </div>
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+              </div>
+              
+
+
+              
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div class="disqus-loading">
+          <strong>Disqus 加载中...</strong>
+          <p>如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        if (disqus_config) {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/';
+            this.page.identifier = '2018/01/28/写一个类似egg的前后端通用脚手架/';
+            this.page.title = '写一个类似egg的前后端通用脚手架';
+          };
+          if (window.DISQUS) {
+            $('.disqus-loading').remove();
+            window.DISQUS.reset({
+              reload: true,
+              config: function () {
+                this.page.url = 'http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/';
+                this.page.identifier = '2018/01/28/写一个类似egg的前后端通用脚手架/';
+                this.page.title = '写一个类似egg的前后端通用脚手架';
+              }
+            });
+          }
+        }
+        else {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/01/28/写一个类似egg的前后端通用脚手架/';
+            this.page.identifier = '2018/01/28/写一个类似egg的前后端通用脚手架/';
+            this.page.title = '写一个类似egg的前后端通用脚手架';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://diygod-me.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+
+        }
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+              
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/card.jpg"
+                alt="悬笔e绝" />
+            
+              <p class="site-author-name" itemprop="name">悬笔e绝</p>
+              <p class="site-description motion-element" itemprop="description">敲代码最溜的BBOY🏃 Breaking最炸的程序猿👨‍💻‍~</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yllg" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/WeChat.jpeg" target="_blank" title="微信公众号" data-balloon="微信公众号" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-wechat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq.png" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="javascript:void(0)" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="javascript:void(0)">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          <nav class="site-state motion-element wordcount">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-file-word-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">全站字数统计&#58;</span>
+            
+            <span title="全站字数统计 ">
+              4.7k
+            </span>
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#自己写一个类似egg的前后端通用脚手架"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;egg&#x7684;&#x524D;&#x540E;&#x7AEF;&#x901A;&#x7528;&#x811A;&#x624B;&#x67B6;" class="headerlink" title="&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;egg&#x7684;&#x524D;&#x540E;&#x7AEF;&#x901A;&#x7528;&#x811A;&#x624B;&#x67B6;"></a>&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;egg&#x7684;&#x524D;&#x540E;&#x7AEF;&#x901A;&#x7528;&#x811A;&#x624B;&#x67B6;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x8FD0;&#x884C;" class="headerlink" title="&#x8FD0;&#x884C;"></a>&#x8FD0;&#x884C;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开发环境，npm-run-build-dev"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;npm-run-build-dev" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;npm run build:dev"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF0C;npm run build:dev</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生产环境，npm-run-build"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;npm-run-build" class="headerlink" title="&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;npm run build"></a>&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;npm run build</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#！脚手架搭好，就可以开始尽情表演了"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#xFF01;&#x811A;&#x624B;&#x67B6;&#x642D;&#x597D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x5C3D;&#x60C5;&#x8868;&#x6F14;&#x4E86;" class="headerlink" title="&#xFF01;&#x811A;&#x624B;&#x67B6;&#x642D;&#x597D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x5C3D;&#x60C5;&#x8868;&#x6F14;&#x4E86;"></a>&#xFF01;&#x811A;&#x624B;&#x67B6;&#x642D;&#x597D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x5C3D;&#x60C5;&#x8868;&#x6F14;&#x4E86;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x76EE;&#x5F55;&#x7ED3;&#x6784;" class="headerlink" title="&#x76EE;&#x5F55;&#x7ED3;&#x6784;"></a>&#x76EE;&#x5F55;&#x7ED3;&#x6784;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的包及其作用说明"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x7528;&#x5230;&#x7684;&#x5305;&#x53CA;&#x5176;&#x4F5C;&#x7528;&#x8BF4;&#x660E;" class="headerlink" title="&#x7528;&#x5230;&#x7684;&#x5305;&#x53CA;&#x5176;&#x4F5C;&#x7528;&#x8BF4;&#x660E;"></a>&#x7528;&#x5230;&#x7684;&#x5305;&#x53CA;&#x5176;&#x4F5C;&#x7528;&#x8BF4;&#x660E;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#node后台用gulp编译打包"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#node&#x540E;&#x53F0;&#x7528;gulp&#x7F16;&#x8BD1;&#x6253;&#x5305;" class="headerlink" title="node&#x540E;&#x53F0;&#x7528;gulp&#x7F16;&#x8BD1;&#x6253;&#x5305;"></a>node&#x540E;&#x53F0;&#x7528;gulp&#x7F16;&#x8BD1;&#x6253;&#x5305;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#babel-plugin-transform-es2015-modules-commonjs，编译import等ES6语法"><span class="nav-number">4.1.1.</span> <span class="nav-text"><a href="#babel-plugin-transform-es2015-modules-commonjs&#xFF0C;&#x7F16;&#x8BD1;import&#x7B49;ES6&#x8BED;&#x6CD5;" class="headerlink" title="babel-plugin-transform-es2015-modules-commonjs&#xFF0C;&#x7F16;&#x8BD1;import&#x7B49;ES6&#x8BED;&#x6CD5;"></a>babel-plugin-transform-es2015-modules-commonjs&#xFF0C;&#x7F16;&#x8BD1;import&#x7B49;ES6&#x8BED;&#x6CD5;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cross-env-，跨平台的设置和使用环境变量NODE-ENV"><span class="nav-number">4.1.2.</span> <span class="nav-text"><a href="#cross-env-&#xFF0C;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x8BBE;&#x7F6E;&#x548C;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF;NODE-ENV" class="headerlink" title="cross-env &#xFF0C;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x8BBE;&#x7F6E;&#x548C;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF;NODE_ENV"></a>cross-env &#xFF0C;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x8BBE;&#x7F6E;&#x548C;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF;NODE_ENV</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#gulp-rollup，tree-shaking-代码清理"><span class="nav-number">4.1.3.</span> <span class="nav-text"><a href="#gulp-rollup&#xFF0C;tree-shaking-&#x4EE3;&#x7801;&#x6E05;&#x7406;" class="headerlink" title="gulp-rollup&#xFF0C;tree shaking &#x4EE3;&#x7801;&#x6E05;&#x7406;"></a>gulp-rollup&#xFF0C;tree shaking &#x4EE3;&#x7801;&#x6E05;&#x7406;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#koa-simple-router-路由中间件"><span class="nav-number">4.1.4.</span> <span class="nav-text"><a href="#koa-simple-router-&#x8DEF;&#x7531;&#x4E2D;&#x95F4;&#x4EF6;" class="headerlink" title="koa-simple-router, &#x8DEF;&#x7531;&#x4E2D;&#x95F4;&#x4EF6;"></a>koa-simple-router, &#x8DEF;&#x7531;&#x4E2D;&#x95F4;&#x4EF6;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#koa-swig-渲染swig模板，koa-v2-x需要co包配合。"><span class="nav-number">4.1.5.</span> <span class="nav-text"><a href="#koa-swig-&#x6E32;&#x67D3;swig&#x6A21;&#x677F;&#xFF0C;koa-v2-x&#x9700;&#x8981;co&#x5305;&#x914D;&#x5408;&#x3002;" class="headerlink" title="koa-swig, &#x6E32;&#x67D3;swig&#x6A21;&#x677F;&#xFF0C;koa v2.x&#x9700;&#x8981;co&#x5305;&#x914D;&#x5408;&#x3002;"></a>koa-swig, &#x6E32;&#x67D3;swig&#x6A21;&#x677F;&#xFF0C;koa v2.x&#x9700;&#x8981;co&#x5305;&#x914D;&#x5408;&#x3002;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#koa-static，设置静态资源文件"><span class="nav-number">4.1.6.</span> <span class="nav-text"><a href="#koa-static&#xFF0C;&#x8BBE;&#x7F6E;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x6587;&#x4EF6;" class="headerlink" title="koa-static&#xFF0C;&#x8BBE;&#x7F6E;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x6587;&#x4EF6;"></a>koa-static&#xFF0C;&#x8BBE;&#x7F6E;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#log4js，配合ErrorHandler进行容错处理并打印错误日志。"><span class="nav-number">4.1.7.</span> <span class="nav-text"><a href="#log4js&#xFF0C;&#x914D;&#x5408;ErrorHandler&#x8FDB;&#x884C;&#x5BB9;&#x9519;&#x5904;&#x7406;&#x5E76;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x3002;" class="headerlink" title="log4js&#xFF0C;&#x914D;&#x5408;ErrorHandler&#x8FDB;&#x884C;&#x5BB9;&#x9519;&#x5904;&#x7406;&#x5E76;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x3002;"></a>log4js&#xFF0C;&#x914D;&#x5408;ErrorHandler&#x8FDB;&#x884C;&#x5BB9;&#x9519;&#x5904;&#x7406;&#x5E76;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x3002;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#awilix，awilix-koa，实现IOC控制反转和DI依赖注入，"><span class="nav-number">4.1.8.</span> <span class="nav-text"><a href="#awilix&#xFF0C;awilix-koa&#xFF0C;&#x5B9E;&#x73B0;IOC&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#x548C;DI&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF0C;" class="headerlink" title="awilix&#xFF0C;awilix-koa&#xFF0C;&#x5B9E;&#x73B0;IOC&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#x548C;DI&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF0C;"></a>awilix&#xFF0C;awilix-koa&#xFF0C;&#x5B9E;&#x73B0;IOC&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#x548C;DI&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF0C;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#babel-plugin-transform-decorators-legacy，翻译装饰器语法，使用装饰器语法-优雅的定义路由并设置路由守卫。"><span class="nav-number">4.1.9.</span> <span class="nav-text"><a href="#babel-plugin-transform-decorators-legacy&#xFF0C;&#x7FFB;&#x8BD1;&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5;-&#x4F18;&#x96C5;&#x7684;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x5E76;&#x8BBE;&#x7F6E;&#x8DEF;&#x7531;&#x5B88;&#x536B;&#x3002;" class="headerlink" title="babel-plugin-transform-decorators-legacy&#xFF0C;&#x7FFB;&#x8BD1;&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5; &#x4F18;&#x96C5;&#x7684;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x5E76;&#x8BBE;&#x7F6E;&#x8DEF;&#x7531;&#x5B88;&#x536B;&#x3002;"></a>babel-plugin-transform-decorators-legacy&#xFF0C;&#x7FFB;&#x8BD1;&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5; &#x4F18;&#x96C5;&#x7684;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x5E76;&#x8BBE;&#x7F6E;&#x8DEF;&#x7531;&#x5B88;&#x536B;&#x3002;</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前端用webpack打包"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#&#x524D;&#x7AEF;&#x7528;webpack&#x6253;&#x5305;" class="headerlink" title="&#x524D;&#x7AEF;&#x7528;webpack&#x6253;&#x5305;"></a>&#x524D;&#x7AEF;&#x7528;webpack&#x6253;&#x5305;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#better-npm-run，更方便的运行webpack配置脚本"><span class="nav-number">4.2.1.</span> <span class="nav-text"><a href="#better-npm-run&#xFF0C;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x8FD0;&#x884C;webpack&#x914D;&#x7F6E;&#x811A;&#x672C;" class="headerlink" title="better-npm-run&#xFF0C;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x8FD0;&#x884C;webpack&#x914D;&#x7F6E;&#x811A;&#x672C;"></a>better-npm-run&#xFF0C;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x8FD0;&#x884C;webpack&#x914D;&#x7F6E;&#x811A;&#x672C;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lodash，函数式编程的库，克隆两份配置文件，防止开发环境和生产环境配置发生混淆。"><span class="nav-number">4.2.2.</span> <span class="nav-text"><a href="#lodash&#xFF0C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x5E93;&#xFF0C;&#x514B;&#x9686;&#x4E24;&#x4EFD;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x9632;&#x6B62;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x53D1;&#x751F;&#x6DF7;&#x6DC6;&#x3002;" class="headerlink" title="lodash&#xFF0C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x5E93;&#xFF0C;&#x514B;&#x9686;&#x4E24;&#x4EFD;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x9632;&#x6B62;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x53D1;&#x751F;&#x6DF7;&#x6DC6;&#x3002;"></a>lodash&#xFF0C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x5E93;&#xFF0C;&#x514B;&#x9686;&#x4E24;&#x4EFD;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x9632;&#x6B62;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x53D1;&#x751F;&#x6DF7;&#x6DC6;&#x3002;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#babel-loader：翻译前端ES6语法"><span class="nav-number">4.2.3.</span> <span class="nav-text"><a href="#babel-loader&#xFF1A;&#x7FFB;&#x8BD1;&#x524D;&#x7AEF;ES6&#x8BED;&#x6CD5;" class="headerlink" title="babel-loader&#xFF1A;&#x7FFB;&#x8BD1;&#x524D;&#x7AEF;ES6&#x8BED;&#x6CD5;"></a>babel-loader&#xFF1A;&#x7FFB;&#x8BD1;&#x524D;&#x7AEF;ES6&#x8BED;&#x6CD5;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#happypack：-webpack好盆友，项目大时可明显提升webpack打包速度"><span class="nav-number">4.2.4.</span> <span class="nav-text"><a href="#happypack&#xFF1A;-webpack&#x597D;&#x76C6;&#x53CB;&#xFF0C;&#x9879;&#x76EE;&#x5927;&#x65F6;&#x53EF;&#x660E;&#x663E;&#x63D0;&#x5347;webpack&#x6253;&#x5305;&#x901F;&#x5EA6;" class="headerlink" title="happypack&#xFF1A; webpack&#x597D;&#x76C6;&#x53CB;&#xFF0C;&#x9879;&#x76EE;&#x5927;&#x65F6;&#x53EF;&#x660E;&#x663E;&#x63D0;&#x5347;webpack&#x6253;&#x5305;&#x901F;&#x5EA6;"></a>happypack&#xFF1A; webpack&#x597D;&#x76C6;&#x53CB;&#xFF0C;&#x9879;&#x76EE;&#x5927;&#x65F6;&#x53EF;&#x660E;&#x663E;&#x63D0;&#x5347;webpack&#x6253;&#x5305;&#x901F;&#x5EA6;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#postcss，面向未来的下一代css，使用了下面两个"><span class="nav-number">4.2.5.</span> <span class="nav-text"><a href="#postcss&#xFF0C;&#x9762;&#x5411;&#x672A;&#x6765;&#x7684;&#x4E0B;&#x4E00;&#x4EE3;css&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;" class="headerlink" title="postcss&#xFF0C;&#x9762;&#x5411;&#x672A;&#x6765;&#x7684;&#x4E0B;&#x4E00;&#x4EE3;css&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;"></a>postcss&#xFF0C;&#x9762;&#x5411;&#x672A;&#x6765;&#x7684;&#x4E0B;&#x4E00;&#x4EE3;css&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#cssnext：忘掉sass-less-stylus这些旧的预处理器吧。"><span class="nav-number">4.2.5.1.</span> <span class="nav-text"><a href="#cssnext&#xFF1A;&#x5FD8;&#x6389;sass-less-stylus&#x8FD9;&#x4E9B;&#x65E7;&#x7684;&#x9884;&#x5904;&#x7406;&#x5668;&#x5427;&#x3002;" class="headerlink" title="cssnext&#xFF1A;&#x5FD8;&#x6389;sass,less,stylus&#x8FD9;&#x4E9B;&#x65E7;&#x7684;&#x9884;&#x5904;&#x7406;&#x5668;&#x5427;&#x3002;"></a>cssnext&#xFF1A;&#x5FD8;&#x6389;sass,less,stylus&#x8FD9;&#x4E9B;&#x65E7;&#x7684;&#x9884;&#x5904;&#x7406;&#x5668;&#x5427;&#x3002;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cssnano：像JS的tree-shaking一样清理到无用的css，并进行css优化和压缩"><span class="nav-number">4.2.5.2.</span> <span class="nav-text"><a href="#cssnano&#xFF1A;&#x50CF;JS&#x7684;tree-shaking&#x4E00;&#x6837;&#x6E05;&#x7406;&#x5230;&#x65E0;&#x7528;&#x7684;css&#xFF0C;&#x5E76;&#x8FDB;&#x884C;css&#x4F18;&#x5316;&#x548C;&#x538B;&#x7F29;" class="headerlink" title="cssnano&#xFF1A;&#x50CF;JS&#x7684;tree shaking&#x4E00;&#x6837;&#x6E05;&#x7406;&#x5230;&#x65E0;&#x7528;&#x7684;css&#xFF0C;&#x5E76;&#x8FDB;&#x884C;css&#x4F18;&#x5316;&#x548C;&#x538B;&#x7F29;"></a>cssnano&#xFF1A;&#x50CF;JS&#x7684;tree shaking&#x4E00;&#x6837;&#x6E05;&#x7406;&#x5230;&#x65E0;&#x7528;&#x7684;css&#xFF0C;&#x5E76;&#x8FDB;&#x884C;css&#x4F18;&#x5316;&#x548C;&#x538B;&#x7F29;</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#html-webpack-plugin，webpack中html文件创建的包，用它提供的钩子来扩展我们自己的一个webpack插件，将数据流中的css-js静态文件正确的插入到swig模板的正确位置。"><span class="nav-number">4.2.6.</span> <span class="nav-text"><a href="#html-webpack-plugin&#xFF0C;webpack&#x4E2D;html&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x7684;&#x5305;&#xFF0C;&#x7528;&#x5B83;&#x63D0;&#x4F9B;&#x7684;&#x94A9;&#x5B50;&#x6765;&#x6269;&#x5C55;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;webpack&#x63D2;&#x4EF6;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;css-js&#x9759;&#x6001;&#x6587;&#x4EF6;&#x6B63;&#x786E;&#x7684;&#x63D2;&#x5165;&#x5230;swig&#x6A21;&#x677F;&#x7684;&#x6B63;&#x786E;&#x4F4D;&#x7F6E;&#x3002;" class="headerlink" title="html-webpack-plugin&#xFF0C;webpack&#x4E2D;html&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x7684;&#x5305;&#xFF0C;&#x7528;&#x5B83;&#x63D0;&#x4F9B;&#x7684;&#x94A9;&#x5B50;&#x6765;&#x6269;&#x5C55;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;webpack&#x63D2;&#x4EF6;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;css,js&#x9759;&#x6001;&#x6587;&#x4EF6;&#x6B63;&#x786E;&#x7684;&#x63D2;&#x5165;&#x5230;swig&#x6A21;&#x677F;&#x7684;&#x6B63;&#x786E;&#x4F4D;&#x7F6E;&#x3002;"></a>html-webpack-plugin&#xFF0C;webpack&#x4E2D;html&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x7684;&#x5305;&#xFF0C;&#x7528;&#x5B83;&#x63D0;&#x4F9B;&#x7684;&#x94A9;&#x5B50;&#x6765;&#x6269;&#x5C55;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;webpack&#x63D2;&#x4EF6;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;css,js&#x9759;&#x6001;&#x6587;&#x4EF6;&#x6B63;&#x786E;&#x7684;&#x63D2;&#x5165;&#x5230;swig&#x6A21;&#x677F;&#x7684;&#x6B63;&#x786E;&#x4F4D;&#x7F6E;&#x3002;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#uglifyjs-webpack-plugin，生产环境一个超给力的压缩插件，"><span class="nav-number">4.2.7.</span> <span class="nav-text"><a href="#uglifyjs-webpack-plugin&#xFF0C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E00;&#x4E2A;&#x8D85;&#x7ED9;&#x529B;&#x7684;&#x538B;&#x7F29;&#x63D2;&#x4EF6;&#xFF0C;" class="headerlink" title="uglifyjs-webpack-plugin&#xFF0C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E00;&#x4E2A;&#x8D85;&#x7ED9;&#x529B;&#x7684;&#x538B;&#x7F29;&#x63D2;&#x4EF6;&#xFF0C;"></a>uglifyjs-webpack-plugin&#xFF0C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E00;&#x4E2A;&#x8D85;&#x7ED9;&#x529B;&#x7684;&#x538B;&#x7F29;&#x63D2;&#x4EF6;&#xFF0C;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#copy-webpack-plugin，不需要处理的文件直接copy到build下"><span class="nav-number">4.2.8.</span> <span class="nav-text"><a href="#copy-webpack-plugin&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x76F4;&#x63A5;copy&#x5230;build&#x4E0B;" class="headerlink" title="copy-webpack-plugin&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x76F4;&#x63A5;copy&#x5230;build&#x4E0B;"></a>copy-webpack-plugin&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x76F4;&#x63A5;copy&#x5230;build&#x4E0B;</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+            
+          </div>
+        </main>
+
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
+<p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
+
+<p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    版本号:v0.0.2.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
+
+            
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+
+        
+
+        
+
+      </div>
+
+      
+
+
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+<!-- 需要fixed的单独拿出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
+
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.2"></script>
+  <script type="text/javascript" src="/js/waifu-tips.js"></script>
+  <script type="text/javascript" src="/js/live2d.js"></script>
+  <script type="text/javascript">
+      loadlive2d("live2d", "/js/Skin/Pio/model1.json");
+  </script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
+
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: true
+    });
+  </script>
+
+</body>
+</html>
