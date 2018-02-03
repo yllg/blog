@@ -175,10 +175,14 @@ var night = 0;
 function switchNightMode(){
   if(night == '0'){
       document.body.classList.add('night');
+      $('.meny-contents').addClass('night');
+      $('#sidebar').addClass('night');
       night = '1';
       console.log('夜间模式开启');
   }else{
       document.body.classList.remove('night');
+      $('.meny-contents').removeClass('night');
+      $('#sidebar').removeClass('night');
       night = '0'
       console.log('夜间模式关闭');
   }

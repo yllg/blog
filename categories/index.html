@@ -5,6 +5,10 @@
 
 <html class="theme-next pisces" lang="default">
 <head>
+
+   <!-- 纯CSS实现加载动画 -->
+  <link href="/css/loading.css" rel="stylesheet">
+
   <link href="/css/flat-ui.min.css" rel="stylesheet">
   <link href="/css/DPlayer.min.css" rel="stylesheet">
   <meta charset="UTF-8"/>
@@ -87,18 +91,18 @@
 
   
 
-<link href="https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.0.2" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.2">
+<link href="/css/main.css?v=0.0.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.3">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=0.0.2" color="#222">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.3" color="#222">
 
 
 
@@ -115,17 +119,30 @@
 
 
 
-<meta name="description" content=".post-title{     color:red !important; }        目前共计 12 个一级分类，8个二级分类                                            JS与QA                 3                                           NodeJS">
+<meta name="description" content=".categoriesContent {         font-family: &quot;Overpass Mono&quot;, monospace;         color: #37373e;         background: white;     }      /* Content */      .categoriesContent .content {         posit">
 <meta property="og:type" content="website">
 <meta property="og:title" content="分类">
 <meta property="og:url" content="http://www.xuanbiyijue.com/categories/index.html">
 <meta property="og:site_name" content="悬笔e绝">
-<meta property="og:description" content=".post-title{     color:red !important; }        目前共计 12 个一级分类，8个二级分类                                            JS与QA                 3                                           NodeJS">
+<meta property="og:description" content=".categoriesContent {         font-family: &quot;Overpass Mono&quot;, monospace;         color: #37373e;         background: white;     }      /* Content */      .categoriesContent .content {         posit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-01-31T13:22:52.536Z">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/1.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/2.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/3.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/4.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/5.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/6.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/7.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/8.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/9.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/10.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/11.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/images/categories/12.png">
+<meta property="og:updated_time" content="2018-02-03T08:46:40.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类">
-<meta name="twitter:description" content=".post-title{     color:red !important; }        目前共计 12 个一级分类，8个二级分类                                            JS与QA                 3                                           NodeJS">
+<meta name="twitter:description" content=".categoriesContent {         font-family: &quot;Overpass Mono&quot;, monospace;         color: #37373e;         background: white;     }      /* Content */      .categoriesContent .content {         posit">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/images/categories/1.png">
 
 
 
@@ -134,7 +151,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '0.0.2',
+    version: '0.0.3',
     sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -209,16 +226,53 @@
   <link href="/css/DecorativeLetter.css" rel="stylesheet">
   <link href="/css/authorName.css" rel="stylesheet">
   <link href="/css/meny.css" rel="stylesheet">
+
+  <!-- 页面加载完毕去掉加载动画 -->
+  <script>
+      window.addEventListener("load", function () {
+          var loader = document.getElementById("loader");
+          setTimeout(function(){
+            document.body.removeChild(loader);
+          },3000);
+      });
+  </script>
+
 </head>
+
+
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
+<!-- 加载动画 -->
+<div id="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<!-- 优先让萝莉出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+
+
+<!-- 主体 -->
 <div class="meny-wrap">
   <div class="meny">
     <div class="meny-menuwarp">
     </div>
   </div>
-  <!-- 主体区域 -->
+  <!-- 主体内容区域 -->
   <div class="meny-contents">
 			
       
@@ -425,69 +479,422 @@
         
           
 <style>
-.post-title{
-    color:red !important;
-}
+    .categoriesContent {
+        font-family: "Overpass Mono", monospace;
+        color: #37373e;
+        background: white;
+    }
+
+    /* Content */
+
+    .categoriesContent .content {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 0 1em;
+    }
+
+
+    /* Grid */
+
+    .categoriesContent .grid {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        perspective: 800px;
+        perspective-origin: 50% 100%;
+    }
+
+    .categoriesContent .grid__item {
+        position: relative;
+        display: block;
+        flex: none;
+        width: 180px;
+        margin: 1.5em 1.5vw;
+        cursor: default;
+        transform-style: preserve-3d;
+    }
+
+    .categoriesContent .grid__item:hover,
+    .categoriesContent .grid__item:focus {
+        outline: none;
+    }
+
+
+    .categoriesContent .grid__item--c1:hover,
+    .categoriesContent .grid__item--c1:focus {
+        color: #52649e;
+    }
+
+
+    .categoriesContent .grid__item--c2:hover,
+    .categoriesContent .grid__item--c2:focus {
+        color: #ee7074;
+    }
+
+    
+    .categoriesContent .grid__item--c3:hover,
+    .categoriesContent .grid__item--c3:focus {
+        color: #f7f295;
+    }
+
+    .categoriesContent .grid__item--c1,
+    .categoriesContent .grid__item--c2,
+    .categoriesContent .grid__item--c3{
+        color: white;
+    }
+
+
+    /* stack */
+
+    .categoriesContent .stack {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    }
+
+    .categoriesContent .stack__deco {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: currentColor;
+        transform-origin: 50% 100%;
+    }
+
+    .categoriesContent .stack__deco:first-child {
+        opacity: 0.2;
+    }
+
+    .categoriesContent .stack__deco:nth-child(2) {
+        opacity: 0.4;
+    }
+
+    .categoriesContent .stack__deco:nth-child(3) {
+        opacity: 0.6;
+    }
+
+    .categoriesContent .stack__deco:nth-child(4) {
+        opacity: 0.8;
+    }
+
+    .categoriesContent .stack__figure {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transform-origin: 50% 100%;
+    }
+
+    .categoriesContent .stack__img {
+        position: relative;
+        display: block;
+        flex: none;
+    }
+
+    .categoriesContent .grid__item-caption {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        transform-style: preserve-3d;
+    }
+
+    .categoriesContent .grid__item-title {
+        font-size: 1.15em;
+        width: 100%;
+        margin: 1em 0;
+        text-align: center;
+        color: #37373e;
+        cursor: pointer;
+    }
+
+
+    /* polaris */
+
+    .categoriesContent .grid--effect-polaris {
+        perspective-origin: 100% -100%;
+    }
+
+    /* Alphard */
+
+    .categoriesContent .grid--effect-alphard {
+        perspective: none;
+    }
+
+    .categoriesContent .grid--effect-alphard .stack__figure,
+    .categoriesContent .grid--effect-alphard .stack__deco {
+        transform-origin: 50% 150%;
+    }
+
+    /* Altair */
+
+    .categoriesContent .grid--effect-altair {
+        perspective-origin: 50% -50%;
+    }
+
+    .categoriesContent .grid--effect-altair .stack__figure,
+    .categoriesContent .grid--effect-altair .stack__deco {
+        transform-origin: 50% 100%;
+    }
+
+    /* Canopus */
+
+    .categoriesContent .grid--effect-canopus {
+        perspective-origin: 50% 0%;
+    }
+
+    .categoriesContent .grid--effect-canopus .stack__figure,
+    .categoriesContent .grid--effect-canopus .stack__deco {
+        transform-origin: 50% 100%;
+    }
+
+    .categoriesContent .stack__img {
+        margin: 0 !important;
+    }
 </style>
 
-<div class="category-all-page">
-    <div class="category-all-title">目前共计 12 个一级分类，8个二级分类</div>
-    <div class="category-all">
-        <ul class="category-list">
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/JS与QA/">JS与QA</a>
-                <span class="category-list-count">3</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/NodeJS/">NodeJS</a>
-                <span class="category-list-count">1</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/前端工程化与持续构建/">前端工程化与持续构建</a>
-                <span class="category-list-count">3</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/前端性能优化与工程化/">前端性能优化与工程化</a>
-                <span class="category-list-count">1</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/CSS与网站重构/">CSS与网站重构</a>
-                <span class="category-list-count">1</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/MV框架/">MV*框架</a>
-                <span class="category-list-count">2</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/前端跨界/">前端跨界</a>
-                <span class="category-list-count">1</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/数据结构与算法的JS实践/">数据结构与算法的JS实践</a>
-                <span class="category-list-count">1</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/JS图形学与H5游戏/">JS图形学与H5游戏</a>
-                <span class="category-list-count">1</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/设计模式/">设计模式</a>
-                <span class="category-list-count">1</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/网络安全/">网络安全</a>
-                <span class="category-list-count">2</span>
-            </li>
-            <li class="category-list-item">
-                <a class="category-list-link" href="/categories/实验室/">实验室</a>
-                <span class="category-list-count">10</span>
-            </li>
-        </ul>
-    </div>
-</div>
+<main class="categoriesContent">
+    <section class="content">
+        <div class="grid grid--effect-canopus">
+            <a href="/categories/JS与QA/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/1.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">JS与QA</h3>
+
+                </div>
+            </a>
+            <a href="/categories/NodeJS/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/2.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">NodeJS</h3>
+
+                </div>
+            </a>
+            <a href="/categories/前端工程化与持续构建/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/3.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">前端工程化与持续构建</h3>
+
+                </div>
+            </a>
+
+        </div>
+    </section>
+    <section class="content">
+        <div class="grid grid--effect-polaris">
+            <a href="/categories/前端性能优化与工程化/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/4.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">前端性能优化</h3>
+
+                </div>
+            </a>
+            <a href="/categories/CSS与网站重构/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/5.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">CSS与网站重构</h3>
+
+                </div>
+            </a>
+            <a href="/categories/MV框架/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/6.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">MV*框架</h3>
+
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="content">
+        <div class="grid grid--effect-alphard">
+            <a href="/categories/前端跨界/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/7.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">前端跨界</h3>
+
+                </div>
+            </a>
+            <a href="/categories/数据结构与算法的JS实践/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/8.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">数据结构与算法</h3>
+
+                </div>
+            </a>
+            <a href="/categories/JS图形学与H5游戏/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/9.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">JS图形学与H5游戏</h3>
+
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="content">
+        <div class="grid grid--effect-altair">
+            <a href="/categories/设计模式/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/10.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">设计模式</h3>
+
+                </div>
+            </a>
+            <a href="/categories/网络安全/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/11.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">网络安全</h3>
+
+                </div>
+            </a>
+            <a href="/categories/实验室/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/12.png" alt="Image">
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">实验室</h3>
+
+                </div>
+            </a>
+        </div>
+    </section>
+
+</main>
 
 <script>
-    
+    $(function () {
+        $.ajax({
+            url: "/js/categories.js",
+            success: function (e) {
+                // console.log("获取js之后再本页初始化即可");
+                (function () {
+
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-polaris > .grid__item')).forEach(function (stackEl) {
+                        new PolarisFx(stackEl);
+                    });
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-alphard > .grid__item')).forEach(function (stackEl) {
+                        new AlphardFx(stackEl);
+                    });
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-altair > .grid__item')).forEach(function (stackEl) {
+                        new AltairFx(stackEl);
+                    });
+
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-canopus > .grid__item')).forEach(function (stackEl) {
+                        new CanopusFx(stackEl);
+                    });
+
+                })();
+            }
+        })
+    })
 </script>
         
       </div>
@@ -552,7 +959,7 @@
             this.page.title = '分类';
           };
           var d = document, s = d.createElement('script');
-          s.src = 'https://diygod-me.disqus.com/embed.js';
+          s.src = 'https://.disqus.com/embed.js';
           s.setAttribute('data-timestamp', '' + +new Date());
 
         }
@@ -573,6 +980,10 @@
   
 
 
+
+
+
+  
 
 
 
@@ -605,8 +1016,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -666,7 +1086,7 @@
             
               <div class="site-state-item site-state-categories">
                 <a href="/categories">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -730,6 +1150,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">JS&#x4E0E;QA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">NodeJS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5316;&#x4E0E;&#x6301;&#x7EED;&#x6784;&#x5EFA;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">&#x524D;&#x7AEF;&#x6027;&#x80FD;&#x4F18;&#x5316;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">CSS&#x4E0E;&#x7F51;&#x7AD9;&#x91CD;&#x6784;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">MV*&#x6846;&#x67B6;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">&#x524D;&#x7AEF;&#x8DE8;&#x754C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">JS&#x56FE;&#x5F62;&#x5B66;&#x4E0E;H5&#x6E38;&#x620F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">&#x7F51;&#x7EDC;&#x5B89;&#x5168;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">&#x5B9E;&#x9A8C;&#x5BA4;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -756,7 +1192,7 @@
 
 <p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
     由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
-    版本号:v0.0.2.
+    版本号:v0.0.3.
 </p>
 <p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
 
@@ -818,24 +1254,9 @@
 	</div>
 </div>
 
+
 <!-- 需要fixed的单独拿出来 -->
-<div class="waifu">
-    <div class="waifu-tips"></div>
-    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-    <div class="waifu-tool">
-        <span class="fui-home"></span>
-        <span class="fui-eye"></span>
-        <span class="fui-chat"></span>
-        <span class="fui-user"></span>
-        <span class="fui-photo"></span>
-        <span class="fui-info-circle"></span>
-        <span class="fui-cross"></span>
-    </div>
-</div>
-<!-- 放到3D空间中 -->
-<canvas id="evanyou"></canvas>
-  <!-- 小三角放到外面 -->
-<div class="meny-arrow"></div>
+
 <!-- 盖住原来的那个-->
 <div class="meny">
   <div class="meny-menuwarp">
@@ -850,6 +1271,11 @@
     </ul>
   </div>
 </div>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
 
 
 
@@ -860,7 +1286,7 @@
 
   <script type="text/javascript" src="/js/authorName.js"></script>
 
-  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.2"></script>
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.3"></script>
   <script type="text/javascript" src="/js/waifu-tips.js"></script>
   <script type="text/javascript" src="/js/live2d.js"></script>
   <script type="text/javascript">
@@ -878,9 +1304,10 @@
       width: 260,
       threshold: 40,
       mouse: true,
-      touch: true
+      touch: false
     });
   </script>
+
 
 </body>
 </html>

@@ -5,6 +5,10 @@
 
 <html class="theme-next pisces" lang="default">
 <head>
+
+   <!-- 纯CSS实现加载动画 -->
+  <link href="/css/loading.css" rel="stylesheet">
+
   <link href="/css/flat-ui.min.css" rel="stylesheet">
   <link href="/css/DPlayer.min.css" rel="stylesheet">
   <meta charset="UTF-8"/>
@@ -87,18 +91,18 @@
 
   
 
-<link href="https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.0.2" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.2">
+<link href="/css/main.css?v=0.0.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.3">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=0.0.2" color="#222">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.3" color="#222">
 
 
 
@@ -134,7 +138,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '0.0.2',
+    version: '0.0.3',
     sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -209,16 +213,53 @@
   <link href="/css/DecorativeLetter.css" rel="stylesheet">
   <link href="/css/authorName.css" rel="stylesheet">
   <link href="/css/meny.css" rel="stylesheet">
+
+  <!-- 页面加载完毕去掉加载动画 -->
+  <script>
+      window.addEventListener("load", function () {
+          var loader = document.getElementById("loader");
+          setTimeout(function(){
+            document.body.removeChild(loader);
+          },3000);
+      });
+  </script>
+
 </head>
+
+
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
+<!-- 加载动画 -->
+<div id="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<!-- 优先让萝莉出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+
+
+<!-- 主体 -->
 <div class="meny-wrap">
   <div class="meny">
     <div class="meny-menuwarp">
     </div>
   </div>
-  <!-- 主体区域 -->
+  <!-- 主体内容区域 -->
   <div class="meny-contents">
 			
       
@@ -488,7 +529,7 @@
             this.page.title = '留言板📝';
           };
           var d = document, s = d.createElement('script');
-          s.src = 'https://diygod-me.disqus.com/embed.js';
+          s.src = 'https://.disqus.com/embed.js';
           s.setAttribute('data-timestamp', '' + +new Date());
 
         }
@@ -509,6 +550,10 @@
   
 
 
+
+
+
+  
 
 
 
@@ -602,7 +647,7 @@
             
               <div class="site-state-item site-state-categories">
                 <a href="/categories">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -692,7 +737,7 @@
 
 <p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
     由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
-    版本号:v0.0.2.
+    版本号:v0.0.3.
 </p>
 <p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
 
@@ -754,24 +799,9 @@
 	</div>
 </div>
 
+
 <!-- 需要fixed的单独拿出来 -->
-<div class="waifu">
-    <div class="waifu-tips"></div>
-    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-    <div class="waifu-tool">
-        <span class="fui-home"></span>
-        <span class="fui-eye"></span>
-        <span class="fui-chat"></span>
-        <span class="fui-user"></span>
-        <span class="fui-photo"></span>
-        <span class="fui-info-circle"></span>
-        <span class="fui-cross"></span>
-    </div>
-</div>
-<!-- 放到3D空间中 -->
-<canvas id="evanyou"></canvas>
-  <!-- 小三角放到外面 -->
-<div class="meny-arrow"></div>
+
 <!-- 盖住原来的那个-->
 <div class="meny">
   <div class="meny-menuwarp">
@@ -786,6 +816,11 @@
     </ul>
   </div>
 </div>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
 
 
 
@@ -796,7 +831,7 @@
 
   <script type="text/javascript" src="/js/authorName.js"></script>
 
-  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.2"></script>
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.3"></script>
   <script type="text/javascript" src="/js/waifu-tips.js"></script>
   <script type="text/javascript" src="/js/live2d.js"></script>
   <script type="text/javascript">
@@ -814,9 +849,10 @@
       width: 260,
       threshold: 40,
       mouse: true,
-      touch: true
+      touch: false
     });
   </script>
+
 
 </body>
 </html>
