@@ -1,6 +1,10 @@
-网站效果图如下，地址：[www.xuanbiyijue.com](http://www.xuanbiyijue.com/ "悬笔e绝")
+## 网站效果图如下，地址：[www.xuanbiyijue.com](http://www.xuanbiyijue.com/ "悬笔e绝")
 
-1.一月20号新增 <br>
+### 2月3日更新
+分类页特效，加载动画，修复各种小bug
+![分类页特效.gif](http://upload-images.jianshu.io/upload_images/5716959-5684e411ae3a3b41.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 一月20号新增 <br>
 （1）头部大图特效+各种IT的名言警句
 ![头部大图特效.gif](http://upload-images.jianshu.io/upload_images/5716959-7032199c667df5f3.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

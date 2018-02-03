@@ -102,11 +102,11 @@ body {
 
 @media screen and (max-width: 991px) {
   .meny{
-    width: 100px !important;
+    width: 120px !important;
     padding: 0;
   }
   .meny a{
-    font-size: 8px;
+    font-size: 16px;
   }
   .meny ul{
     padding: 0px;
@@ -115,7 +115,7 @@ body {
     width: 100%;
   }
   .meny-contents.menu-open{
-    transform: translateX(100px) rotateY(15deg) !important;
+    transform: translateX(120px) rotateY(15deg) !important;
   }
 }
 
