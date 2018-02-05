@@ -108,7 +108,7 @@
 
 
 
-  <meta name="keywords" content="karma,jasmine,phantomjs," />
+  <meta name="keywords" content="AOP," />
 
 
 
@@ -119,21 +119,18 @@
 
 
 
-<meta name="description" content="原文链接   fanshunkai的博客 gulp使用gulp实现起服务，自动编译less和ES6 安装gulp1$ npm install gulp -g 安装connect,less和babel12$ npm init -y  //npm初始化$ npm install gulp gulp-connect gulp-less gulp-babel babel-core babel-preset">
-<meta name="keywords" content="karma,jasmine,phantomjs">
+<meta name="description" content="原文链接   黑黢黢的简书 面向切面编程（AOP）是 Aspect Oriented Programming 的缩写，脱胎于函数式编程，是一种无侵入式的编程风格。 无侵入式编程所谓无侵入式编程，就是在不修改原有代码的基础上，对原始代码进行一些功能拓展。常可以应用于诸如代码统计、日志打印、原始函数功能补充等场景中。下面通过一些示例来展示这种编程风格在 JavaScript 中的应用。 举个吃饭的例子">
+<meta name="keywords" content="AOP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端自动化测试">
-<meta property="og:url" content="http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/index.html">
+<meta property="og:title" content="JS的AOP实践">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/index.html">
 <meta property="og:site_name" content="悬笔e绝">
-<meta property="og:description" content="原文链接   fanshunkai的博客 gulp使用gulp实现起服务，自动编译less和ES6 安装gulp1$ npm install gulp -g 安装connect,less和babel12$ npm init -y  //npm初始化$ npm install gulp gulp-connect gulp-less gulp-babel babel-core babel-preset">
+<meta property="og:description" content="原文链接   黑黢黢的简书 面向切面编程（AOP）是 Aspect Oriented Programming 的缩写，脱胎于函数式编程，是一种无侵入式的编程风格。 无侵入式编程所谓无侵入式编程，就是在不修改原有代码的基础上，对原始代码进行一些功能拓展。常可以应用于诸如代码统计、日志打印、原始函数功能补充等场景中。下面通过一些示例来展示这种编程风格在 JavaScript 中的应用。 举个吃饭的例子">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/图1.png">
-<meta property="og:image" content="http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/图2.png">
-<meta property="og:updated_time" content="2018-01-26T11:34:41.677Z">
+<meta property="og:updated_time" content="2018-02-05T14:24:30.976Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端自动化测试">
-<meta name="twitter:description" content="原文链接   fanshunkai的博客 gulp使用gulp实现起服务，自动编译less和ES6 安装gulp1$ npm install gulp -g 安装connect,less和babel12$ npm init -y  //npm初始化$ npm install gulp gulp-connect gulp-less gulp-babel babel-core babel-preset">
-<meta name="twitter:image" content="http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/图1.png">
+<meta name="twitter:title" content="JS的AOP实践">
+<meta name="twitter:description" content="原文链接   黑黢黢的简书 面向切面编程（AOP）是 Aspect Oriented Programming 的缩写，脱胎于函数式编程，是一种无侵入式的编程风格。 无侵入式编程所谓无侵入式编程，就是在不修改原有代码的基础上，对原始代码进行一些功能拓展。常可以应用于诸如代码统计、日志打印、原始函数功能补充等场景中。下面通过一些示例来展示这种编程风格在 JavaScript 中的应用。 举个吃饭的例子">
 
 
 
@@ -188,13 +185,13 @@
 
 
 
-  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/"/>
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/"/>
 
 
 
 
 
-  <title>前端自动化测试 | 悬笔e绝</title>
+  <title>JS的AOP实践 | 悬笔e绝</title>
   
 
 
@@ -463,8 +460,8 @@
   
   
   <div class="post-date">
-			<div class="post-month">01月</div>
-			<div class="post-day">25</div>
+			<div class="post-month">02月</div>
+			<div class="post-day">05</div>
 	</div>
   
   <div class="post-badge">
@@ -479,7 +476,7 @@
   
 
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="悬笔e绝">
@@ -496,7 +493,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端自动化测试</h1>
+          <h1 class="post-title" itemprop="name headline">JS的AOP实践</h1>
         
 
         <div class="post-meta">
@@ -508,8 +505,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-25T23:29:36+08:00">
-                2018/01/25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-05T21:56:29+08:00">
+                2018/02/05
               </time>
             
 
@@ -524,8 +521,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-01-26T19:34:41+08:00">
-                2018/01/26
+              <time title="Post modified" itemprop="dateModified" datetime="2018-02-05T22:24:30+08:00">
+                2018/02/05
               </time>
             
           </span>
@@ -561,8 +558,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/25/前端自动化测试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/25/前端自动化测试/" itemprop="commentsCount"></span>
+                <a href="/2018/02/05/JS的AOP实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/05/JS的AOP实践/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -570,7 +567,7 @@
 
           
           
-             <span id="/2018/01/25/前端自动化测试/" class="leancloud_visitors" data-flag-title="前端自动化测试">
+             <span id="/2018/02/05/JS的AOP实践/" class="leancloud_visitors" data-flag-title="JS的AOP实践">
                <span class="post-meta-divider">•</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -595,7 +592,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计 ">
-                  370
+                  1,914
                 </span>
               
 
@@ -611,7 +608,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2&nbsp;min
+                  7&nbsp;min
                 </span>
               
             </div>
@@ -632,21 +629,51 @@
       
 
       
-        <p><strong>原文链接</strong>   <a href="http://fanshunkai.com" target="_blank" rel="noopener">fanshunkai的博客</a></p>
-<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h3><p>使用gulp实现起服务，自动编译less和ES6</p>
-<h4 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gulp -g</span><br></pre></td></tr></table></figure>
-<h4 id="安装connect-less和babel"><a href="#安装connect-less和babel" class="headerlink" title="安装connect,less和babel"></a>安装connect,less和babel</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm init -y  //npm初始化</span><br><span class="line">$ npm install gulp gulp-connect gulp-less gulp-babel babel-core babel-preset-es2015 --save-dev</span><br></pre></td></tr></table></figure>
-<h4 id="创建gulpfile-js并编写gulp-task"><a href="#创建gulpfile-js并编写gulp-task" class="headerlink" title="创建gulpfile.js并编写gulp task"></a>创建gulpfile.js并编写gulp task</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(<span class="string">'gulp'</span>),</span><br><span class="line">connect = require(<span class="string">'gulp-connect'</span>),</span><br><span class="line">less = require(<span class="string">'gulp-less'</span>),</span><br><span class="line">babel = require(<span class="string">'gulp-babel'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'server'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        port:<span class="string">'8000'</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'css'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    gulp.src(<span class="string">'style/*.less'</span>)</span><br><span class="line">    .pipe(less())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./style'</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'es6'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    gulp.src(<span class="string">'./scripts/index.js'</span>)</span><br><span class="line">    .pipe(babel())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dest'</span>))</span><br><span class="line">&#125;)</span><br><span class="line">gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        gulp.watch(<span class="string">'./style/**/*.less'</span>,[<span class="string">'css'</span>]);</span><br><span class="line">        gulp.watch(<span class="string">'./scripts/**/*.js'</span>,[<span class="string">'es6'</span>]);</span><br><span class="line">&#125;)</span><br><span class="line">gulp.task(<span class="string">'default'</span>,[<span class="string">'css'</span>,<span class="string">'es6'</span>,<span class="string">'watch'</span>,<span class="string">'server'</span>],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">'success'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="运行gulp，出现如下画面，gulp配置成功"><a href="#运行gulp，出现如下画面，gulp配置成功" class="headerlink" title="运行gulp，出现如下画面，gulp配置成功"></a>运行gulp，出现如下画面，gulp配置成功</h4><img src="/2018/01/25/前端自动化测试/图1.png" title="gulp配置成功">
-<h3 id="配置karma"><a href="#配置karma" class="headerlink" title="配置karma"></a>配置karma</h3><h4 id="安装karma"><a href="#安装karma" class="headerlink" title="安装karma"></a>安装karma</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install karma karma-jasmine jasmine-core karma-phantomjs-launcher --save-dev</span><br></pre></td></tr></table></figure>
-<h4 id="配置scripts-在package-json中配置相关scripts命令"><a href="#配置scripts-在package-json中配置相关scripts命令" class="headerlink" title="配置scripts 在package.json中配置相关scripts命令"></a>配置scripts 在package.json中配置相关scripts命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">   <span class="string">"test"</span>: <span class="string">"karma start"</span>,</span><br><span class="line">   <span class="string">"karmainit"</span>:<span class="string">"karma init"</span>,</span><br><span class="line">   <span class="string">"start"</span>: <span class="string">"gulp"</span></span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-<h4 id="初始化karma"><a href="#初始化karma" class="headerlink" title="初始化karma"></a>初始化karma</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run karmainit</span><br></pre></td></tr></table></figure>
-<p>选择 jasmine phantomjs 其余默认<br>生成karma.conf.js文件</p>
-<h4 id="配置karma-conf-js-files中配置目标测试文件和测试用例-singleRun设为true"><a href="#配置karma-conf-js-files中配置目标测试文件和测试用例-singleRun设为true" class="headerlink" title="配置karma.conf.js files中配置目标测试文件和测试用例,singleRun设为true"></a>配置karma.conf.js files中配置目标测试文件和测试用例,singleRun设为true</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">files: [</span><br><span class="line">      <span class="string">'./dest/add.js'</span>,</span><br><span class="line">      <span class="string">'./test/add.spec.js'</span></span><br><span class="line">  ],...</span><br><span class="line">singleRun:<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h4 id="写测试用例-在-test-add-spec-js文件中写用例"><a href="#写测试用例-在-test-add-spec-js文件中写用例" class="headerlink" title="写测试用例 在./test/add.spec.js文件中写用例"></a>写测试用例 在./test/add.spec.js文件中写用例</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'测试加法函数'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    it(<span class="string">'测试add(1)是否等于2'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        expect(add(1)).toBe(2);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="运行karma进行单元测试"><a href="#运行karma进行单元测试" class="headerlink" title="运行karma进行单元测试"></a>运行karma进行单元测试</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>出现以下画面，说明测试通过<br><img src="/2018/01/25/前端自动化测试/图2.png" title="测试通过"></p>
-<p>GitHub: <a href="https://github.com/yllg/JS-QA" target="_blank" rel="noopener">GitHub</a></p>
+        <p><strong>原文链接</strong>   <a href="https://www.jianshu.com/p/20381c6b9251" target="_blank" rel="noopener">黑黢黢的简书</a></p>
+<p>面向切面编程（AOP）是 Aspect Oriented Programming 的缩写，脱胎于函数式编程，是一种无侵入式的编程风格。</p>
+<h3 id="无侵入式编程"><a href="#无侵入式编程" class="headerlink" title="无侵入式编程"></a>无侵入式编程</h3><p>所谓无侵入式编程，就是在不修改原有代码的基础上，对原始代码进行一些功能拓展。常可以应用于诸如代码统计、日志打印、原始函数功能补充等场景中。<br>下面通过一些示例来展示这种编程风格在 JavaScript 中的应用。</p>
+<h3 id="举个吃饭的例子"><a href="#举个吃饭的例子" class="headerlink" title="举个吃饭的例子"></a>举个吃饭的例子</h3><p>这里举一个吃饭的例子，你正在做一个关于“吃”的项目，项目中你定义了一个 eat 函数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">eat</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">"我正在吃糖醋排骨，好香好香"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>随后随着需求升级，PM 要求你完善整个吃饭的流程，一个比较完整的吃饭流程应该是：做饭、吃饭、刷碗。此处你只定义了“吃”的方法，新需求还要求你实现“做饭”和“刷碗”两项功能。<br>你可以直接对 eat 函数进行修改，在函数开头加入“做饭”的功能，在函数结尾加入“刷碗”的功能，但你知道这样是不好的，因为这种方式侵入了原始的 eat 函数，降低了代码的可维护性，也增加了出错的可能性。<br>不让修改原始的 eat 函数怎么办？此时就需要一种无侵入式的编程范式，也就是本文要介绍的 AOP 编程。</p>
+<h3 id="JavaScript-中-AOP-的实现"><a href="#JavaScript-中-AOP-的实现" class="headerlink" title="JavaScript 中 AOP 的实现"></a>JavaScript 中 AOP 的实现</h3><p>在 JavaScript 中实现 AOP 编程，主要是通过 Function.prototype 完成。此例中，我们可以在 Function.prorotype 上挂载一个 before 方法和 after 方法，分别在 eat 函数执行前后调用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.before = <span class="keyword">function</span>(fn)&#123;</span><br><span class="line">    fn &amp;&amp; fn();</span><br><span class="line">    this()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Function.prototype.after = <span class="keyword">function</span>(fn)&#123;</span><br><span class="line">    this()</span><br><span class="line">    fn &amp;&amp; fn();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时如果我们调用 before 函数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eat.before(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我先去做饭"</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>输出结果为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我先去做饭</span><br><span class="line">我正在吃糖醋排骨，好香好香</span><br></pre></td></tr></table></figure></p>
+<p>同理，如果我们调用 after 函数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">eat.after(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我得去刷碗了"</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>输出结果为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我正在吃糖醋排骨，好香好香</span><br><span class="line">我得去刷碗了</span><br></pre></td></tr></table></figure></p>
+<p>现在，我们已经初步实现了一个 AOP 的编程模型。</p>
+<h3 id="实现链式调用"><a href="#实现链式调用" class="headerlink" title="实现链式调用"></a>实现链式调用</h3><p>上面的代码有没有什么问题呢？在我看来，至少有两个问题：<br><blockquote><ul>
+<li>同时调用 before 函数和 after 函数，会导致 eat 函数被调用两次</li>
+<li>无法实现链式调用</li>
+</ul>
+</blockquote></p>
+<p>上面的代码，如果只是单独调用 before 或 after 函数，没有什么问题。但新流程是需要我们同时调用 before 和 after 方法的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">eat.before(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我先去做饭"</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">eat.after(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我得去刷碗了"</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>下面是运行结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">我先去做饭</span><br><span class="line">我正在吃糖醋排骨，好香好香</span><br><span class="line">我正在吃糖醋排骨，好香好香</span><br><span class="line">我得去刷碗了</span><br></pre></td></tr></table></figure></p>
+<p>可见，eat 函数被调用了两次，如果我们想在“做饭”之前在做点操作，比如“买菜”，会导致 eat 函数多次的调用。究其原因，是因为我们调用 before 或 after 函数时，会立即调用 eat 函数，我们可以对 before 函数和 after 函数做一些修改，让它们返回一个函数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.before = <span class="keyword">function</span>(fn)&#123;</span><br><span class="line">    <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">        fn &amp;&amp; fn();</span><br><span class="line">        this()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Function.prototype.after = <span class="keyword">function</span>(fn)&#123;</span><br><span class="line">    <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">        this()</span><br><span class="line">        fn &amp;&amp; fn();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过返回一个函数，实现了 eat 的延迟调用，同时由于返回值是一个函数，我们还可以对该返回值应用 before 和 after 函数，并实现链式调用，这得益于 JavaScript 的灵活性。<br>修改代码后，我们进行以下调用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">eat.before(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我先去做饭"</span>)</span><br><span class="line">&#125;).after(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我得去刷碗了"</span>)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>你可以把 before 和 after 作为一个包装器，类似于 bind 方法，都是绑定在 Function .prototype 上的方法，对调用这些函数的函数（this）进行一些包装，返回一个新的函数数，而原始的函数不受影响。<br>现在我们实现了一个具有一定扩展性的 AOP 编程模型，此例中，如果你想在“做饭”之前加上“买菜”功能，在“刷碗”后加上“看电视”功能，以及其他任意的功能，都可以很方便的添加：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">eat.before(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我先去做饭"</span>)</span><br><span class="line">&#125;).after(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我得去刷碗了"</span>)</span><br><span class="line">&#125;).before(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我先去买菜"</span>)</span><br><span class="line">&#125;).after(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我去休息一下"</span>)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我先去买菜</span><br><span class="line">我先去做饭</span><br><span class="line">我正在吃糖醋排骨，好香好香</span><br><span class="line">我得去刷碗了</span><br><span class="line">我去休息一下</span><br></pre></td></tr></table></figure></p>
+<h3 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h3><p>经过一连串的链式调用后，怎么获取原始函数的返回值呢？如果我们的 eat 函数有个返回值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">eat</span></span>()&#123;</span><br><span class="line">    console.log(<span class="string">"我正在吃糖醋排骨，好香好香"</span>);</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        <span class="string">"dish"</span>:<span class="string">"糖醋排骨"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>要想获取原始函数的返回值，我们再对 before 和 after 做一些修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.before = <span class="keyword">function</span>(fn)&#123;</span><br><span class="line">    <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">        fn &amp;&amp; fn();</span><br><span class="line">        const result = this();</span><br><span class="line">        <span class="built_in">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Function.prototype.after = <span class="keyword">function</span>(fn)&#123;</span><br><span class="line">    <span class="built_in">return</span> () =&gt; &#123;</span><br><span class="line">        const result = this();</span><br><span class="line">        fn &amp;&amp; fn();</span><br><span class="line">        <span class="built_in">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里对 before 和 after 函数返回的函数增加了返回值，返回值就是调用该函数的函数（这里是 eat）的返回值，这样一来，eat 函数的返回值就可以层层进行传递下去了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const retVal = eat.before(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我先去做饭"</span>)</span><br><span class="line">&#125;).after(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我得去刷碗了"</span>)</span><br><span class="line">&#125;).before(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我先去买菜"</span>)</span><br><span class="line">&#125;).after(()=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">"我去休息一下"</span>)</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">console.log(retVal)</span><br></pre></td></tr></table></figure>
+<p>调用结果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">我先去买菜</span><br><span class="line">我先去做饭</span><br><span class="line">我正在吃糖醋排骨，好香好香</span><br><span class="line">我得去刷碗了</span><br><span class="line">我去休息一下</span><br><span class="line">&#123; dish: <span class="string">'糖醋排骨'</span> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码统计"><a href="#代码统计" class="headerlink" title="代码统计"></a>代码统计</h3><p>通过前面的介绍，我们实现了一个 AOP 的编程模型，尽管这个模型并不是尽善尽美的，但我们已经可以用来做一些事情了。我们来做一个实现代码统计的例子，通过代码统计，可以找出一些运行时间较长的函数，然后对其进行优化。这里我们准备对 test 函数进行代码统计：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">let</span> i = 0; i &lt; 100000000;i++)&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以实现一个 getRunTime 方法，该方法用来进行代码统计：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getRunTime(fn)&#123;</span><br><span class="line">    // 定义开始时间和结束时间</span><br><span class="line">    <span class="built_in">let</span> start;</span><br><span class="line">    <span class="built_in">let</span> end;</span><br><span class="line">    // 使用获取代码运行时间</span><br><span class="line">    fn.before(()=&gt;&#123;</span><br><span class="line">        start = +new Date();</span><br><span class="line">    &#125;).after(()=&gt;&#123;</span><br><span class="line">        end = +new Date();</span><br><span class="line">    &#125;)();</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">return</span> end - start;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后只需调用 getRunTime 方法，就可以实现代码统计了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const runTime = getRunTime(<span class="built_in">test</span>)</span><br><span class="line">console.log(runTime)</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">66</span><br></pre></td></tr></table></figure></p>
+<p>getRunTime 的内部实现是依赖于 AOP 的，通过 AOP 实现了无侵入式的编程，我们在没有对 test 内部代码进行任何修改的情况下，实现了对其的运行时长进行统计，这种编程范式的优点，大家可以细细体会。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文对面向切面编程（AOP）的概念进行了一些介绍，并给出了 JavaScript 的实现方式，最后给出了一个例子。<br>在 JavaScript 中实现 AOP 的原理很简单，就是通过对 Function.prototype 进行扩展，这种方式也应用于诸多内置函数中，如常用的 bind 函数，我们应该主要学习这种思想。</p>
 
       
     </div>
@@ -671,7 +698,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/" title="前端自动化测试">http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/</a>
+    <a href="http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/" title="JS的AOP实践">http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -686,11 +713,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/karma/" rel="tag"># karma</a>
-          
-            <a href="/tags/jasmine/" rel="tag"># jasmine</a>
-          
-            <a href="/tags/phantomjs/" rel="tag"># phantomjs</a>
+            <a href="/tags/AOP/" rel="tag"># AOP</a>
           
         </div>
       
@@ -703,8 +726,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/31/wxxcx/" rel="next" title="微信小程序">
-                <i class="fa fa-chevron-left"></i> 微信小程序
+              <a href="/2018/02/04/纪念下我第一篇阅读量破万的技术贴/" rel="next" title="纪念下我第一篇阅读量破万的技术贴">
+                <i class="fa fa-chevron-left"></i> 纪念下我第一篇阅读量破万的技术贴
               </a>
             
           </div>
@@ -712,10 +735,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/26/函数式编程入门/" rel="prev" title="函数式编程入门">
-                函数式编程入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -799,27 +818,27 @@
       <script type="text/javascript">
         if (disqus_config) {
           var disqus_config = function () {
-            this.page.url = 'http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/';
-            this.page.identifier = '2018/01/25/前端自动化测试/';
-            this.page.title = '前端自动化测试';
+            this.page.url = 'http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/';
+            this.page.identifier = '2018/02/05/JS的AOP实践/';
+            this.page.title = 'JS的AOP实践';
           };
           if (window.DISQUS) {
             $('.disqus-loading').remove();
             window.DISQUS.reset({
               reload: true,
               config: function () {
-                this.page.url = 'http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/';
-                this.page.identifier = '2018/01/25/前端自动化测试/';
-                this.page.title = '前端自动化测试';
+                this.page.url = 'http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/';
+                this.page.identifier = '2018/02/05/JS的AOP实践/';
+                this.page.title = 'JS的AOP实践';
               }
             });
           }
         }
         else {
           var disqus_config = function () {
-            this.page.url = 'http://www.xuanbiyijue.com/2018/01/25/前端自动化测试/';
-            this.page.identifier = '2018/01/25/前端自动化测试/';
-            this.page.title = '前端自动化测试';
+            this.page.url = 'http://www.xuanbiyijue.com/2018/02/05/JS的AOP实践/';
+            this.page.identifier = '2018/02/05/JS的AOP实践/';
+            this.page.title = 'JS的AOP实践';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://.disqus.com/embed.js';
@@ -1022,7 +1041,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp"><span class="nav-number">1.</span> <span class="nav-text"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装gulp"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;gulp" class="headerlink" title="&#x5B89;&#x88C5;gulp"></a>&#x5B89;&#x88C5;gulp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装connect-less和babel"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;connect-less&#x548C;babel" class="headerlink" title="&#x5B89;&#x88C5;connect,less&#x548C;babel"></a>&#x5B89;&#x88C5;connect,less&#x548C;babel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建gulpfile-js并编写gulp-task"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;gulpfile-js&#x5E76;&#x7F16;&#x5199;gulp-task" class="headerlink" title="&#x521B;&#x5EFA;gulpfile.js&#x5E76;&#x7F16;&#x5199;gulp task"></a>&#x521B;&#x5EFA;gulpfile.js&#x5E76;&#x7F16;&#x5199;gulp task</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行gulp，出现如下画面，gulp配置成功"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#&#x8FD0;&#x884C;gulp&#xFF0C;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x753B;&#x9762;&#xFF0C;gulp&#x914D;&#x7F6E;&#x6210;&#x529F;" class="headerlink" title="&#x8FD0;&#x884C;gulp&#xFF0C;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x753B;&#x9762;&#xFF0C;gulp&#x914D;&#x7F6E;&#x6210;&#x529F;"></a>&#x8FD0;&#x884C;gulp&#xFF0C;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x753B;&#x9762;&#xFF0C;gulp&#x914D;&#x7F6E;&#x6210;&#x529F;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置karma"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;karma" class="headerlink" title="&#x914D;&#x7F6E;karma"></a>&#x914D;&#x7F6E;karma</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装karma"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;karma" class="headerlink" title="&#x5B89;&#x88C5;karma"></a>&#x5B89;&#x88C5;karma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置scripts-在package-json中配置相关scripts命令"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;scripts-&#x5728;package-json&#x4E2D;&#x914D;&#x7F6E;&#x76F8;&#x5173;scripts&#x547D;&#x4EE4;" class="headerlink" title="&#x914D;&#x7F6E;scripts &#x5728;package.json&#x4E2D;&#x914D;&#x7F6E;&#x76F8;&#x5173;scripts&#x547D;&#x4EE4;"></a>&#x914D;&#x7F6E;scripts &#x5728;package.json&#x4E2D;&#x914D;&#x7F6E;&#x76F8;&#x5173;scripts&#x547D;&#x4EE4;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化karma"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x521D;&#x59CB;&#x5316;karma" class="headerlink" title="&#x521D;&#x59CB;&#x5316;karma"></a>&#x521D;&#x59CB;&#x5316;karma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置karma-conf-js-files中配置目标测试文件和测试用例-singleRun设为true"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;karma-conf-js-files&#x4E2D;&#x914D;&#x7F6E;&#x76EE;&#x6807;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x548C;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;-singleRun&#x8BBE;&#x4E3A;true" class="headerlink" title="&#x914D;&#x7F6E;karma.conf.js files&#x4E2D;&#x914D;&#x7F6E;&#x76EE;&#x6807;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x548C;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;,singleRun&#x8BBE;&#x4E3A;true"></a>&#x914D;&#x7F6E;karma.conf.js files&#x4E2D;&#x914D;&#x7F6E;&#x76EE;&#x6807;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x548C;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;,singleRun&#x8BBE;&#x4E3A;true</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写测试用例-在-test-add-spec-js文件中写用例"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#&#x5199;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;-&#x5728;-test-add-spec-js&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x7528;&#x4F8B;" class="headerlink" title="&#x5199;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B; &#x5728;./test/add.spec.js&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x7528;&#x4F8B;"></a>&#x5199;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B; &#x5728;./test/add.spec.js&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x7528;&#x4F8B;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行karma进行单元测试"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#&#x8FD0;&#x884C;karma&#x8FDB;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;" class="headerlink" title="&#x8FD0;&#x884C;karma&#x8FDB;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"></a>&#x8FD0;&#x884C;karma&#x8FDB;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#无侵入式编程"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x65E0;&#x4FB5;&#x5165;&#x5F0F;&#x7F16;&#x7A0B;" class="headerlink" title="&#x65E0;&#x4FB5;&#x5165;&#x5F0F;&#x7F16;&#x7A0B;"></a>&#x65E0;&#x4FB5;&#x5165;&#x5F0F;&#x7F16;&#x7A0B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举个吃饭的例子"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x4E3E;&#x4E2A;&#x5403;&#x996D;&#x7684;&#x4F8B;&#x5B50;" class="headerlink" title="&#x4E3E;&#x4E2A;&#x5403;&#x996D;&#x7684;&#x4F8B;&#x5B50;"></a>&#x4E3E;&#x4E2A;&#x5403;&#x996D;&#x7684;&#x4F8B;&#x5B50;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-中-AOP-的实现"><span class="nav-number">3.</span> <span class="nav-text"><a href="#JavaScript-&#x4E2D;-AOP-&#x7684;&#x5B9E;&#x73B0;" class="headerlink" title="JavaScript &#x4E2D; AOP &#x7684;&#x5B9E;&#x73B0;"></a>JavaScript &#x4E2D; AOP &#x7684;&#x5B9E;&#x73B0;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现链式调用"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x5B9E;&#x73B0;&#x94FE;&#x5F0F;&#x8C03;&#x7528;" class="headerlink" title="&#x5B9E;&#x73B0;&#x94FE;&#x5F0F;&#x8C03;&#x7528;"></a>&#x5B9E;&#x73B0;&#x94FE;&#x5F0F;&#x8C03;&#x7528;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数返回值"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;" class="headerlink" title="&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;"></a>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码统计"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x4EE3;&#x7801;&#x7EDF;&#x8BA1;" class="headerlink" title="&#x4EE3;&#x7801;&#x7EDF;&#x8BA1;"></a>&#x4EE3;&#x7801;&#x7EDF;&#x8BA1;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
             
 
           </div>
