@@ -1589,11 +1589,11 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: #ff0085;
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: #2aafff;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1971,7 +1971,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff6;
+  background: #4beb2b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3128,7 +3128,7 @@ a {
   padding: 1px 15px;
   border: none;
   border-radius: 5px;
-  background: #97dffd;
+  background: #ff0085;
   color: #fff;
   font-size: 13px;
 }
@@ -5159,7 +5159,6 @@ body.night .comments {
   padding-bottom: 40px;
   width: 70%;
   border-radius: 5px;
-  background: #85e0ff;
   text-align: center;
   font-size: 16px;
   opacity: 0.98;
@@ -5301,7 +5300,7 @@ body.night .comments {
   overflow: visible;
 }
 .links-of-author-item a:hover .fa {
-  background: #97dffd;
+  background: #ff0085;
   color: #fff;
 }
 .links-of-author-item .fa {
@@ -5380,13 +5379,13 @@ body.night .comments {
 }
 .posts-expand .post-title-link,
 .posts-expand .post-title {
-  color: #444;
-  font-size: 25px;
+  color: #ff0085;
   font-weight: 700;
+  font-size: 25px;
 }
 .posts-expand .post-meta {
-  color: #555;
   margin-top: 5px;
+  color: #555;
 }
 @media (max-width: 991px) {
   .posts-expand .post-meta {
@@ -5396,27 +5395,42 @@ body.night .comments {
 }
 .post {
   position: relative;
-  padding: 40px;
-  background: #fff;
   margin-bottom: 40px;
-  border-radius: 5px;
+  padding: 40px;
+  border: 5px solid #ff0085;
+  border-radius: 20px;
+  background-color: #201155;
+}
+.post .post-block {
+  color: #2aafff;
+}
+.post .post-block .post-meta {
+  color: #2aafff;
+}
+.post .post-block .post-title-link {
+  color: #ff0085;
+}
+.post .post-block blockquote,
+.post .post-block .highlight {
+  color: #fff;
 }
 @media (max-width: 991px) {
   .post {
     padding: 40px 20px;
     border-radius: 0;
+    border: 0px solid;
   }
 }
 .post-date {
-  background-color: #97dffd;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   position: absolute;
   top: -20px;
   left: -30px;
-  height: 60px;
-  width: 70px;
   padding-top: 10px;
+  width: 70px;
+  height: 60px;
   border-radius: 100px;
+  background-color: #ff0085;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   color: #fff;
   text-align: center;
   line-height: 1.1;
@@ -5427,21 +5441,21 @@ body.night .comments {
   }
 }
 .post-date .post-day {
-  font-size: 30px;
   font-weight: 700;
+  font-size: 30px;
 }
 .post-badge {
   position: absolute;
-  left: -16px;
   top: 65px;
-  border-color: #47456d;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
-  background-color: #97dffd;
-  margin: 5px 0 15px 2px;
-  font-size: 14px;
-  border-radius: 0 4px 4px 0;
+  left: -16px;
   display: inline-block;
+  margin: 5px 0 15px 2px;
   padding: 7px 11px 7px 32px;
+  border-color: #47456d;
+  border-radius: 0 4px 4px 0;
+  background-color: #ff0085;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+  font-size: 14px;
   line-height: 1;
 }
 @media (max-width: 991px) {
@@ -5454,55 +5468,57 @@ body.night .comments {
 }
 .post-badge:after {
   position: absolute;
-  content: "";
   top: 100%;
   left: 0;
-  border-top: 0 solid transparent;
-  border-right-width: 1em;
-  border-right-color: inherit;
-  border-right-style: solid;
-  border-bottom: 1em solid transparent;
-  border-left: 0 solid transparent;
   width: 0;
   height: 0;
+  border-top: 0 solid transparent;
+  border-right-width: 1em;
+  border-right-style: solid;
+  border-right-color: inherit;
+  border-bottom: 1em solid transparent;
+  border-left: 0 solid transparent;
+  content: '';
 }
 .pagination {
   margin: 20px 0;
-  border-top: none;
-  background: #fff;
   padding: 15px 0;
-  border-radius: 5px;
+  border-top: none;
+  border: 5px solid #ff0085;
+  border-radius: 20px;
+  background-color: #201155;
 }
 .pagination .page-number {
-  background: #fff;
-  color: #97dffd;
+  border: 1px solid #ff0085;
   border-radius: 5px;
-  border: 1px solid #97dffd;
+  background: #fff;
+  color: #ff0085;
 }
 .pagination .page-number:hover {
-  background: #97dffd;
+  border-top-color: #ff0085;
+  background: #ff0085;
   color: #fff;
-  border-top-color: #97dffd;
 }
 .pagination .page-number.current {
-  background: #97dffd;
-  border: 1px solid #97dffd;
+  border: 1px solid #ff0085;
+  background: #ff0085;
 }
 .pagination .extend {
   border-top: none;
+  color: #fff;
 }
 .pagination .extend:hover {
   border-top: none;
 }
 #rewardButton span {
-  background: #e26d6d;
-  height: 34px;
   width: 80px;
+  height: 34px;
   border-radius: 4px;
-  line-height: 34px;
-  text-align: center;
+  background: #e26d6d;
   color: #fff;
+  text-align: center;
   font-size: 14px;
+  line-height: 34px;
   cursor: pointer;
 }
 #wechat {
@@ -5526,10 +5542,10 @@ body.night .comments {
   transform: translateY(-50%);
 }
 .comments {
-  background: #fff;
   margin: 0;
   padding: 40px;
   border-radius: 5px;
+  background: #fff;
 }
 @media (max-width: 991px) {
   .comments {

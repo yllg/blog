@@ -17,8 +17,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,.DecoLetter,nav,sec
 	--color-link: #fff;
 	--color-link-hover: #fff473;
 	--color-nav: #fff;
-	--color-bg-slide-1: #4cabef;
-	--color-bg-slide-2: #0406e6;
+	--color-bg-slide-1: #201155;
+	--color-bg-slide-2: #4cabef;
 	--color-bg-slide-3: #272526;
 	--color-bg-slide-4: #b9b9b9;
 	--color-bg-slide-5: #5900ce;
@@ -263,7 +263,8 @@ a:focus {
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
-	font-size: 9vw;
+  font-size: 9vw;
+  color: #ff0085;
 }
 
 .word--2 {
