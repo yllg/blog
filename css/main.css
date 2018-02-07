@@ -1589,11 +1589,11 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #ff0085;
+  color: #97dffd;
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #2aafff;
+  color: #47456d;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1971,7 +1971,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4beb2b;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3128,7 +3128,7 @@ a {
   padding: 1px 15px;
   border: none;
   border-radius: 5px;
-  background: #ff0085;
+  background: #97dffd;
   color: #fff;
   font-size: 13px;
 }
@@ -5300,7 +5300,7 @@ body.night .comments {
   overflow: visible;
 }
 .links-of-author-item a:hover .fa {
-  background: #ff0085;
+  background: #97dffd;
   color: #fff;
 }
 .links-of-author-item .fa {
@@ -5379,7 +5379,7 @@ body.night .comments {
 }
 .posts-expand .post-title-link,
 .posts-expand .post-title {
-  color: #ff0085;
+  color: #97dffd;
   font-weight: 700;
   font-size: 25px;
 }
@@ -5397,18 +5397,17 @@ body.night .comments {
   position: relative;
   margin-bottom: 40px;
   padding: 40px;
-  border: 5px solid #ff0085;
   border-radius: 20px;
-  background-color: #201155;
+  background: #fff;
 }
 .post .post-block {
-  color: #2aafff;
+  color: #47456d;
 }
 .post .post-block .post-meta {
-  color: #2aafff;
+  color: #47456d;
 }
 .post .post-block .post-title-link {
-  color: #ff0085;
+  color: #97dffd;
 }
 .post .post-block blockquote,
 .post .post-block .highlight {
@@ -5429,7 +5428,7 @@ body.night .comments {
   width: 70px;
   height: 60px;
   border-radius: 100px;
-  background-color: #ff0085;
+  background-color: #97dffd;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   color: #fff;
   text-align: center;
@@ -5453,7 +5452,7 @@ body.night .comments {
   padding: 7px 11px 7px 32px;
   border-color: #47456d;
   border-radius: 0 4px 4px 0;
-  background-color: #ff0085;
+  background-color: #97dffd;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
   font-size: 14px;
   line-height: 1;
@@ -5484,24 +5483,23 @@ body.night .comments {
   margin: 20px 0;
   padding: 15px 0;
   border-top: none;
-  border: 5px solid #ff0085;
   border-radius: 20px;
-  background-color: #201155;
+  background-color: #fff;
 }
 .pagination .page-number {
-  border: 1px solid #ff0085;
+  border: 1px solid #97dffd;
   border-radius: 5px;
   background: #fff;
-  color: #ff0085;
+  color: #97dffd;
 }
 .pagination .page-number:hover {
-  border-top-color: #ff0085;
-  background: #ff0085;
+  border-top-color: #97dffd;
+  background: #97dffd;
   color: #fff;
 }
 .pagination .page-number.current {
-  border: 1px solid #ff0085;
-  background: #ff0085;
+  border: 1px solid #97dffd;
+  background: #97dffd;
 }
 .pagination .extend {
   border-top: none;
