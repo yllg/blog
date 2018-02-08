@@ -1971,7 +1971,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #a3f9a8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -5503,7 +5503,7 @@ body.night .comments {
 }
 .pagination .extend {
   border-top: none;
-  color: #fff;
+  color: #97dffd;
 }
 .pagination .extend:hover {
   border-top: none;
