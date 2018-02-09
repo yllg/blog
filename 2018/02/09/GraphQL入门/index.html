@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="default">
+<head>
+
+   <!-- 纯CSS实现加载动画 -->
+  <link href="/css/loading.css" rel="stylesheet">
+
+  <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="GraphQL," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="GraphQL简介GraphQL 是一种用于 API 的查询语言。它使得客户端能够准确地获得它需要的数据，而且没有任何冗余 特点不多不少的请求你需要的数据发出一个 GraphQL 请求就能准确获得你想要的数据，不多不少。 GraphQL 查询总是返回可预测的结果。使用 GraphQL 的应用可以工作得又快又稳，因为控制数据的是应用，而不是服务器。 获取多个资源只需要用一个请求GraphQL 查询不">
+<meta name="keywords" content="GraphQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GraphQL入门">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/index.html">
+<meta property="og:site_name" content="悬笔e绝">
+<meta property="og:description" content="GraphQL简介GraphQL 是一种用于 API 的查询语言。它使得客户端能够准确地获得它需要的数据，而且没有任何冗余 特点不多不少的请求你需要的数据发出一个 GraphQL 请求就能准确获得你想要的数据，不多不少。 GraphQL 查询总是返回可预测的结果。使用 GraphQL 的应用可以工作得又快又稳，因为控制数据的是应用，而不是服务器。 获取多个资源只需要用一个请求GraphQL 查询不">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/1.gif">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/2.gif">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/3.gif">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/4.png">
+<meta property="og:updated_time" content="2018-02-09T11:54:07.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GraphQL入门">
+<meta name="twitter:description" content="GraphQL简介GraphQL 是一种用于 API 的查询语言。它使得客户端能够准确地获得它需要的数据，而且没有任何冗余 特点不多不少的请求你需要的数据发出一个 GraphQL 请求就能准确获得你想要的数据，不多不少。 GraphQL 查询总是返回可预测的结果。使用 GraphQL 的应用可以工作得又快又稳，因为控制数据的是应用，而不是服务器。 获取多个资源只需要用一个请求GraphQL 查询不">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/1.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.3',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '12/12/2017 2:00:00',
+    onlineAPI: '',
+    site: {
+      title: '火の意志',
+      subtitle: '',
+      author: '悬笔e绝'
+    },
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '6yIOhn3kOO9PP9MGXP84RkNU-gzGzoHsz',
+      appKey: 'Ar2z70S83F1nVkRGH4Ifodrn'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)欢迎回来！',
+      hide_text: ''
+    }
+  };
+</script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/"/>
+
+
+
+
+
+  <title>GraphQL入门 | 悬笔e绝</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://cdn.bootcss.com/analytics.js/2.9.1/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
+
+  <!-- 页面加载完毕去掉加载动画 -->
+  <script>
+      window.addEventListener("load", function () {
+          var loader = document.getElementById("loader");
+          setTimeout(function(){
+            document.body.removeChild(loader);
+          },3000);
+      });
+  </script>
+
+</head>
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<!-- 加载动画 -->
+<div id="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<!-- 优先让萝莉出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+
+
+<!-- 主体 -->
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体内容区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
+
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-实验室">
+          <a href="/categories/实验室/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-音乐">
+          <a href="/Music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-unsleep">
+          <a href="/UNSLEEP/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            UNSLEEP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/Message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
+</div>
+
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
+</div>
+
+
+ </div>
+        </header>
+
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">09</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/NodeJS/" itemprop="url" rel="index">
+          <span itemprop="name">NodeJS</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悬笔e绝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/悬笔e绝.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬笔e绝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GraphQL入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-09T18:50:20+08:00">
+                2018/02/09
+              </time>
+            
+
+            
+              <span class="post-meta-divider">•</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-02-09T19:54:07+08:00">
+                2018/02/09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">•</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NodeJS/" itemprop="url" rel="index">
+                    <span itemprop="name">NodeJS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">•</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/09/GraphQL入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/09/GraphQL入门/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/02/09/GraphQL入门/" class="leancloud_visitors" data-flag-title="GraphQL入门">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计 ">
+                  2,438
+                </span>
+              
+
+              
+                <span class="post-meta-divider">•</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10&nbsp;min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="GraphQL简介"><a href="#GraphQL简介" class="headerlink" title="GraphQL简介"></a>GraphQL简介</h3><p>GraphQL 是一种用于 API 的查询语言。它使得客户端能够准确地获得它需要的数据，而且没有任何冗余</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><h4 id="不多不少的请求你需要的数据"><a href="#不多不少的请求你需要的数据" class="headerlink" title="不多不少的请求你需要的数据"></a>不多不少的请求你需要的数据</h4><p>发出一个 GraphQL 请求就能准确获得你想要的数据，不多不少。 GraphQL 查询总是返回可预测的结果。使用 GraphQL 的应用可以工作得又快又稳，因为控制数据的是应用，而不是服务器。<br><img src="/2018/02/09/GraphQL入门/1.gif" class="ClassName"></p>
+<h4 id="获取多个资源只需要用一个请求"><a href="#获取多个资源只需要用一个请求" class="headerlink" title="获取多个资源只需要用一个请求"></a>获取多个资源只需要用一个请求</h4><p>GraphQL 查询不仅能够获得资源的属性，还能沿着资源间引用进一步查询。典型的 REST API 请求多个资源时得载入多个 URL，而 GraphQL 可以通过一次请求就获取你应用所需的所有数据。这样一来，即使是比较慢的移动网络连接下，使用 GraphQL 的应用也能表现得足够迅速。</p>
+<h4 id="完善的类型系统"><a href="#完善的类型系统" class="headerlink" title="完善的类型系统"></a>完善的类型系统</h4><p>GraphQL API 是基于类型和字段的方式进行组织的。GraphQL 使用强类型来保证请求数据的正确性，提前声明好类型可以避免编写代码手动进行解析。它还提供了清晰的辅助性错误信息。<br><img src="/2018/02/09/GraphQL入门/2.gif" class="ClassName"></p>
+<h4 id="API-演进无需划分版本"><a href="#API-演进无需划分版本" class="headerlink" title="API 演进无需划分版本"></a>API 演进无需划分版本</h4><p>给你的 GraphQL API 添加字段和类型而无需影响现有查询。老旧的字段可以废弃，从工具中隐藏。通过使用单一演进版本，GraphQL API 使得应用始终能够使用新的特性，并鼓励使用更加简洁、更好维护的服务端代码。<br><img src="/2018/02/09/GraphQL入门/3.gif" class="ClassName"></p>
+<h4 id="使用你现有的数据和代码"><a href="#使用你现有的数据和代码" class="headerlink" title="使用你现有的数据和代码"></a>使用你现有的数据和代码</h4><p>GraphQL 让你的整个应用共享一套 API，而不用被限制于特定存储引擎。GraphQL 引擎已经有多种语言实现，通过 GraphQL API 能够更好利用你的现有数据和代码。你只需要为类型系统的字段编写函数，GraphQL 就能通过优化并发的方式来调用它们</p>
+<blockquote><p>一个GraphQL查询可以包含一个或者多个操作（operation），类似于一个RESTful API。操作有两种类型：查询（Query）或者修改（mutation）</p>
+</blockquote>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h4 id="第一个demo"><a href="#第一个demo" class="headerlink" title="第一个demo"></a>第一个demo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">query &#123;</span><br><span class="line">  user(id: 1) &#123;</span><br><span class="line">    id </span><br><span class="line">    name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote><p>user是查询的operation<br>(id: 1)包含了传入给Query的参数<br>查询包含id和name字段，这些字段也就是我们希望查询可以返回的数据</p>
+</blockquote>
+<p>这时server返回的数据就类似下面这种：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>: &#123;</span><br><span class="line">    <span class="string">"user"</span>: &#123;</span><br><span class="line">      <span class="string">"id"</span>: <span class="string">"1"</span>,</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"悬笔e绝"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第二个demo"><a href="#第二个demo" class="headerlink" title="第二个demo"></a>第二个demo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">query &#123;</span><br><span class="line">  student(class_id: 1, order: <span class="string">"number DESC"</span>) &#123;</span><br><span class="line">    name </span><br><span class="line">    class_id</span><br><span class="line">    number</span><br><span class="line">    hometown </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这次我们查询student，并传入两个参数：class_id班号用于过滤，order指明按照number学号进行降序排列。查询中包含的字段是：name、class_id、number和hometown）</p>
+<p>应该能猜到返回的结果是什么样的了，没错，大概如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>: &#123;</span><br><span class="line">    <span class="string">"student"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"悬笔e绝"</span>,</span><br><span class="line">        <span class="string">" class_id "</span>: 1,</span><br><span class="line">        <span class="string">" number "</span>: 16,</span><br><span class="line">        <span class="string">" hometown "</span>: jiujiang</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"li"</span>,</span><br><span class="line">        <span class="string">" class_id "</span>:1,</span><br><span class="line">        <span class="string">" number "</span>: 15,</span><br><span class="line">        <span class="string">" hometown "</span>:Shenzhen</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面两个例子里可以看出来GraphQL允许客户端明确指定它要的是什么，避免了数据后去的冗余或者不足。而RESTful API ，每一个客户端都会对应很多个RESTful API或者一个API要服务很多个客户端。<br>所以说GraphQL是很好的查询语言。所有的operation、参数和所有可以查询的字段都需要在GraphQL server上定义、实现。</p>
+<h4 id="嵌套查询"><a href="#嵌套查询" class="headerlink" title="嵌套查询"></a>嵌套查询</h4><p>查询的嵌套没有限制，全看我们的查询和server的实现。比如可以使用下面的查询：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  purchases(client_id: 1) &#123;</span><br><span class="line">    date</span><br><span class="line">    quantity</span><br><span class="line">    total</span><br><span class="line">    product &#123;</span><br><span class="line">      name</span><br><span class="line">      price</span><br><span class="line">      product_category &#123;</span><br><span class="line">        name</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    client &#123;</span><br><span class="line">      name</span><br><span class="line">      dob</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们请求server返回某个客户的purchases。查询里不仅指定了purchase的字段，还指定了相关的product，product_category的名称。</p>
+<h4 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h4><p>官方文档有一句话如下：<br><blockquote><p>“每一个GraphQL server都要定义类型系统。查询是在这个类型系统的上下文中执行的。”</p>
+</blockquote><br>也就是说，你可以查询值类型：Int, Float, String, Boolean和ID<br>如果想要查询object类型，就需要我们自己定义了。</p>
+<p>由于GraphQL查询都是结构化的，信息也是类树结构展示的。我们可以这么简单的理解：值类型（Scalar Type）–叶子，对象类型（Object Type）–树干。</p>
+<h4 id="字段别名"><a href="#字段别名" class="headerlink" title="字段别名"></a>字段别名</h4><p>在GraphQL查询中可以为Operation里的字段指定别名。<br>比如查询里指定了字段hometown，但是客户端只能接受jiaxiang。<br>因为查询的返回结果都包含在以operation名称为key的对象里，所以可以为这个名称设置一个别名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  MrLi_student: student (class_id: 1) &#123;</span><br><span class="line">    class_id</span><br><span class="line">    name</span><br><span class="line">    jiaxiang: hometown</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回的数据类似这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>: &#123;</span><br><span class="line">    <span class="string">" MrLi_student "</span>: &#123;</span><br><span class="line">      <span class="string">" class_id "</span>: <span class="string">"1"</span>,</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"悬笔e绝 "</span>,</span><br><span class="line">      <span class="string">" jiaxiang "</span>: <span class="string">"jiujiang"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="其他查询的功能"><a href="#其他查询的功能" class="headerlink" title="其他查询的功能"></a>其他查询的功能</h4><h5 id="Fragments"><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</h5><p>一次查询的两个对象中包含了大量相同片段的时候，可以把重复的字段都提出来，放到一个fragment里；<br>用操作符“…” 就可以使用fragment了</p>
+<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><p>查询参数多处使用的时候，我们可以定义一个变量来方便使用</p>
+<h3 id="修改Mutation"><a href="#修改Mutation" class="headerlink" title="修改Mutation"></a>修改Mutation</h3><p>GraphQL不仅可以用来查询数据，也可以创建、更新和销毁数据。<br>当然和查询一样，这些也需要server端有对应的实现。<br>增、删、改一类的operation在GraphQL里统称为Muration（修改）。<br>下面通过几个例子来演示一下mutation。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mutation &#123;</span><br><span class="line">  create_student (</span><br><span class="line">    name: <span class="string">"张三"</span></span><br><span class="line">    class_id: 3</span><br><span class="line">  ) &#123; </span><br><span class="line">    name</span><br><span class="line">    class_id</span><br><span class="line">    hometown</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们现在指定operation的类型为mutation，而不是query。<br>在create_student操作里我们传入了创建一个student需要的数据，并最终返回一个查询集合：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>: &#123;</span><br><span class="line">    <span class="string">"create_student"</span>: &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"张三"</span>,</span><br><span class="line">      <span class="string">"class_id"</span>: 3,</span><br><span class="line">	    <span class="string">"hometown"</span>: <span class="string">"shenzhen"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改和删除类似了，对应的update_student和destroy_student即可</p>
+<h3 id="定义文档"><a href="#定义文档" class="headerlink" title="定义文档"></a>定义文档</h3><p>上个例子的create<em>student、update</em> student和destroy_ student这些operation都是在GraphQL server实现好的。那我们前台客户端怎么知道GraphQL server都实现了什么方法呢？于是就有了 定义文档<br>GraphQL会根据已经定义好的类型系统来自动生成出一个说明文档。这样你就不用一次一次的翻看代码，而直接查看文档来了解operation的全部实现细节。<br>如果你用的是express-graphql, 并设置graphiql为true的话，那么就会生成一个web的调试界面。在最右侧可以直接使用doc</p>
+<h4 id="查询所有的queryType类型的operation"><a href="#查询所有的queryType类型的operation" class="headerlink" title="查询所有的queryType类型的operation"></a>查询所有的queryType类型的operation</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  __schema &#123;</span><br><span class="line">    queryType &#123;</span><br><span class="line">      name </span><br><span class="line">      fields &#123;</span><br><span class="line">        name</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于mutation类型的操作也是类似的:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  __schema &#123;</span><br><span class="line">    mutationType &#123;</span><br><span class="line">      name</span><br><span class="line">      fields &#123;</span><br><span class="line">        name</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回结果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>: &#123;</span><br><span class="line">    <span class="string">"__schema"</span>: &#123;</span><br><span class="line">      <span class="string">"mutationType"</span>: &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Mutation"</span>,</span><br><span class="line">        <span class="string">"fields"</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"create_student"</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"destroy_ student "</span></span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"update_ student "</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们还可以具体查询operation的参数，比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  __schema &#123;</span><br><span class="line">    mutationType &#123;</span><br><span class="line">      name</span><br><span class="line">      fields &#123;</span><br><span class="line">        name</span><br><span class="line">        args &#123;</span><br><span class="line">          name</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>: &#123;</span><br><span class="line">    <span class="string">"__schema"</span>: &#123;</span><br><span class="line">      <span class="string">" mutationType "</span>: &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">" Mutation "</span>,</span><br><span class="line">        <span class="string">"fields"</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">" create_student "</span>, </span><br><span class="line">            <span class="string">"args"</span>: [</span><br><span class="line">              &#123;</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"name"</span></span><br><span class="line">              &#125;,</span><br><span class="line">              &#123;</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"class_id"</span></span><br><span class="line">              &#125;</span><br><span class="line">            ]</span><br><span class="line">          &#125;,</span><br><span class="line">          &#123;</span><br><span class="line">            ...</span><br><span class="line">          &#125; </span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你会看到server实现了一个create_student的修改operation，参数为name和class_id。</p>
+<h3 id="搭建一个简单的基于node的GraphQL-Server"><a href="#搭建一个简单的基于node的GraphQL-Server" class="headerlink" title="搭建一个简单的基于node的GraphQL Server"></a>搭建一个简单的基于node的GraphQL Server</h3><h4 id="第一步初始化项目"><a href="#第一步初始化项目" class="headerlink" title="第一步初始化项目"></a>第一步初始化项目</h4><p>创建工程目录 graphqlDemo<br>初始化项目，以及引入所需的包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm init -f</span><br><span class="line">npm install graphql express express-graphql --save</span><br><span class="line">npm install babel-cli babel-preset-es2015 --save-dev</span><br><span class="line">npm install -g nodemon</span><br></pre></td></tr></table></figure>
+<h4 id="第二步-mock数据"><a href="#第二步-mock数据" class="headerlink" title="第二步 mock数据"></a>第二步 mock数据</h4><p>在项目根目录下创建 data 目录，并在该目录下创建 data.json 文件，并输入以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"1"</span>: &#123;</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"1"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"悬笔e绝"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"2"</span>: &#123;</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"2"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"li"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"3"</span>: &#123;</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"3"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"张三"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第三步-创建server-js文件"><a href="#第三步-创建server-js文件" class="headerlink" title="第三步 创建server.js文件"></a>第三步 创建server.js文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import express from <span class="string">'express'</span></span><br><span class="line"></span><br><span class="line">const app = express()</span><br><span class="line">const port = 3000</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.send(<span class="string">'Hello!'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> server = app.listen(port, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    console.log(<span class="string">'server Start, Listening on 3000端口'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>命令行运行：nodemon –exec babel-node –presets=es2015 server.js，<br>浏览器输入：<a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a> 。显示 Hello!，说明你的 express 服务已经 OK 了。</p>
+<h4 id="第四步-编写GraphQL-Schema"><a href="#第四步-编写GraphQL-Schema" class="headerlink" title="第四步 编写GraphQL Schema"></a>第四步 编写GraphQL Schema</h4><p>创建文件夹 /src/schema，并创建文件 index.js。<br>并在 index.js 文件中编写GraphQL Schema。Schema 是 GraphQL 请求的入口，用户请求的<br>GraphQL 将会对应到具体的 Schema。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import &#123;</span><br><span class="line">    GraphQLObjectType,</span><br><span class="line">    GraphQLSchema,</span><br><span class="line">    GraphQLString,</span><br><span class="line">    GraphQLInt</span><br><span class="line">&#125; from <span class="string">'graphql'</span></span><br><span class="line"></span><br><span class="line">// 我们要用的模拟数据</span><br><span class="line">const data = require(<span class="string">'../../data/data.json'</span>)</span><br><span class="line"></span><br><span class="line">const User = new GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'User'</span>,</span><br><span class="line">    description: <span class="string">'User对象'</span>,</span><br><span class="line">    fields: &#123;</span><br><span class="line">        id: &#123;</span><br><span class="line">            <span class="built_in">type</span>: GraphQLInt</span><br><span class="line">        &#125;,</span><br><span class="line">        name: &#123;</span><br><span class="line">            <span class="built_in">type</span>: GraphQLString</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const Query = new GraphQLObjectType(&#123;</span><br><span class="line">    name: <span class="string">'Query'</span>,</span><br><span class="line">    fields: &#123;</span><br><span class="line">        user: &#123;</span><br><span class="line">            <span class="built_in">type</span>: User,</span><br><span class="line">            args: &#123;</span><br><span class="line">                id: &#123;</span><br><span class="line">                    <span class="built_in">type</span>: GraphQLInt</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            resolve: <span class="keyword">function</span> (_, args) &#123;</span><br><span class="line">                <span class="built_in">return</span> data[args.id];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const Schema = new GraphQLSchema(&#123;</span><br><span class="line">    query: Query</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default Schema;</span><br></pre></td></tr></table></figure>
+<h4 id="第五步-连接-schema"><a href="#第五步-连接-schema" class="headerlink" title="第五步 连接 schema"></a>第五步 连接 schema</h4><p>修改 server.js 文件，连接 schema。将 server.js 文件修改为以下内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import express from <span class="string">'express'</span></span><br><span class="line">import Schema from <span class="string">'./src/schema'</span></span><br><span class="line">import graphqlHTTP from <span class="string">'express-graphql'</span></span><br><span class="line"></span><br><span class="line">const app = express()</span><br><span class="line">const port = 3000</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, graphqlHTTP(&#123;</span><br><span class="line">    schema: Schema,</span><br><span class="line">    graphiql: <span class="literal">true</span></span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> server = app.listen(port, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    console.log(<span class="string">'server Start, Listening on 3000端口'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这时，在浏览器中可以查看到如下界面：<br><img src="/2018/02/09/GraphQL入门/4.png" class="ClassName"></p>
+<p>在左边的空白处输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  user(id: 1) &#123;</span><br><span class="line">    name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>点击“运行”按钮，右边会出现结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>: &#123;</span><br><span class="line">    <span class="string">"user"</span>: &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"悬笔e绝"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>至此我们对GraphQL有了初步的认识，并且搭建了一个简单的node端的 GraphQL server<br>更深入的了解，可以查阅官方文档，连接如下：</p>
+<p><a href="http://facebook.github.io/graphql/October2016/" target="_blank" rel="noopener">GraphQL官方文档</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div class="post-share" style="display: block !important;">分享到：
+
+      </div>
+    
+
+    
+      <div class="post-copyrightwrap">
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    悬笔e绝
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/" title="GraphQL入门">http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GraphQL/" rel="tag"># GraphQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/08/开发个小游戏才是正经事/" rel="next" title="开发个小游戏才是正经事">
+                <i class="fa fa-chevron-left"></i> 开发个小游戏才是正经事
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+
+     
+      <div class="post-donate">
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    <div id="donateImg">
+        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
+    </div>
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+              </div>
+              
+
+
+              
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div class="disqus-loading">
+          <strong>Disqus 加载中...</strong>
+          <p>如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        if (disqus_config) {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/';
+            this.page.identifier = '2018/02/09/GraphQL入门/';
+            this.page.title = 'GraphQL入门';
+          };
+          if (window.DISQUS) {
+            $('.disqus-loading').remove();
+            window.DISQUS.reset({
+              reload: true,
+              config: function () {
+                this.page.url = 'http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/';
+                this.page.identifier = '2018/02/09/GraphQL入门/';
+                this.page.title = 'GraphQL入门';
+              }
+            });
+          }
+        }
+        else {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/02/09/GraphQL入门/';
+            this.page.identifier = '2018/02/09/GraphQL入门/';
+            this.page.title = 'GraphQL入门';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+
+        }
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+              
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/card.jpg"
+                alt="悬笔e绝" />
+            
+              <p class="site-author-name" itemprop="name">悬笔e绝</p>
+              <p class="site-description motion-element" itemprop="description">敲代码最溜的BBOY🏃 Breaking最炸的程序猿👨‍💻‍~</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yllg" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/WeChat.jpeg" target="_blank" title="微信公众号" data-balloon="微信公众号" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-wechat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq.png" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="javascript:void(0)" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="javascript:void(0)">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          <nav class="site-state motion-element wordcount">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-file-word-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">全站字数统计&#58;</span>
+            
+            <span title="全站字数统计 ">
+              11.5k
+            </span>
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GraphQL简介"><span class="nav-number">1.</span> <span class="nav-text"><a href="#GraphQL&#x7B80;&#x4ECB;" class="headerlink" title="GraphQL&#x7B80;&#x4ECB;"></a>GraphQL&#x7B80;&#x4ECB;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x7279;&#x70B9;" class="headerlink" title="&#x7279;&#x70B9;"></a>&#x7279;&#x70B9;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不多不少的请求你需要的数据"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x4E0D;&#x591A;&#x4E0D;&#x5C11;&#x7684;&#x8BF7;&#x6C42;&#x4F60;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;" class="headerlink" title="&#x4E0D;&#x591A;&#x4E0D;&#x5C11;&#x7684;&#x8BF7;&#x6C42;&#x4F60;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;"></a>&#x4E0D;&#x591A;&#x4E0D;&#x5C11;&#x7684;&#x8BF7;&#x6C42;&#x4F60;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取多个资源只需要用一个请求"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#x53EA;&#x9700;&#x8981;&#x7528;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;" class="headerlink" title="&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#x53EA;&#x9700;&#x8981;&#x7528;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;"></a>&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#x53EA;&#x9700;&#x8981;&#x7528;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完善的类型系统"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x5B8C;&#x5584;&#x7684;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x5B8C;&#x5584;&#x7684;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;"></a>&#x5B8C;&#x5584;&#x7684;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API-演进无需划分版本"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#API-&#x6F14;&#x8FDB;&#x65E0;&#x9700;&#x5212;&#x5206;&#x7248;&#x672C;" class="headerlink" title="API &#x6F14;&#x8FDB;&#x65E0;&#x9700;&#x5212;&#x5206;&#x7248;&#x672C;"></a>API &#x6F14;&#x8FDB;&#x65E0;&#x9700;&#x5212;&#x5206;&#x7248;&#x672C;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用你现有的数据和代码"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;&#x4F60;&#x73B0;&#x6709;&#x7684;&#x6570;&#x636E;&#x548C;&#x4EE3;&#x7801;" class="headerlink" title="&#x4F7F;&#x7528;&#x4F60;&#x73B0;&#x6709;&#x7684;&#x6570;&#x636E;&#x548C;&#x4EE3;&#x7801;"></a>&#x4F7F;&#x7528;&#x4F60;&#x73B0;&#x6709;&#x7684;&#x6570;&#x636E;&#x548C;&#x4EE3;&#x7801;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x67E5;&#x8BE2;" class="headerlink" title="&#x67E5;&#x8BE2;"></a>&#x67E5;&#x8BE2;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一个demo"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E00;&#x4E2A;demo" class="headerlink" title="&#x7B2C;&#x4E00;&#x4E2A;demo"></a>&#x7B2C;&#x4E00;&#x4E2A;demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二个demo"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E8C;&#x4E2A;demo" class="headerlink" title="&#x7B2C;&#x4E8C;&#x4E2A;demo"></a>&#x7B2C;&#x4E8C;&#x4E2A;demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套查询"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#&#x5D4C;&#x5957;&#x67E5;&#x8BE2;" class="headerlink" title="&#x5D4C;&#x5957;&#x67E5;&#x8BE2;"></a>&#x5D4C;&#x5957;&#x67E5;&#x8BE2;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强类型"><span class="nav-number">3.4.</span> <span class="nav-text"><a href="#&#x5F3A;&#x7C7B;&#x578B;" class="headerlink" title="&#x5F3A;&#x7C7B;&#x578B;"></a>&#x5F3A;&#x7C7B;&#x578B;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字段别名"><span class="nav-number">3.5.</span> <span class="nav-text"><a href="#&#x5B57;&#x6BB5;&#x522B;&#x540D;" class="headerlink" title="&#x5B57;&#x6BB5;&#x522B;&#x540D;"></a>&#x5B57;&#x6BB5;&#x522B;&#x540D;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他查询的功能"><span class="nav-number">3.6.</span> <span class="nav-text"><a href="#&#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x7684;&#x529F;&#x80FD;" class="headerlink" title="&#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x7684;&#x529F;&#x80FD;"></a>&#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x7684;&#x529F;&#x80FD;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Fragments"><span class="nav-number">3.6.1.</span> <span class="nav-text"><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量"><span class="nav-number">3.6.2.</span> <span class="nav-text"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;"></a>&#x53D8;&#x91CF;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Mutation"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x4FEE;&#x6539;Mutation" class="headerlink" title="&#x4FEE;&#x6539;Mutation"></a>&#x4FEE;&#x6539;Mutation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义文档"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x5B9A;&#x4E49;&#x6587;&#x6863;" class="headerlink" title="&#x5B9A;&#x4E49;&#x6587;&#x6863;"></a>&#x5B9A;&#x4E49;&#x6587;&#x6863;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询所有的queryType类型的operation"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;queryType&#x7C7B;&#x578B;&#x7684;operation" class="headerlink" title="&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;queryType&#x7C7B;&#x578B;&#x7684;operation"></a>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;queryType&#x7C7B;&#x578B;&#x7684;operation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建一个简单的基于node的GraphQL-Server"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x642D;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x57FA;&#x4E8E;node&#x7684;GraphQL-Server" class="headerlink" title="&#x642D;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x57FA;&#x4E8E;node&#x7684;GraphQL Server"></a>&#x642D;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x57FA;&#x4E8E;node&#x7684;GraphQL Server</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步初始化项目"><span class="nav-number">6.1.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E00;&#x6B65;&#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;" class="headerlink" title="&#x7B2C;&#x4E00;&#x6B65;&#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;"></a>&#x7B2C;&#x4E00;&#x6B65;&#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二步-mock数据"><span class="nav-number">6.2.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E8C;&#x6B65;-mock&#x6570;&#x636E;" class="headerlink" title="&#x7B2C;&#x4E8C;&#x6B65; mock&#x6570;&#x636E;"></a>&#x7B2C;&#x4E8C;&#x6B65; mock&#x6570;&#x636E;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三步-创建server-js文件"><span class="nav-number">6.3.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E09;&#x6B65;-&#x521B;&#x5EFA;server-js&#x6587;&#x4EF6;" class="headerlink" title="&#x7B2C;&#x4E09;&#x6B65; &#x521B;&#x5EFA;server.js&#x6587;&#x4EF6;"></a>&#x7B2C;&#x4E09;&#x6B65; &#x521B;&#x5EFA;server.js&#x6587;&#x4EF6;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四步-编写GraphQL-Schema"><span class="nav-number">6.4.</span> <span class="nav-text"><a href="#&#x7B2C;&#x56DB;&#x6B65;-&#x7F16;&#x5199;GraphQL-Schema" class="headerlink" title="&#x7B2C;&#x56DB;&#x6B65; &#x7F16;&#x5199;GraphQL Schema"></a>&#x7B2C;&#x56DB;&#x6B65; &#x7F16;&#x5199;GraphQL Schema</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第五步-连接-schema"><span class="nav-number">6.5.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E94;&#x6B65;-&#x8FDE;&#x63A5;-schema" class="headerlink" title="&#x7B2C;&#x4E94;&#x6B65; &#x8FDE;&#x63A5; schema"></a>&#x7B2C;&#x4E94;&#x6B65; &#x8FDE;&#x63A5; schema</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+            
+          </div>
+        </main>
+
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
+<p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
+
+<p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    版本号:v0.0.3.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
+
+            
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+
+        
+
+        
+
+      </div>
+
+      
+
+
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+
+<!-- 需要fixed的单独拿出来 -->
+
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
+  </div>
+</div>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+
+
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
+
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.3"></script>
+  <script type="text/javascript" src="/js/waifu-tips.js"></script>
+  <script type="text/javascript" src="/js/live2d.js"></script>
+  <script type="text/javascript">
+      loadlive2d("live2d", "/js/Skin/Pio/model1.json");
+  </script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
+
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: false
+    });
+  </script>
+
+
+</body>
+</html>

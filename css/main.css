@@ -1971,7 +1971,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff12f7;
+  background: #388250;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -5411,7 +5411,7 @@ body.night .comments {
 }
 .post .post-block blockquote,
 .post .post-block .highlight {
-  color: #fff;
+  color: #47456d;
 }
 @media (max-width: 991px) {
   .post {
