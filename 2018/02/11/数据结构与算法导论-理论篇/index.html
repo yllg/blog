@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="default">
+<head>
+
+   <!-- 纯CSS实现加载动画 -->
+  <link href="/css/loading.css" rel="stylesheet">
+
+  <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="悬笔e绝,个人博客,blog, web前端,大前端,学习,笔记,UNSLEEP" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写在前面这一篇侧重数据结构与算法的理论知识，最近应该会再写一篇–代码实践篇（如果过年期间我没有偷懒的话）因为理论不是很复杂，简单的概念我就不再赘述了，挑一些我最近复习时发现的重点（其实就是我大学没有记牢的知识点）。。 数据结构什么是数据结构数据结构起源于程序设计，是用计算机来存储、组织数据的的方式。数据结构不是使我们学会敲代码，而是为我们提供一种编程思想，具有更好的思路  广义的定义： 数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法导论-理论篇">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/index.html">
+<meta property="og:site_name" content="悬笔e绝">
+<meta property="og:description" content="写在前面这一篇侧重数据结构与算法的理论知识，最近应该会再写一篇–代码实践篇（如果过年期间我没有偷懒的话）因为理论不是很复杂，简单的概念我就不再赘述了，挑一些我最近复习时发现的重点（其实就是我大学没有记牢的知识点）。。 数据结构什么是数据结构数据结构起源于程序设计，是用计算机来存储、组织数据的的方式。数据结构不是使我们学会敲代码，而是为我们提供一种编程思想，具有更好的思路  广义的定义： 数据结构">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/1.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/2.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/3.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/4.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/5.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/6.png">
+<meta property="og:updated_time" content="2018-02-11T15:41:36.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构与算法导论-理论篇">
+<meta name="twitter:description" content="写在前面这一篇侧重数据结构与算法的理论知识，最近应该会再写一篇–代码实践篇（如果过年期间我没有偷懒的话）因为理论不是很复杂，简单的概念我就不再赘述了，挑一些我最近复习时发现的重点（其实就是我大学没有记牢的知识点）。。 数据结构什么是数据结构数据结构起源于程序设计，是用计算机来存储、组织数据的的方式。数据结构不是使我们学会敲代码，而是为我们提供一种编程思想，具有更好的思路  广义的定义： 数据结构">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.3',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '12/12/2017 2:00:00',
+    onlineAPI: '',
+    site: {
+      title: '火の意志',
+      subtitle: '',
+      author: '悬笔e绝'
+    },
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '6yIOhn3kOO9PP9MGXP84RkNU-gzGzoHsz',
+      appKey: 'Ar2z70S83F1nVkRGH4Ifodrn'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)欢迎回来！',
+      hide_text: ''
+    }
+  };
+</script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/"/>
+
+
+
+
+
+  <title>数据结构与算法导论-理论篇 | 悬笔e绝</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://cdn.bootcss.com/analytics.js/2.9.1/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
+
+  <!-- 页面加载完毕去掉加载动画 -->
+  <script>
+      window.addEventListener("load", function () {
+          var loader = document.getElementById("loader");
+          setTimeout(function(){
+            document.body.removeChild(loader);
+          },3000);
+      });
+  </script>
+
+</head>
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<!-- 加载动画 -->
+<div id="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<!-- 优先让萝莉出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+
+
+<!-- 主体 -->
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体内容区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
+
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-实验室">
+          <a href="/categories/实验室/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-音乐">
+          <a href="/Music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-unsleep">
+          <a href="/UNSLEEP/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            UNSLEEP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/Message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
+</div>
+
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
+</div>
+
+
+ </div>
+        </header>
+
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">11</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+          <span itemprop="name">数据结构与算法</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悬笔e绝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/悬笔e绝.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬笔e绝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构与算法导论-理论篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-11T22:05:23+08:00">
+                2018/02/11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">•</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-02-11T23:41:36+08:00">
+                2018/02/11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">•</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">•</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/11/数据结构与算法导论-理论篇/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/02/11/数据结构与算法导论-理论篇/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/02/11/数据结构与算法导论-理论篇/" class="leancloud_visitors" data-flag-title="数据结构与算法导论-理论篇">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计 ">
+                  1,717
+                </span>
+              
+
+              
+                <span class="post-meta-divider">•</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6&nbsp;min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>这一篇侧重数据结构与算法的理论知识，最近应该会再写一篇–代码实践篇（如果过年期间我没有偷懒的话）<br>因为理论不是很复杂，简单的概念我就不再赘述了，挑一些我最近复习时发现的重点（其实就是我大学没有记牢的知识点）。。</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h2><p>数据结构起源于程序设计，是用计算机来存储、组织数据的的方式。<br>数据结构不是使我们学会敲代码，而是为我们提供一种编程思想，具有更好的思路</p>
+<blockquote><ul>
+<li>广义的定义： 数据结构 = 数据存储 + 算法</li>
+<li>狭义的说法： 数据结构 = 数据的存储</li>
+</ul>
+</blockquote>
+<h2 id="数据结构能做什么"><a href="#数据结构能做什么" class="headerlink" title="数据结构能做什么"></a>数据结构能做什么</h2><blockquote><ul>
+<li>程序员的内功心法之一</li>
+<li>有效的管理数据对象</li>
+<li>解决处理性能问题</li>
+<li>面试加分项</li>
+</ul>
+</blockquote>
+<h2 id="数据结构与算法的关系"><a href="#数据结构与算法的关系" class="headerlink" title="数据结构与算法的关系"></a>数据结构与算法的关系</h2><p>数据元素互相之间的关系称为结构<br><blockquote><ul>
+<li>逻辑结构：反应数据元素之间的逻辑关系</li>
+<li>存储结构：数据结构在计算机中的表示</li>
+<li>算法：对数据的操作</li>
+</ul>
+</blockquote></p>
+<h2 id="四种基本数据结构及衍生结构"><a href="#四种基本数据结构及衍生结构" class="headerlink" title="四种基本数据结构及衍生结构"></a>四种基本数据结构及衍生结构</h2><p>四种基本数据类型是：集合，线性结构，树状结构，图状结构（网状结构）<br><img src="/2018/02/11/数据结构与算法导论-理论篇/1.png" class="ClassName" title="四种基本数据结构"></p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><blockquote><ul>
+<li>数据成员是无序的</li>
+<li>每个数据成员在集合中不能重复，<font color="#FF0000"> 仅且仅出现一次 </font> </li>
+</ul>
+</blockquote>
+<p>比如JS ES6中的set数据结构</p>
+<h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><p>按照物理结构又分为 顺序表和链表<br><blockquote><ul>
+<li>顺序表：占用<font color="#FF0000"> 连续 </font>的内存空间，不能有空洞</li>
+<li>链表：可以占用不连续的内存空间，使用<font color="#FF0000"> 引用 </font>来记录互相之间的地址</li>
+</ul>
+</blockquote><br>另外：链表又分为，单链表和双链表，各自的区别和优缺点就不在赘述了</p>
+<h4 id="线性表的衍生结构–栈"><a href="#线性表的衍生结构–栈" class="headerlink" title="线性表的衍生结构–栈"></a>线性表的衍生结构–栈</h4><p>操作受限的线性表<br>操作原则：LIFO（Last In First Out） 后进先出<br>用途：<br><blockquote><ul>
+<li>函数调用</li>
+<li>KOA的中间件执行机制</li>
+<li>括号匹配检查</li>
+<li>浏览器后退，编辑器undo功能等等</li>
+</ul>
+</blockquote></p>
+<h4 id="线性表的衍生结构–队列"><a href="#线性表的衍生结构–队列" class="headerlink" title="线性表的衍生结构–队列"></a>线性表的衍生结构–队列</h4><p>操作受限的线性表<br>操作原则：FIFO（First In First Out） 先进先出<br>用途：<br><blockquote><ul>
+<li>消息队列</li>
+<li>视频弹幕</li>
+<li>维护打印机任务等等</li>
+</ul>
+</blockquote></p>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>树是有若干个有限节点组成的一个具有层次关系的集合<br>几个核心概念：<br><blockquote><ul>
+<li>边：两个节点直接相连；  路径： 非直接相连</li>
+<li>树和图的区别：任意两个节点之间只有<font color="#FF0000"> 一条路径 </font>，是树；否则就是图；</li>
+<li>度：有几个子节点就有几个度，度为0的叫叶子节点</li>
+</ul>
+</blockquote></p>
+<h4 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h4><p>先区别下两个概念：<br><blockquote><ul>
+<li>经过： 只操作树节点的引用部分，不操作数据部分；</li>
+<li>访问： 会操作数节点的数据部分</li>
+</ul>
+</blockquote></p>
+<p>树的遍历：按照某种规则，不重复的<font color="#FF0000"> 访问 </font>某种树的所有节点</p>
+<h5 id="深度优先"><a href="#深度优先" class="headerlink" title="深度优先"></a>深度优先</h5><p>比如，AlphaGo下围棋用的就是深度优先，如果人最多可以深度考虑到下面3步的情况，哪儿AlphaGo可以用深度优先算法考虑到10步甚至更多步之后的情况，自然就比人类厉害了</p>
+<h6 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h6><p>访问节点的顺序： 根，左，右</p>
+<h6 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h6><p>访问节点的顺序： 左，根，右</p>
+<h6 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h6><p>访问节点的顺序： 左，右，根</p>
+<img src="/2018/02/11/数据结构与算法导论-理论篇/2.png" class="ClassName" title="深度优先遍历">
+<h5 id="广度优先-层序遍历"><a href="#广度优先-层序遍历" class="headerlink" title="广度优先-层序遍历"></a>广度优先-层序遍历</h5><p>典型的例子：搜索引擎<br>访问节点特点：一层一层的<br><img src="/2018/02/11/数据结构与算法导论-理论篇/3.png" class="ClassName" title="广度优先遍历"></p>
+<h4 id="树的衍生"><a href="#树的衍生" class="headerlink" title="树的衍生"></a>树的衍生</h4><p>1.根据边是否是向量，分为有序树和无序树<br>2.有序树，边的权值不同的情况下，带权路径最短的树叫做霍夫曼树，也叫最优二叉树<br>使用场景： 压缩软件，压缩视频和音频<br>3.二叉树的两种情况： 完全二叉树，满二叉树</p>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>由顶点的集合（不能是空集）和边的集合组成的结构，变现是多对多的关系<br>也分为有向图和无向图</p>
+<p>注意这几种结构的叫法：<br>线性表中叫元素； 数中叫节点； 图中叫顶点；</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>算法是完成某个特定任务的过程。<br>一般认为： 程序 = 数据结构 + 算法</p>
+<h2 id="常见的算法"><a href="#常见的算法" class="headerlink" title="常见的算法"></a>常见的算法</h2><blockquote><ul>
+<li>排序算法</li>
+<li>查找算法</li>
+<li>推荐算法</li>
+<li>贪心算法</li>
+</ul>
+</blockquote>
+<h2 id="算法五大特征"><a href="#算法五大特征" class="headerlink" title="算法五大特征"></a>算法五大特征</h2><p>有穷性； 确切性； 输入项； 输出项； 可行性；</p>
+<h2 id="衡量算法标准"><a href="#衡量算法标准" class="headerlink" title="衡量算法标准"></a>衡量算法标准</h2><blockquote><ul>
+<li>时间复杂度</li>
+<li>空间复杂度</li>
+<li>正确性</li>
+<li>可读性</li>
+<li>健壮性</li>
+</ul>
+</blockquote>
+<p>1.时间复杂度：<br>因为计算机硬件等原因会导致同样的程序再不同机器上运行时间不一样<br>所以时间复杂度并不是真正执行的时间，而是用单个基本步骤执行次数表示；</p>
+<p>2.空间复杂度<br>算法运算是需要额外使用的内存大小<br>当然，它也不是绝对的字节大小，而是用多少个基本元素的大小来衡量</p>
+<h2 id="高手必会十大算法"><a href="#高手必会十大算法" class="headerlink" title="高手必会十大算法"></a>高手必会十大算法</h2><img src="/2018/02/11/数据结构与算法导论-理论篇/4.png" class="ClassName" title="高手必会十大算法">
+<p>作为普通程序员，左边的排序算法和查找算法两大类，是我们必须掌握的</p>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><img src="/2018/02/11/数据结构与算法导论-理论篇/5.png" class="ClassName" title="常见排序算法对比">
+<p>1.前三列表示时间复杂度<br>best表示运气比较好，初始的时候基本排好了；<br>worst表示运气很差，初始的时候很乱，甚至完全相反。<br>一般我们着重看中间average平均的情况；<br>注意：log对数，比较小，是比较好的排序算法；JS原生的<font color="#FF0000"> sort排序 </font>，就是使用的快排哦。<br>2.第四列是空间复杂度<br>一般来说，时间复杂度高的，空间复杂度就会低些；所以要在二者中权衡。<br>3.最后一列是稳定性；<br>可能细心地人看见了，想要时间复杂度和空间复杂度都要好的话，用堆排啊！<br>没错，但是堆排不稳定；不稳定表现在：<br>有重复的数据，出现的结果可能不一样哦。<br>4.整体综合起来，最好的是 快排！</p>
+<h2 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h2><img src="/2018/02/11/数据结构与算法导论-理论篇/6.png" class="ClassName" title="查找算法">
+<p>1.顺序查找：<br>时间复杂度是n，适合小数据量<br>2.二分查找：<br>时间复杂度是log对数，也只适合小数据量，而且前提是数据必须排序好了；<br>3.分块查找：<br>适合大数据量，可以看做是二分查找的 增强升级版。<br>时间复杂度是log/n，但是需要对数据进行更多的处理，而且不适合数据库数据的这种情况。<br>4.散列表：<br>适合数据库大数据量的情况，使用索引查找。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>至此，把数据结构与算法导论的基本理论过了一遍，下一篇会对排序算法进行具体的JS代码实现~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div class="post-share" style="display: block !important;">分享到：
+
+      </div>
+    
+
+    
+      <div class="post-copyrightwrap">
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    悬笔e绝
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/" title="数据结构与算法导论-理论篇">http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/09/GraphQL入门/" rel="next" title="GraphQL入门">
+                <i class="fa fa-chevron-left"></i> GraphQL入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+
+     
+      <div class="post-donate">
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    <div id="donateImg">
+        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
+    </div>
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+              </div>
+              
+
+
+              
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div class="disqus-loading">
+          <strong>Disqus 加载中...</strong>
+          <p>如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        if (disqus_config) {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/';
+            this.page.identifier = '2018/02/11/数据结构与算法导论-理论篇/';
+            this.page.title = '数据结构与算法导论-理论篇';
+          };
+          if (window.DISQUS) {
+            $('.disqus-loading').remove();
+            window.DISQUS.reset({
+              reload: true,
+              config: function () {
+                this.page.url = 'http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/';
+                this.page.identifier = '2018/02/11/数据结构与算法导论-理论篇/';
+                this.page.title = '数据结构与算法导论-理论篇';
+              }
+            });
+          }
+        }
+        else {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/02/11/数据结构与算法导论-理论篇/';
+            this.page.identifier = '2018/02/11/数据结构与算法导论-理论篇/';
+            this.page.title = '数据结构与算法导论-理论篇';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+
+        }
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+              
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/card.jpg"
+                alt="悬笔e绝" />
+            
+              <p class="site-author-name" itemprop="name">悬笔e绝</p>
+              <p class="site-description motion-element" itemprop="description">敲代码最溜的BBOY🏃 Breaking最炸的程序猿👨‍💻‍~</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yllg" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/WeChat.jpeg" target="_blank" title="微信公众号" data-balloon="微信公众号" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-wechat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq.png" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="javascript:void(0)" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="javascript:void(0)">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          <nav class="site-state motion-element wordcount">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-file-word-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">全站字数统计&#58;</span>
+            
+            <span title="全站字数统计 ">
+              13.3k
+            </span>
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5199;&#x5728;&#x524D;&#x9762;" class="headerlink" title="&#x5199;&#x5728;&#x524D;&#x9762;"></a>&#x5199;&#x5728;&#x524D;&#x9762;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x7ED3;&#x6784;" class="headerlink" title="&#x6570;&#x636E;&#x7ED3;&#x6784;"></a>&#x6570;&#x636E;&#x7ED3;&#x6784;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是数据结构"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x4EC0;&#x4E48;&#x662F;&#x6570;&#x636E;&#x7ED3;&#x6784;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;&#x6570;&#x636E;&#x7ED3;&#x6784;"></a>&#x4EC0;&#x4E48;&#x662F;&#x6570;&#x636E;&#x7ED3;&#x6784;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构能做什么"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x7ED3;&#x6784;&#x80FD;&#x505A;&#x4EC0;&#x4E48;" class="headerlink" title="&#x6570;&#x636E;&#x7ED3;&#x6784;&#x80FD;&#x505A;&#x4EC0;&#x4E48;"></a>&#x6570;&#x636E;&#x7ED3;&#x6784;&#x80FD;&#x505A;&#x4EC0;&#x4E48;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构与算法的关系"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;&#x7684;&#x5173;&#x7CFB;" class="headerlink" title="&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;&#x7684;&#x5173;&#x7CFB;"></a>&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;&#x7684;&#x5173;&#x7CFB;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种基本数据结构及衍生结构"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x56DB;&#x79CD;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x53CA;&#x884D;&#x751F;&#x7ED3;&#x6784;" class="headerlink" title="&#x56DB;&#x79CD;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x53CA;&#x884D;&#x751F;&#x7ED3;&#x6784;"></a>&#x56DB;&#x79CD;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x53CA;&#x884D;&#x751F;&#x7ED3;&#x6784;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">2.4.1.</span> <span class="nav-text"><a href="#&#x96C6;&#x5408;" class="headerlink" title="&#x96C6;&#x5408;"></a>&#x96C6;&#x5408;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性表"><span class="nav-number">2.4.2.</span> <span class="nav-text"><a href="#&#x7EBF;&#x6027;&#x8868;" class="headerlink" title="&#x7EBF;&#x6027;&#x8868;"></a>&#x7EBF;&#x6027;&#x8868;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表的衍生结构–栈"><span class="nav-number">2.4.2.1.</span> <span class="nav-text"><a href="#&#x7EBF;&#x6027;&#x8868;&#x7684;&#x884D;&#x751F;&#x7ED3;&#x6784;&#x2013;&#x6808;" class="headerlink" title="&#x7EBF;&#x6027;&#x8868;&#x7684;&#x884D;&#x751F;&#x7ED3;&#x6784;&#x2013;&#x6808;"></a>&#x7EBF;&#x6027;&#x8868;&#x7684;&#x884D;&#x751F;&#x7ED3;&#x6784;&#x2013;&#x6808;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性表的衍生结构–队列"><span class="nav-number">2.4.2.2.</span> <span class="nav-text"><a href="#&#x7EBF;&#x6027;&#x8868;&#x7684;&#x884D;&#x751F;&#x7ED3;&#x6784;&#x2013;&#x961F;&#x5217;" class="headerlink" title="&#x7EBF;&#x6027;&#x8868;&#x7684;&#x884D;&#x751F;&#x7ED3;&#x6784;&#x2013;&#x961F;&#x5217;"></a>&#x7EBF;&#x6027;&#x8868;&#x7684;&#x884D;&#x751F;&#x7ED3;&#x6784;&#x2013;&#x961F;&#x5217;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树"><span class="nav-number">2.4.3.</span> <span class="nav-text"><a href="#&#x6811;" class="headerlink" title="&#x6811;"></a>&#x6811;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#树的遍历"><span class="nav-number">2.4.3.1.</span> <span class="nav-text"><a href="#&#x6811;&#x7684;&#x904D;&#x5386;" class="headerlink" title="&#x6811;&#x7684;&#x904D;&#x5386;"></a>&#x6811;&#x7684;&#x904D;&#x5386;</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#深度优先"><span class="nav-number">2.4.3.1.1.</span> <span class="nav-text"><a href="#&#x6DF1;&#x5EA6;&#x4F18;&#x5148;" class="headerlink" title="&#x6DF1;&#x5EA6;&#x4F18;&#x5148;"></a>&#x6DF1;&#x5EA6;&#x4F18;&#x5148;</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#先序遍历"><span class="nav-number">2.4.3.1.1.1.</span> <span class="nav-text"><a href="#&#x5148;&#x5E8F;&#x904D;&#x5386;" class="headerlink" title="&#x5148;&#x5E8F;&#x904D;&#x5386;"></a>&#x5148;&#x5E8F;&#x904D;&#x5386;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#中序遍历"><span class="nav-number">2.4.3.1.1.2.</span> <span class="nav-text"><a href="#&#x4E2D;&#x5E8F;&#x904D;&#x5386;" class="headerlink" title="&#x4E2D;&#x5E8F;&#x904D;&#x5386;"></a>&#x4E2D;&#x5E8F;&#x904D;&#x5386;</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#后序遍历"><span class="nav-number">2.4.3.1.1.3.</span> <span class="nav-text"><a href="#&#x540E;&#x5E8F;&#x904D;&#x5386;" class="headerlink" title="&#x540E;&#x5E8F;&#x904D;&#x5386;"></a>&#x540E;&#x5E8F;&#x904D;&#x5386;</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#广度优先-层序遍历"><span class="nav-number">2.4.3.1.2.</span> <span class="nav-text"><a href="#&#x5E7F;&#x5EA6;&#x4F18;&#x5148;-&#x5C42;&#x5E8F;&#x904D;&#x5386;" class="headerlink" title="&#x5E7F;&#x5EA6;&#x4F18;&#x5148;-&#x5C42;&#x5E8F;&#x904D;&#x5386;"></a>&#x5E7F;&#x5EA6;&#x4F18;&#x5148;-&#x5C42;&#x5E8F;&#x904D;&#x5386;</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#树的衍生"><span class="nav-number">2.4.3.2.</span> <span class="nav-text"><a href="#&#x6811;&#x7684;&#x884D;&#x751F;" class="headerlink" title="&#x6811;&#x7684;&#x884D;&#x751F;"></a>&#x6811;&#x7684;&#x884D;&#x751F;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图"><span class="nav-number">2.4.4.</span> <span class="nav-text"><a href="#&#x56FE;" class="headerlink" title="&#x56FE;"></a>&#x56FE;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x7B97;&#x6CD5;" class="headerlink" title="&#x7B97;&#x6CD5;"></a>&#x7B97;&#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的算法"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x5E38;&#x89C1;&#x7684;&#x7B97;&#x6CD5;" class="headerlink" title="&#x5E38;&#x89C1;&#x7684;&#x7B97;&#x6CD5;"></a>&#x5E38;&#x89C1;&#x7684;&#x7B97;&#x6CD5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法五大特征"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x7B97;&#x6CD5;&#x4E94;&#x5927;&#x7279;&#x5F81;" class="headerlink" title="&#x7B97;&#x6CD5;&#x4E94;&#x5927;&#x7279;&#x5F81;"></a>&#x7B97;&#x6CD5;&#x4E94;&#x5927;&#x7279;&#x5F81;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#衡量算法标准"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#&#x8861;&#x91CF;&#x7B97;&#x6CD5;&#x6807;&#x51C6;" class="headerlink" title="&#x8861;&#x91CF;&#x7B97;&#x6CD5;&#x6807;&#x51C6;"></a>&#x8861;&#x91CF;&#x7B97;&#x6CD5;&#x6807;&#x51C6;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高手必会十大算法"><span class="nav-number">3.4.</span> <span class="nav-text"><a href="#&#x9AD8;&#x624B;&#x5FC5;&#x4F1A;&#x5341;&#x5927;&#x7B97;&#x6CD5;" class="headerlink" title="&#x9AD8;&#x624B;&#x5FC5;&#x4F1A;&#x5341;&#x5927;&#x7B97;&#x6CD5;"></a>&#x9AD8;&#x624B;&#x5FC5;&#x4F1A;&#x5341;&#x5927;&#x7B97;&#x6CD5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法"><span class="nav-number">3.5.</span> <span class="nav-text"><a href="#&#x6392;&#x5E8F;&#x7B97;&#x6CD5;" class="headerlink" title="&#x6392;&#x5E8F;&#x7B97;&#x6CD5;"></a>&#x6392;&#x5E8F;&#x7B97;&#x6CD5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找算法"><span class="nav-number">3.6.</span> <span class="nav-text"><a href="#&#x67E5;&#x627E;&#x7B97;&#x6CD5;" class="headerlink" title="&#x67E5;&#x627E;&#x7B97;&#x6CD5;"></a>&#x67E5;&#x627E;&#x7B97;&#x6CD5;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+            
+          </div>
+        </main>
+
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
+<p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
+
+<p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    版本号:v0.0.3.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
+
+            
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+
+        
+
+        
+
+      </div>
+
+      
+
+
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+
+<!-- 需要fixed的单独拿出来 -->
+
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
+  </div>
+</div>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+
+
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
+
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.3"></script>
+  <script type="text/javascript" src="/js/waifu-tips.js"></script>
+  <script type="text/javascript" src="/js/live2d.js"></script>
+  <script type="text/javascript">
+      loadlive2d("live2d", "/js/Skin/Pio/model1.json");
+  </script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
+
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: false
+    });
+  </script>
+
+
+</body>
+</html>
