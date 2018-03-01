@@ -122,21 +122,21 @@ $.ajax({
     }else {
         if (window.location.href == 'http://www.xuanbiyijue.com/') { //如果是主页
             var now = (new Date()).getHours();
-            if (now > 23 || now <= 5) {
+            if (now > 24 || now <= 5) {
                 text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
-            } else if (now > 5 && now <= 7) {
+            } else if (now > 6 && now <= 9) {
                 text = '早上好！一日之计在于晨，美好的一天就要开始了';
-            } else if (now > 7 && now <= 11) {
+            } else if (now > 9 && now <= 11) {
                 text = '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
-            } else if (now > 11 && now <= 14) {
+            } else if (now > 11 && now <= 13) {
                 text = '中午了，工作了一个上午，现在是午餐时间！';
-            } else if (now > 14 && now <= 17) {
+            } else if (now > 13 && now <= 15) {
                 text = '午后很容易犯困呢，今天的运动目标完成了吗？';
             } else if (now > 17 && now <= 19) {
-                text = '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~';
-            } else if (now > 19 && now <= 21) {
+                text = '傍晚了！窗外夕阳的景色很美丽呢~';
+            } else if (now > 19 && now <= 23) {
                 text = '晚上好，今天过得怎么样？';
-            } else if (now > 21 && now <= 23) {
+            } else if (now > 23 && now <= 24) {
                 text = '已经这么晚了呀，早点休息吧，晚安~';
             } else {
                 text = '嗨~ 快来逗我玩吧！';
