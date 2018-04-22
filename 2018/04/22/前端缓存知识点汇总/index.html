@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="default">
+<head>
+
+   <!-- 纯CSS实现加载动画 -->
+  <link href="/css/loading.css" rel="stylesheet">
+
+  <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="悬笔e绝,个人博客,blog, web前端,大前端,学习,笔记,UNSLEEP" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近看了几篇关于前端缓存和存储相关的文章，知识点零零散散，所以想要写个汇总 总体分为以下三个大点：1.浏览器缓存机制2.前端存储方案3.PWA的缓存处理  浏览器缓存机制http报文三个部分组成，CRLF隔开，消息头最后有两个CRLF 起始行请求时–请求行； 响应时–状态行，比如 200 OK 消息头键值对组成，CRLF隔开，最后一个有两个CRLF 消息体字符串，长度由消息头content-len">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端缓存知识点汇总">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/index.html">
+<meta property="og:site_name" content="悬笔e绝">
+<meta property="og:description" content="最近看了几篇关于前端缓存和存储相关的文章，知识点零零散散，所以想要写个汇总 总体分为以下三个大点：1.浏览器缓存机制2.前端存储方案3.PWA的缓存处理  浏览器缓存机制http报文三个部分组成，CRLF隔开，消息头最后有两个CRLF 起始行请求时–请求行； 响应时–状态行，比如 200 OK 消息头键值对组成，CRLF隔开，最后一个有两个CRLF 消息体字符串，长度由消息头content-len">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/格式.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/请求报文.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/响应报文.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/缓存机制.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/Storage.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/img/公众号二维码.jpg">
+<meta property="og:updated_time" content="2018-04-22T14:17:45.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端缓存知识点汇总">
+<meta name="twitter:description" content="最近看了几篇关于前端缓存和存储相关的文章，知识点零零散散，所以想要写个汇总 总体分为以下三个大点：1.浏览器缓存机制2.前端存储方案3.PWA的缓存处理  浏览器缓存机制http报文三个部分组成，CRLF隔开，消息头最后有两个CRLF 起始行请求时–请求行； 响应时–状态行，比如 200 OK 消息头键值对组成，CRLF隔开，最后一个有两个CRLF 消息体字符串，长度由消息头content-len">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/格式.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.3',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '12/12/2017 2:00:00',
+    onlineAPI: '',
+    site: {
+      title: '火の意志',
+      subtitle: '',
+      author: '悬笔e绝'
+    },
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '6yIOhn3kOO9PP9MGXP84RkNU-gzGzoHsz',
+      appKey: 'Ar2z70S83F1nVkRGH4Ifodrn'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)欢迎回来！',
+      hide_text: ''
+    }
+  };
+</script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/"/>
+
+
+
+
+
+  <title>前端缓存知识点汇总 | 悬笔e绝</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://cdn.bootcss.com/analytics.js/2.9.1/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
+
+  <!-- 页面加载完毕去掉加载动画 -->
+  <script>
+      window.addEventListener("load", function () {
+          var loader = document.getElementById("loader");
+          setTimeout(function(){
+            document.body.removeChild(loader);
+          },3000);
+      });
+  </script>
+
+</head>
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<!-- 加载动画 -->
+<div id="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<!-- 优先让萝莉出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+
+
+<!-- 主体 -->
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体内容区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
+
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-实验室">
+          <a href="/categories/实验室/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-音乐">
+          <a href="/Music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-unsleep">
+          <a href="/UNSLEEP/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            UNSLEEP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/Message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
+</div>
+
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
+</div>
+
+
+ </div>
+        </header>
+
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">04月</div>
+			<div class="post-day">22</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/前端性能优化与工程化/" itemprop="url" rel="index">
+          <span itemprop="name">前端性能优化与工程化</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悬笔e绝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/悬笔e绝.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬笔e绝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端缓存知识点汇总</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-22T20:33:54+08:00">
+                2018/04/22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">•</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-04-22T22:17:45+08:00">
+                2018/04/22
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">•</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端性能优化与工程化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端性能优化与工程化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">•</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/22/前端缓存知识点汇总/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/22/前端缓存知识点汇总/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/04/22/前端缓存知识点汇总/" class="leancloud_visitors" data-flag-title="前端缓存知识点汇总">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计 ">
+                  2,255
+                </span>
+              
+
+              
+                <span class="post-meta-divider">•</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9&nbsp;min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近看了几篇关于前端缓存和存储相关的文章，知识点零零散散，所以想要写个汇总</p>
+<p>总体分为以下三个大点：<br>1.浏览器缓存机制<br>2.前端存储方案<br>3.PWA的缓存处理 </p>
+<h1 id="浏览器缓存机制"><a href="#浏览器缓存机制" class="headerlink" title="浏览器缓存机制"></a>浏览器缓存机制</h1><h2 id="http报文"><a href="#http报文" class="headerlink" title="http报文"></a>http报文</h2><p>三个部分组成，CRLF隔开，消息头最后有两个CRLF</p>
+<h3 id="起始行"><a href="#起始行" class="headerlink" title="起始行"></a>起始行</h3><p>请求时–请求行； 响应时–状态行，比如 200 OK</p>
+<h3 id="消息头"><a href="#消息头" class="headerlink" title="消息头"></a>消息头</h3><p>键值对组成，CRLF隔开，最后一个有两个CRLF</p>
+<h3 id="消息体"><a href="#消息体" class="headerlink" title="消息体"></a>消息体</h3><p>字符串，长度由消息头content-length决定，<br>请求时，get是没有消息体的，post消息体存放表单数据<br>响应时，返回的json数据就放在这里的。</p>
+<p>格式<br><img src="/2018/04/22/前端缓存知识点汇总/格式.png" class="ClassName" title="格式"><br>请求报文<br><img src="/2018/04/22/前端缓存知识点汇总/请求报文.png" class="ClassName" title="请求报文"><br>响应报文<br><img src="/2018/04/22/前端缓存知识点汇总/响应报文.png" class="ClassName" title="响应报文"></p>
+<h2 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h2><p>强制缓存就是向浏览器缓存查找该请求结果</p>
+<h3 id="三种情况："><a href="#三种情况：" class="headerlink" title="三种情况："></a>三种情况：</h3><p>1.不存在该缓存结果和缓存标识，强制缓存失效，则直接向服务器发起请求（跟第一次发起请求一致）<br>2.存在该缓存结果和缓存标识，但该结果已失效，强制缓存失效，则使用协商缓存(暂不分析)<br>3.存在该缓存结果和缓存标识，且该结果尚未失效，强制缓存生效，直接返回该结果</p>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><p>控制强制缓存的字段分别是Expires和Cache-Control，其中Cache-Control优先级比Expires高</p>
+<h4 id="expires"><a href="#expires" class="headerlink" title="expires"></a>expires</h4><p>1.是HTTP/1.0控制网页缓存的字段，其值为服务器返回该请求结果缓存的到期时间；<br>2.是一个绝对值；<br>3.因为某些原因（例如时区不同；客户端和服务端有一方的时间不准确）发生误差，那么强制缓存则会直接失效</p>
+<h4 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h4><p>1.是HTTP/1.1控制网页缓存的字段<br>2.是相对值<br>3.优先级高</p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>就是强制缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程</p>
+<h3 id="两种情况"><a href="#两种情况" class="headerlink" title="两种情况"></a>两种情况</h3><p>协商缓存生效，返回304<br>协商缓存失效，返回200和请求结果结果</p>
+<h3 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h3><p>控制协商缓存的字段分别有：Last-Modified / If-Modified-Since和Etag / If-None-Match，其中Etag / If-None-Match的优先级比Last-Modified / If-Modified-Since高。</p>
+<h4 id="Last-Modified-If-Modified-Since"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last-Modified / If-Modified-Since"></a>Last-Modified / If-Modified-Since</h4><p>Last-Modified是服务器响应请求时，返回该资源文件在服务器最后被修改的时间<br>若服务器的资源最后被修改时间大于If-Modified-Since的字段值，则重新返回资源，状态码为200；否则则返回304，代表资源无更新，可继续使用缓存文件</p>
+<h4 id="Etag-If-None-Match"><a href="#Etag-If-None-Match" class="headerlink" title="Etag / If-None-Match"></a>Etag / If-None-Match</h4><p>Etag是服务器响应请求时，返回当前资源文件的一个唯一标识(由服务器生成)<br>服务器会根据If-None-Match的字段值与该资源在服务器的Etag值做对比，一致则返回304，代表资源无更新，继续使用缓存文件；不一致则重新返回资源文件，状态码为200</p>
+<h2 id="存储位置"><a href="#存储位置" class="headerlink" title="存储位置"></a>存储位置</h2><p>1.from memory cache代表使用内存中的缓存，from disk cache则代表使用的是硬盘中的缓存，浏览器读取缓存的顺序为memory –&gt; disk</p>
+<p>2.特点：<br>（1）内存缓存(from memory cache)：<br>快速读取，时效性（一旦该进程关闭，则该进程的内存则会清空）<br>（2）硬盘缓存(from disk cache)：<br>硬盘缓存则是直接将缓存写入硬盘文件中，读取缓存需要对该缓存存放的硬盘文件进行I/O操作，然后重新解析该缓存内容，读取复杂，速度比内存缓存慢。</p>
+<p>3.具体应用：<br>js和图片等文件解析执行后直接存入内存缓存中，刷新页面时只需直接从内存缓存中读取(from memory cache)；<br>而css文件则会存入硬盘文件中，每次渲染页面都需要从硬盘读取缓存(from disk cache)</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>强制缓存优先于协商缓存进行，若强制缓存(Expires和Cache-Control)生效则直接使用缓存，若不生效则进行协商缓存(Last-Modified / If-Modified-Since和Etag / If-None-Match)；<br>协商缓存由服务器决定是否使用缓存，若协商缓存失效，那么代表该请求的缓存失效，重新获取请求结果，再存入浏览器缓存中；生效则返回304，继续使用缓存，主要过程如下：</p>
+<img src="/2018/04/22/前端缓存知识点汇总/缓存机制.png" class="ClassName" title="缓存机制">
+<h1 id="前端存储方案"><a href="#前端存储方案" class="headerlink" title="前端存储方案"></a>前端存储方案</h1><img src="/2018/04/22/前端缓存知识点汇总/Storage.png" class="ClassName" title="Storage">
+<h2 id="最常见的三个"><a href="#最常见的三个" class="headerlink" title="最常见的三个"></a>最常见的三个</h2><h3 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h3><p>大小：4K<br>生命期：过期时间之前都可用<br>适用：存储登陆信息<br>访问权限：设置顶级域名，其下子域名可以共享</p>
+<h3 id="Webstorage"><a href="#Webstorage" class="headerlink" title="Webstorage"></a>Webstorage</h3><p>包括下面两种</p>
+<h4 id="Session-Storage"><a href="#Session-Storage" class="headerlink" title="Session Storage"></a>Session Storage</h4><p>大小：5M<br>生命期：刷新页面仍存在，其他情况都会丢失；<br>适用：网页音乐播放器进度条；<br>访问权限：本域才能用；</p>
+<h4 id="Local-Storage"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</h4><p>大小：5M<br>生命期：永久存在，除非故意删除；<br>访问权限：本域才能用；新开tab也能访问</p>
+<h2 id="重型武器-Web-SQL和IndexDB"><a href="#重型武器-Web-SQL和IndexDB" class="headerlink" title="重型武器 Web SQL和IndexDB"></a>重型武器 Web SQL和IndexDB</h2><p>和localstorage类似，性能更好<br>没有大小限制<br>速度更快</p>
+<h3 id="Web-SQL"><a href="#Web-SQL" class="headerlink" title="Web SQL"></a>Web SQL</h3><p>现在不维护了<br>类似关系型数据库，用sql脚本</p>
+<h3 id="IndexDB"><a href="#IndexDB" class="headerlink" title="IndexDB"></a>IndexDB</h3><p>最新标准<br>类似no sql数据库，js方法操作</p>
+<h2 id="ORM库"><a href="#ORM库" class="headerlink" title="ORM库"></a>ORM库</h2><p>ORM对象关系映射，把对数据库的操作转成对对象的操作，方便开发人员以面向对象的思想来实现对数据库的操作。</p>
+<h3 id="localforage"><a href="#localforage" class="headerlink" title="localforage"></a>localforage</h3><p>使用简单但功能强大的API来包装IndexedDB，WebSQL或localStorage。<br>可以实现前端缓存的负载均衡</p>
+<h1 id="PWA完成缓存的控制"><a href="#PWA完成缓存的控制" class="headerlink" title="PWA完成缓存的控制"></a>PWA完成缓存的控制</h1><h2 id="Service-Worker概念和特点"><a href="#Service-Worker概念和特点" class="headerlink" title="Service Worker概念和特点"></a>Service Worker概念和特点</h2><p>1.Service Worker是走的主线程之外的另一个的线程，可以理解为在浏览器背后默默运行的一个线程，脱离浏览器窗体，因此，window以及DOM都是不能访问的，此时我们可以使用self访问全局上下文<br>2.Service Worker设计为完全异步，同步API（如XHR和localStorage）不能在Service Worker中使用<br>3.必须是https协议<br>4.大量使用Promise，因为通常它们会等待响应后继续，并根据响应返回一个成功或者失败的操作，这些场景非常适合Promise</p>
+<h2 id="SW的生命周期"><a href="#SW的生命周期" class="headerlink" title="SW的生命周期"></a>SW的生命周期</h2><p>installing → installed → activating → activated</p>
+<h2 id="三个基本事件"><a href="#三个基本事件" class="headerlink" title="三个基本事件"></a>三个基本事件</h2><p>‘install’用来缓存文件<br>‘activate’用来缓存更新<br>‘fetch’用来拦截请求直接返回缓存数据<br>三者齐心，构成了完成的缓存控制结构。</p>
+<h2 id="Cache和CacheStorage"><a href="#Cache和CacheStorage" class="headerlink" title="Cache和CacheStorage"></a>Cache和CacheStorage</h2><p>1.Cache和CacheStorage都是Service Worker API下的接口<br>2.Cache直接和请求打交道，CacheStorage和Cache对象打交道<br>我们可以直接使用全局的caches属性访问CacheStorage<br>3.Cache和CacheStorage的出现让浏览器的缓存类型又多了一个：之前有memoryCache和diskCache，现在又多了个ServiceWorker cache<br>4.具体的增删改查API直接去官网查，Service Worker API的知识体量还是很大的</p>
+<h2 id="借助Service-Worker和cacheStorage离线开发的固定套路"><a href="#借助Service-Worker和cacheStorage离线开发的固定套路" class="headerlink" title="借助Service Worker和cacheStorage离线开发的固定套路"></a>借助Service Worker和cacheStorage离线开发的固定套路</h2><h3 id="页面上注册一个Service-Worker"><a href="#页面上注册一个Service-Worker" class="headerlink" title="页面上注册一个Service Worker"></a>页面上注册一个Service Worker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">    navigator.serviceWorker.register(<span class="string">'./sw-demo-cache.js'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="sw-demo-cache-js这个JS中复制如下代码"><a href="#sw-demo-cache-js这个JS中复制如下代码" class="headerlink" title="sw-demo-cache.js这个JS中复制如下代码"></a>sw-demo-cache.js这个JS中复制如下代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">var VERSION = <span class="string">'v1'</span>;</span><br><span class="line"></span><br><span class="line">// 缓存</span><br><span class="line">self.addEventListener(<span class="string">'install'</span>, <span class="keyword">function</span>(event) &#123;</span><br><span class="line">  event.waitUntil(</span><br><span class="line">    caches.open(VERSION).<span class="keyword">then</span>(<span class="keyword">function</span>(cache) &#123;</span><br><span class="line">      <span class="built_in">return</span> cache.addAll([</span><br><span class="line">        <span class="string">'./start.html'</span>,</span><br><span class="line">        <span class="string">'./static/jquery.min.js'</span>,</span><br><span class="line">        <span class="string">'./static/mm1.jpg'</span></span><br><span class="line">      ]);</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 缓存更新</span><br><span class="line">self.addEventListener(<span class="string">'activate'</span>, <span class="keyword">function</span>(event) &#123;</span><br><span class="line">  event.waitUntil(</span><br><span class="line">    caches.keys().<span class="keyword">then</span>(<span class="keyword">function</span>(cacheNames) &#123;</span><br><span class="line">      <span class="built_in">return</span> Promise.all(</span><br><span class="line">        cacheNames.map(<span class="keyword">function</span>(cacheName) &#123;</span><br><span class="line">          // 如果当前版本和缓存版本不一致</span><br><span class="line">          <span class="keyword">if</span> (cacheName !== VERSION) &#123;</span><br><span class="line">            <span class="built_in">return</span> caches.delete(cacheName);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 捕获请求并返回缓存数据</span><br><span class="line">self.addEventListener(<span class="string">'fetch'</span>, <span class="keyword">function</span>(event) &#123;</span><br><span class="line">  event.respondWith(caches.match(event.request).catch(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> fetch(event.request);</span><br><span class="line">  &#125;).<span class="keyword">then</span>(<span class="keyword">function</span>(response) &#123;</span><br><span class="line">    caches.open(VERSION).<span class="keyword">then</span>(<span class="keyword">function</span>(cache) &#123;</span><br><span class="line">      cache.put(event.request, response);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">return</span> response.clone();</span><br><span class="line">  &#125;).catch(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> caches.match(<span class="string">'./static/mm1.jpg'</span>);</span><br><span class="line">  &#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="把cache-addAll-方法中缓存文件数组换成你希望缓存的文件数组"><a href="#把cache-addAll-方法中缓存文件数组换成你希望缓存的文件数组" class="headerlink" title="把cache.addAll()方法中缓存文件数组换成你希望缓存的文件数组"></a>把cache.addAll()方法中缓存文件数组换成你希望缓存的文件数组</h3><p>恭喜你，简单3步曲，复制、粘贴、改路径。你的网站已经支持Service Worker缓存，甚至离线也可以自如访问，支持各种网站，PC和Mobile通杀，不支持的浏览器没有任何影响，支持的浏览器天然离线支持，想要更新缓存，v1换成v2就可以，so easy!。</p>
+<h2 id="PWA的核心技术"><a href="#PWA的核心技术" class="headerlink" title="PWA的核心技术"></a>PWA的核心技术</h2><blockquote><ul>
+<li>Web App Manifest – 在主屏幕添加app图标，定义手机标题栏颜色之类</li>
+<li>Service Worker – 缓存，离线开发，以及地理位置信息处理等</li>
+<li>App Shell – 先显示APP的主结构，再填充主数据，更快显示更好体验</li>
+<li>Push Notification – 消息推送</li>
+</ul>
+</blockquote>
+<p>参考文章：<br>掘金: <a href="https://juejin.im/post/5ad4094e6fb9a028d7011069" target="_blank" rel="noopener">小哥哥,小姐姐,我有一份tcp、http面试指南你要吗？</a><br>前端早读课: <a href="https://mp.weixin.qq.com/s/d2zeGhUptGUGJpB5xHQbOA" target="_blank" rel="noopener">彻底理解浏览器的缓存机制</a><br>segmentfault: <a href="https://segmentfault.com/a/1190000005927232" target="_blank" rel="noopener">[聊一聊系列]聊一聊前端存储那些事儿</a><br>张鑫旭的博客: <a href="http://www.zhangxinxu.com/wordpress/2017/07/service-worker-cachestorage-offline-develop/" target="_blank" rel="noopener">借助Service Worker和cacheStorage缓存及离线开发</a></p>
+<p>同时欢迎关注我的个人微信公众号：<br><img src="/img/公众号二维码.jpg" width="300" height="300" title="悬笔e绝"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div class="post-share" style="display: block !important;">分享到：
+
+      </div>
+    
+
+    
+      <div class="post-copyrightwrap">
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    悬笔e绝
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/" title="前端缓存知识点汇总">http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/05/自己实现一个vue双向数据绑定的demo/" rel="next" title="自己实现一个vue双向数据绑定的demo">
+                <i class="fa fa-chevron-left"></i> 自己实现一个vue双向数据绑定的demo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+
+     
+      <div class="post-donate">
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    <div id="donateImg">
+        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
+    </div>
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+              </div>
+              
+
+
+              
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div class="disqus-loading">
+          <strong>Disqus 加载中...</strong>
+          <p>如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        if (disqus_config) {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/';
+            this.page.identifier = '2018/04/22/前端缓存知识点汇总/';
+            this.page.title = '前端缓存知识点汇总';
+          };
+          if (window.DISQUS) {
+            $('.disqus-loading').remove();
+            window.DISQUS.reset({
+              reload: true,
+              config: function () {
+                this.page.url = 'http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/';
+                this.page.identifier = '2018/04/22/前端缓存知识点汇总/';
+                this.page.title = '前端缓存知识点汇总';
+              }
+            });
+          }
+        }
+        else {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/04/22/前端缓存知识点汇总/';
+            this.page.identifier = '2018/04/22/前端缓存知识点汇总/';
+            this.page.title = '前端缓存知识点汇总';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+
+        }
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+              
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/card.jpg"
+                alt="悬笔e绝" />
+            
+              <p class="site-author-name" itemprop="name">悬笔e绝</p>
+              <p class="site-description motion-element" itemprop="description">敲代码最溜的BBOY🏃 Breaking最炸的程序猿👨‍💻‍~</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yllg" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/WeChat.jpeg" target="_blank" title="微信公众号" data-balloon="微信公众号" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-wechat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq.png" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="javascript:void(0)" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="javascript:void(0)">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          <nav class="site-state motion-element wordcount">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-file-word-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">全站字数统计&#58;</span>
+            
+            <span title="全站字数统计 ">
+              21.4k
+            </span>
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器缓存机制"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x673A;&#x5236;" class="headerlink" title="&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x673A;&#x5236;"></a>&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x673A;&#x5236;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http报文"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#http&#x62A5;&#x6587;" class="headerlink" title="http&#x62A5;&#x6587;"></a>http&#x62A5;&#x6587;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#起始行"><span class="nav-number">1.1.1.</span> <span class="nav-text"><a href="#&#x8D77;&#x59CB;&#x884C;" class="headerlink" title="&#x8D77;&#x59CB;&#x884C;"></a>&#x8D77;&#x59CB;&#x884C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息头"><span class="nav-number">1.1.2.</span> <span class="nav-text"><a href="#&#x6D88;&#x606F;&#x5934;" class="headerlink" title="&#x6D88;&#x606F;&#x5934;"></a>&#x6D88;&#x606F;&#x5934;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息体"><span class="nav-number">1.1.3.</span> <span class="nav-text"><a href="#&#x6D88;&#x606F;&#x4F53;" class="headerlink" title="&#x6D88;&#x606F;&#x4F53;"></a>&#x6D88;&#x606F;&#x4F53;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制缓存"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x5F3A;&#x5236;&#x7F13;&#x5B58;" class="headerlink" title="&#x5F3A;&#x5236;&#x7F13;&#x5B58;"></a>&#x5F3A;&#x5236;&#x7F13;&#x5B58;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种情况："><span class="nav-number">1.2.1.</span> <span class="nav-text"><a href="#&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;" class="headerlink" title="&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;"></a>&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规则"><span class="nav-number">1.2.2.</span> <span class="nav-text"><a href="#&#x89C4;&#x5219;" class="headerlink" title="&#x89C4;&#x5219;"></a>&#x89C4;&#x5219;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#expires"><span class="nav-number">1.2.2.1.</span> <span class="nav-text"><a href="#expires" class="headerlink" title="expires"></a>expires</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cache-Control"><span class="nav-number">1.2.2.2.</span> <span class="nav-text"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协商缓存"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x534F;&#x5546;&#x7F13;&#x5B58;" class="headerlink" title="&#x534F;&#x5546;&#x7F13;&#x5B58;"></a>&#x534F;&#x5546;&#x7F13;&#x5B58;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两种情况"><span class="nav-number">1.3.1.</span> <span class="nav-text"><a href="#&#x4E24;&#x79CD;&#x60C5;&#x51B5;" class="headerlink" title="&#x4E24;&#x79CD;&#x60C5;&#x51B5;"></a>&#x4E24;&#x79CD;&#x60C5;&#x51B5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#规则-1"><span class="nav-number">1.3.2.</span> <span class="nav-text"><a href="#&#x89C4;&#x5219;-1" class="headerlink" title="&#x89C4;&#x5219;"></a>&#x89C4;&#x5219;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Last-Modified-If-Modified-Since"><span class="nav-number">1.3.2.1.</span> <span class="nav-text"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last-Modified / If-Modified-Since"></a>Last-Modified / If-Modified-Since</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Etag-If-None-Match"><span class="nav-number">1.3.2.2.</span> <span class="nav-text"><a href="#Etag-If-None-Match" class="headerlink" title="Etag / If-None-Match"></a>Etag / If-None-Match</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储位置"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;" class="headerlink" title="&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;"></a>&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#&#x5C0F;&#x7ED3;" class="headerlink" title="&#x5C0F;&#x7ED3;"></a>&#x5C0F;&#x7ED3;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端存储方案"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x524D;&#x7AEF;&#x5B58;&#x50A8;&#x65B9;&#x6848;" class="headerlink" title="&#x524D;&#x7AEF;&#x5B58;&#x50A8;&#x65B9;&#x6848;"></a>&#x524D;&#x7AEF;&#x5B58;&#x50A8;&#x65B9;&#x6848;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最常见的三个"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x6700;&#x5E38;&#x89C1;&#x7684;&#x4E09;&#x4E2A;" class="headerlink" title="&#x6700;&#x5E38;&#x89C1;&#x7684;&#x4E09;&#x4E2A;"></a>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x4E09;&#x4E2A;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies"><span class="nav-number">2.1.1.</span> <span class="nav-text"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webstorage"><span class="nav-number">2.1.2.</span> <span class="nav-text"><a href="#Webstorage" class="headerlink" title="Webstorage"></a>Webstorage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Session-Storage"><span class="nav-number">2.1.2.1.</span> <span class="nav-text"><a href="#Session-Storage" class="headerlink" title="Session Storage"></a>Session Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Local-Storage"><span class="nav-number">2.1.2.2.</span> <span class="nav-text"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重型武器-Web-SQL和IndexDB"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x91CD;&#x578B;&#x6B66;&#x5668;-Web-SQL&#x548C;IndexDB" class="headerlink" title="&#x91CD;&#x578B;&#x6B66;&#x5668; Web SQL&#x548C;IndexDB"></a>&#x91CD;&#x578B;&#x6B66;&#x5668; Web SQL&#x548C;IndexDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-SQL"><span class="nav-number">2.2.1.</span> <span class="nav-text"><a href="#Web-SQL" class="headerlink" title="Web SQL"></a>Web SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IndexDB"><span class="nav-number">2.2.2.</span> <span class="nav-text"><a href="#IndexDB" class="headerlink" title="IndexDB"></a>IndexDB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORM库"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#ORM&#x5E93;" class="headerlink" title="ORM&#x5E93;"></a>ORM&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#localforage"><span class="nav-number">2.3.1.</span> <span class="nav-text"><a href="#localforage" class="headerlink" title="localforage"></a>localforage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PWA完成缓存的控制"><span class="nav-number">3.</span> <span class="nav-text"><a href="#PWA&#x5B8C;&#x6210;&#x7F13;&#x5B58;&#x7684;&#x63A7;&#x5236;" class="headerlink" title="PWA&#x5B8C;&#x6210;&#x7F13;&#x5B58;&#x7684;&#x63A7;&#x5236;"></a>PWA&#x5B8C;&#x6210;&#x7F13;&#x5B58;&#x7684;&#x63A7;&#x5236;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-Worker概念和特点"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#Service-Worker&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;" class="headerlink" title="Service Worker&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;"></a>Service Worker&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SW的生命周期"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#SW&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;" class="headerlink" title="SW&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;"></a>SW&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三个基本事件"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#&#x4E09;&#x4E2A;&#x57FA;&#x672C;&#x4E8B;&#x4EF6;" class="headerlink" title="&#x4E09;&#x4E2A;&#x57FA;&#x672C;&#x4E8B;&#x4EF6;"></a>&#x4E09;&#x4E2A;&#x57FA;&#x672C;&#x4E8B;&#x4EF6;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache和CacheStorage"><span class="nav-number">3.4.</span> <span class="nav-text"><a href="#Cache&#x548C;CacheStorage" class="headerlink" title="Cache&#x548C;CacheStorage"></a>Cache&#x548C;CacheStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#借助Service-Worker和cacheStorage离线开发的固定套路"><span class="nav-number">3.5.</span> <span class="nav-text"><a href="#&#x501F;&#x52A9;Service-Worker&#x548C;cacheStorage&#x79BB;&#x7EBF;&#x5F00;&#x53D1;&#x7684;&#x56FA;&#x5B9A;&#x5957;&#x8DEF;" class="headerlink" title="&#x501F;&#x52A9;Service Worker&#x548C;cacheStorage&#x79BB;&#x7EBF;&#x5F00;&#x53D1;&#x7684;&#x56FA;&#x5B9A;&#x5957;&#x8DEF;"></a>&#x501F;&#x52A9;Service Worker&#x548C;cacheStorage&#x79BB;&#x7EBF;&#x5F00;&#x53D1;&#x7684;&#x56FA;&#x5B9A;&#x5957;&#x8DEF;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面上注册一个Service-Worker"><span class="nav-number">3.5.1.</span> <span class="nav-text"><a href="#&#x9875;&#x9762;&#x4E0A;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;Service-Worker" class="headerlink" title="&#x9875;&#x9762;&#x4E0A;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;Service Worker"></a>&#x9875;&#x9762;&#x4E0A;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;Service Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sw-demo-cache-js这个JS中复制如下代码"><span class="nav-number">3.5.2.</span> <span class="nav-text"><a href="#sw-demo-cache-js&#x8FD9;&#x4E2A;JS&#x4E2D;&#x590D;&#x5236;&#x5982;&#x4E0B;&#x4EE3;&#x7801;" class="headerlink" title="sw-demo-cache.js&#x8FD9;&#x4E2A;JS&#x4E2D;&#x590D;&#x5236;&#x5982;&#x4E0B;&#x4EE3;&#x7801;"></a>sw-demo-cache.js&#x8FD9;&#x4E2A;JS&#x4E2D;&#x590D;&#x5236;&#x5982;&#x4E0B;&#x4EE3;&#x7801;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把cache-addAll-方法中缓存文件数组换成你希望缓存的文件数组"><span class="nav-number">3.5.3.</span> <span class="nav-text"><a href="#&#x628A;cache-addAll-&#x65B9;&#x6CD5;&#x4E2D;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x6570;&#x7EC4;&#x6362;&#x6210;&#x4F60;&#x5E0C;&#x671B;&#x7F13;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x6570;&#x7EC4;" class="headerlink" title="&#x628A;cache.addAll()&#x65B9;&#x6CD5;&#x4E2D;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x6570;&#x7EC4;&#x6362;&#x6210;&#x4F60;&#x5E0C;&#x671B;&#x7F13;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x6570;&#x7EC4;"></a>&#x628A;cache.addAll()&#x65B9;&#x6CD5;&#x4E2D;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x6570;&#x7EC4;&#x6362;&#x6210;&#x4F60;&#x5E0C;&#x671B;&#x7F13;&#x5B58;&#x7684;&#x6587;&#x4EF6;&#x6570;&#x7EC4;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PWA的核心技术"><span class="nav-number">3.6.</span> <span class="nav-text"><a href="#PWA&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;" class="headerlink" title="PWA&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;"></a>PWA&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+            
+          </div>
+        </main>
+
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
+<p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
+
+<p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    版本号:v0.0.3.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
+
+            
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+
+        
+
+        
+
+      </div>
+
+      
+
+
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+
+<!-- 需要fixed的单独拿出来 -->
+
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
+  </div>
+</div>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+
+
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
+
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.3"></script>
+  <script type="text/javascript" src="/js/waifu-tips.js"></script>
+  <script type="text/javascript" src="/js/live2d.js"></script>
+  <script type="text/javascript">
+      loadlive2d("live2d", "/js/Skin/Pio/model1.json");
+  </script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
+
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: false
+    });
+  </script>
+
+
+</body>
+</html>
