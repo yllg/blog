@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="default">
+<head>
+
+   <!-- 纯CSS实现加载动画 -->
+  <link href="/css/loading.css" rel="stylesheet">
+
+  <link href="/css/flat-ui.min.css" rel="stylesheet">
+  <link href="/css/DPlayer.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.16/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="性能优化," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="大纲，分为以下六个方面的优化：1.资源方面优化：html，css，js2.HTTP网络请求优化：减少http请求数，减少DNS查询，避免重定向，使用HTTP23.server服务端优化：使用CDN，负载均衡，开启GZip，缓存策略，node的性能优化4.前端缓存优化：见上一篇《前端缓存知识点汇总》5.前端工程化方面的优化：webpack优化，Vue的优化，增量更新6.专题优化：首屏优化，网络不稳定">
+<meta name="keywords" content="性能优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能优化大全">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/index.html">
+<meta property="og:site_name" content="悬笔e绝">
+<meta property="og:description" content="大纲，分为以下六个方面的优化：1.资源方面优化：html，css，js2.HTTP网络请求优化：减少http请求数，减少DNS查询，避免重定向，使用HTTP23.server服务端优化：使用CDN，负载均衡，开启GZip，缓存策略，node的性能优化4.前端缓存优化：见上一篇《前端缓存知识点汇总》5.前端工程化方面的优化：webpack优化，Vue的优化，增量更新6.专题优化：首屏优化，网络不稳定">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/DNS预解析.png">
+<meta property="og:image" content="http://www.xuanbiyijue.com/img/公众号二维码.jpg">
+<meta property="og:updated_time" content="2018-05-02T13:22:20.492Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端性能优化大全">
+<meta name="twitter:description" content="大纲，分为以下六个方面的优化：1.资源方面优化：html，css，js2.HTTP网络请求优化：减少http请求数，减少DNS查询，避免重定向，使用HTTP23.server服务端优化：使用CDN，负载均衡，开启GZip，缓存策略，node的性能优化4.前端缓存优化：见上一篇《前端缓存知识点汇总》5.前端工程化方面的优化：webpack优化，Vue的优化，增量更新6.专题优化：首屏优化，网络不稳定">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/DNS预解析.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.3',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '12/12/2017 2:00:00',
+    onlineAPI: '',
+    site: {
+      title: '火の意志',
+      subtitle: '',
+      author: '悬笔e绝'
+    },
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '6yIOhn3kOO9PP9MGXP84RkNU-gzGzoHsz',
+      appKey: 'Ar2z70S83F1nVkRGH4Ifodrn'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)欢迎回来！',
+      hide_text: ''
+    }
+  };
+</script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/"/>
+
+
+
+
+
+  <title>前端性能优化大全 | 悬笔e绝</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://cdn.bootcss.com/analytics.js/2.9.1/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  <link href="/css/DecorativeLetter.css" rel="stylesheet">
+  <link href="/css/authorName.css" rel="stylesheet">
+  <link href="/css/meny.css" rel="stylesheet">
+
+  <!-- 页面加载完毕去掉加载动画 -->
+  <script>
+      window.addEventListener("load", function () {
+          var loader = document.getElementById("loader");
+          setTimeout(function(){
+            document.body.removeChild(loader);
+          },3000);
+      });
+  </script>
+
+</head>
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<!-- 加载动画 -->
+<div id="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<!-- 优先让萝莉出来 -->
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+
+
+<!-- 主体 -->
+<div class="meny-wrap">
+  <div class="meny">
+    <div class="meny-menuwarp">
+    </div>
+  </div>
+  <!-- 主体内容区域 -->
+  <div class="meny-contents">
+			
+      
+        
+      
+
+      <div class="container sidebar-position-right page-post-detail">
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-实验室">
+          <a href="/categories/实验室/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-音乐">
+          <a href="/Music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-unsleep">
+          <a href="/UNSLEEP/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            UNSLEEP
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/Message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">6</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper demo-1" style="background-image: url(/)">
+  <svg class="hidden">
+		<symbol id="icon-nav-arrow" viewBox="0 0 90 64">
+			<title>nav-arrow</title>
+			<path d="M88.148 30.124H6.404L33.208 3.32a1.877 1.877 0 0 0 0-2.652 1.877 1.877 0 0 0-2.652 0L.552 30.67a1.942 1.942 0 0 0-.409.612 1.86 1.86 0 0 0 0 1.432c.094.233.233.44.41.612L30.555 63.33c.367.368.847.552 1.328.552.48 0 .96-.184 1.327-.548a1.877 1.877 0 0 0 0-2.652L6.404 33.874h81.743a1.876 1.876 0 0 0 0-3.75z"
+			/>
+		</symbol>
+	</svg>
+	<div class="DecoLetter">
+			<div class="content">
+				<div class="slideshow">
+					<div class="slide slide--current">
+						<div class="slide__bg slide__bg--1"></div>
+						<h2 class="word word--1">You build it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--2"></div>
+						<h2 class="word word--2">You run it</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--3"></div>
+						<h2 class="word word--3">Talk is cheap</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--4"></div>
+						<h2 class="word word--4">Show me the code</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--5"></div>
+						<h2 class="word word--5">Go big</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--6"></div>
+						<h2 class="word word--6">or go home</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--7"></div>
+						<h2 class="word word--7">Eat your own</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--8"></div>
+						<h2 class="word word--8">Dog Food</h2>
+					</div>
+					<div class="slide">
+						<div class="slide__bg slide__bg--9"></div>
+						<h2 class="word word--9">悬笔e绝</h2>
+					</div>
+				</div>
+				<nav class="slidenav">
+					<button class="slidenav__item slidenav__item--prev">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+					<button class="slidenav__item slidenav__item--next">
+						<svg class="icon icon--navarrow">
+							<use xlink:href="#icon-nav-arrow"></use>
+						</svg>
+					</button>
+				</nav>
+			</div>
+	</div>
+</div>
+
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="author-name">
+			<section class="content content--layout">
+				<h2 class="word word--playful">悬笔<i>345</i>E绝</h2>
+			</section>
+		</div>
+    <a class="site-master-avatar" href="/images/悬笔e绝马赛克拼图.jpeg" target="_blank" title="logo">
+      <img class="site-master-avatar" itemprop="image" src="/images/悬笔e绝.jpg" alt="悬笔e绝" />
+    </a>
+</div>
+
+
+ </div>
+        </header>
+
+        <main id="main" class="main">
+          <div class="main-inner">
+            <div class="content-wrap">
+              <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">05月</div>
+			<div class="post-day">01</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/前端性能优化与工程化/" itemprop="url" rel="index">
+          <span itemprop="name">前端性能优化与工程化</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="悬笔e绝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/悬笔e绝.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬笔e绝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端性能优化大全</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T22:38:28+08:00">
+                2018/05/01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">•</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-05-02T21:22:20+08:00">
+                2018/05/02
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">•</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端性能优化与工程化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端性能优化与工程化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">•</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/01/前端性能优化大全/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/01/前端性能优化大全/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/01/前端性能优化大全/" class="leancloud_visitors" data-flag-title="前端性能优化大全">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计 ">
+                  2,002
+                </span>
+              
+
+              
+                <span class="post-meta-divider">•</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7&nbsp;min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>大纲，分为以下六个方面的优化：<br>1.资源方面优化：html，css，js<br>2.HTTP网络请求优化：减少http请求数，减少DNS查询，避免重定向，使用HTTP2<br>3.server服务端优化：使用CDN，负载均衡，开启GZip，缓存策略，node的性能优化<br>4.前端缓存优化：见上一篇《前端缓存知识点汇总》<br>5.前端工程化方面的优化：webpack优化，Vue的优化，增量更新<br>6.专题优化：首屏优化，网络不稳定时的优化</p>
+<h1 id="资源方面的优化"><a href="#资源方面的优化" class="headerlink" title="资源方面的优化"></a>资源方面的优化</h1><h2 id="HTML的优化"><a href="#HTML的优化" class="headerlink" title="HTML的优化"></a>HTML的优化</h2><p>1.SEO的优化：<br>（1）标签语义化<br>（2）合适的meta标签，比如keyword，description等<br>（3）图片加alt属性；<br>2.H5的manifest缓存机制</p>
+<h2 id="CSS的优化"><a href="#CSS的优化" class="headerlink" title="CSS的优化"></a>CSS的优化</h2><p>1.css放顶部，可以防止FOUC–无样式内容的闪烁；<br>2.避免内联样式<br>注意：这一点并不绝对；比如现在MVVM框架主张css in js，谷歌的AMP要求css必须内联；<br>3.no表达式，<br>4.no image,字体图标等矢量图标代替图片，<br>5.属性值为0，把单位去掉，<br>6.不要滥用float，易造成重排；<br>7.预处理器（sass，less，stylus）和后处理器压缩处理（postcss）<br>8.使用可以触发GPU加速的属性：比如3D过渡，变形，透明度等属性</p>
+<h2 id="JS的优化"><a href="#JS的优化" class="headerlink" title="JS的优化"></a>JS的优化</h2><p>1.放html的底部<br>2.避免直接操作dom，可以使用MVVM框架的虚拟dom<br>3.一定要操作dom的话，尽量使用id选择器，减少遍历次数<br>4.避免批量绑定事件，使用事件代理<br>5.动画尽量交给css，万不得已才用js<br>6.使用gpu.js库触发GPU硬件加速；</p>
+<h1 id="HTTP网络请求的优化"><a href="#HTTP网络请求的优化" class="headerlink" title="HTTP网络请求的优化"></a>HTTP网络请求的优化</h1><h2 id="减少http请求数"><a href="#减少http请求数" class="headerlink" title="减少http请求数"></a>减少http请求数</h2><p>1.使用雪碧图合并小图片<br>2.no image，颜色单一的图案尽量用矢量的字体图标<br>3.webpack可以把小图片base64压缩到js中<br>4.合并css和js文件；</p>
+<h2 id="减少DNS查询"><a href="#减少DNS查询" class="headerlink" title="减少DNS查询"></a>减少DNS查询</h2><p>DNS查找流程：浏览器缓存，本机DNS缓存，本地DNS服务器<br>使用缓存加快DNS查找的速度；</p>
+<h2 id="尽量避免重定向"><a href="#尽量避免重定向" class="headerlink" title="尽量避免重定向"></a>尽量避免重定向</h2><p>当页面发生了重定向，就会延迟整个HTML文档的传输。<br>在HTML文档到达之前，页面中不会呈现任何东西，也没有任何组件会被下载。<br>301：永久重定向； 302：临时重定向； 304：Not Modified没有修改；</p>
+<h2 id="使用HTTP2"><a href="#使用HTTP2" class="headerlink" title="使用HTTP2"></a>使用HTTP2</h2><p>1.双工通信，多路复用；配合数据流机制确定数据包属于哪个请求；<br>2.二进制传输，加快解析<br>3.头部压缩，节省带宽<br>4.服务器主动推送；</p>
+<h1 id="server服务端的优化"><a href="#server服务端的优化" class="headerlink" title="server服务端的优化"></a>server服务端的优化</h1><h2 id="使用CDN"><a href="#使用CDN" class="headerlink" title="使用CDN"></a>使用CDN</h2><p>1.速度快，稳定性有保障；<br>2.请求CDN时不用把cookies带来带去；<br>3.给自己的资源服务器减轻负担，省空间省流量</p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>Ngnix进行负载均衡配置</p>
+<h2 id="开启GZip压缩"><a href="#开启GZip压缩" class="headerlink" title="开启GZip压缩"></a>开启GZip压缩</h2><p>注意要设置个压缩上限；比如32K，因为原文件100K左右已经很大了；</p>
+<h2 id="缓存策略"><a href="#缓存策略" class="headerlink" title="缓存策略"></a>缓存策略</h2><p>见我上一篇《前端缓存知识点汇总》<br>1.强制缓存expires和cache control，<br>2.协商缓存last-modified/if-modified-since， etag/if-none-match</p>
+<h2 id="node的性能优化"><a href="#node的性能优化" class="headerlink" title="node的性能优化"></a>node的性能优化</h2><p>1.异常处理：<br>使用uncaughtException捕获异常并进行异常处理，不然node轻易挂掉；</p>
+<p>2.压测：<br>（1）压测工具：Jmeter, wrk<br>（2）峰值QPS和机器计算：<br>QPS表示单个进程每秒请求服务器的成功次数，QPS = PV/秒数<br>峰值QPS,每天80%的访问集中在20%的时间里，峰值QPS = （总PV数<em>80%）/（每天的秒数</em>20%）<br>需要的机器数量 = 峰值QPS / 单台机器的QPS<br>比如：300W PV，每个机器的QPS是58，需要几台机器?<br>解：（3000000 X 0.8）/（24 X 3600 X 0.2） / 58 = 2.395 所以需要3台；</p>
+<p>3.防止内存泄漏<br>（1）发生内存泄漏的原因：<br>大循环产生大对象，消费不及时导致；比如递归，可以优化成“尾递归”<br>滥用闭包； 及时清理不用的变量，置为null即可；<br>（2）process.memoryUsage<br>使用node进程模块的memoryUsage属性查看内存的使用情况<br>（3）检查内存泄漏的工具：memwatch + heapdump，<br>可以监听leak泄漏事件，memwatch检测内存泄漏，heapdump抓取内存实时情况；</p>
+<p>4.调试node代码<br>（1）node-inspect + Chrome，官方的调试工具包<br>安装，执行命令，地址栏输入chrome://inspect 就可以调试node代码<br>（也可以远程调试手机端的node应用哦）<br>缺点：比较慢<br>（2）node-inspector + chrome，更好用的一个工具包<br>（3）VSCode，调试node的神器，简单方便</p>
+<h1 id="前端缓存的优化"><a href="#前端缓存的优化" class="headerlink" title="前端缓存的优化"></a>前端缓存的优化</h1><p>见我之前写的《前端缓存知识点汇总》<br>1.浏览器缓存策略<br>2.前端存储方案<br>3.PWA实现缓存</p>
+<h1 id="前端工程化方面的优化"><a href="#前端工程化方面的优化" class="headerlink" title="前端工程化方面的优化"></a>前端工程化方面的优化</h1><h2 id="工具优化之webpack优化技巧"><a href="#工具优化之webpack优化技巧" class="headerlink" title="工具优化之webpack优化技巧"></a>工具优化之webpack优化技巧</h2><p>1.分离第三方库的依赖，引入DllPlugin，将不需要修改的第三方库和自己业务代码分开打包；<br>2.引入多进程编译的工具包，比如happypack；充分利用CPU多核特性；<br>3.提取公共依赖模块，commonChunkPlugin；版本4已经默认集成了；<br>4.提取公共样式，减小打包的体积，比如ExtracTextPlugin<br>5.资源压缩混淆，uglifyJS<br>6.Gzip压缩<br>7.按需加载，自身提供的require.ensure，各种框架也有自己的模块加载方案；<br>8.tree shaking去掉没用上的代码，版本3和4默认有了；</p>
+<h2 id="MVVM框架优化"><a href="#MVVM框架优化" class="headerlink" title="MVVM框架优化"></a>MVVM框架优化</h2><p>vue优化，react优化，angular优化<br>这里暂时不展开了；之后再补充；</p>
+<h2 id="策略优化之增量更新策略"><a href="#策略优化之增量更新策略" class="headerlink" title="策略优化之增量更新策略"></a>策略优化之增量更新策略</h2><p>整体思路类似git<br>1.本地使用localstorage或者其他的存储方案，保存一份代码+时间戳；<br>2.向服务器请求时带上时间戳，服务器判断客户端版本，跟最新版本对比，返回一个diff信息；<br>3.客户端根据diff信息，增量更新代码，更新时间戳；<br>4.Diff信息格式可以如下：<br>[3,”-2”,”+abcd”,1]<br>整数表示无变化的字符数量，“-”开头的字符串代表被移除的字符数量，<br>“+”开头的字符串表示新加入的字符；<br>5.粒度更细的增量更新解决方案，可以看看腾讯的mt.js</p>
+<h1 id="其他专题优化"><a href="#其他专题优化" class="headerlink" title="其他专题优化"></a>其他专题优化</h1><h2 id="移动端首屏优化"><a href="#移动端首屏优化" class="headerlink" title="移动端首屏优化"></a>移动端首屏优化</h2><p>两个方面，优化网络与优化渲染<br>优化网络可以提升几秒，而优化渲染，大部分是是毫秒级的，所以网络优化才是重点；</p>
+<p>1.DNS预解析<br>配置meta和link标签，比如：<br><img src="/2018/05/01/前端性能优化大全/DNS预解析.png" class="ClassName" title="DNS预解析"><br>2.域名收敛<br>域名收敛，就是将静态资源放在一个域名下，减少DNS解析的开销时间；<br>注意：PC端提倡域名发散，是为了利用浏览器多线程并行下载能力；移动端为了提高性能使用域名收敛；<br>3.链路复用:keep-alive，或者使用http2<br>4.资源内联，减少请求，AMP和百度MIP都这么提倡的；<br>5.按需加载，异步加载：只加载首页需要的<br>6.异步渲染：需要交互才出现的资源使用异步渲染；<br>7.图片懒加载；<br>8.服务端渲染，node+swig进行SSR；前后端同构渲染；<br>9.使用缓存机制，见上面；H5的离线方案manifest或者PWA的缓存<br>10.html框架预加载，提取每个页面的公共部分，预加载<br>11.代理服务器，预请求数据。<br>12.给个良好的提示，菊花图<br>注：是不是感觉和上面的有重复的地方，正所谓知识都是相通的嘛，要活学活用；</p>
+<h2 id="用户网络不稳定的优化策略"><a href="#用户网络不稳定的优化策略" class="headerlink" title="用户网络不稳定的优化策略"></a>用户网络不稳定的优化策略</h2><p>1.图片的优化，根据不同网速，显示不同清晰度的图片<br>2.专门做一个简版的项目，给网速差的情况下使用<br>3.首屏加载优化：见上一点；</p>
+<p>以上<br>欢迎补充~</p>
+<p>同时欢迎关注我的个人微信公众号：<br><img src="/img/公众号二维码.jpg" width="300" height="300" title="悬笔e绝"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div class="post-share" style="display: block !important;">分享到：
+
+      </div>
+    
+
+    
+      <div class="post-copyrightwrap">
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    悬笔e绝
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/" title="前端性能优化大全">http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/22/前端缓存知识点汇总/" rel="next" title="前端缓存知识点汇总">
+                <i class="fa fa-chevron-left"></i> 前端缓存知识点汇总
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+
+     
+      <div class="post-donate">
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    <div id="donateImg">
+        <img id="donateCute" src="/images/donateCute.jpg" style="width: 100%;" alt="悬笔e绝"/>
+    </div>
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="悬笔e绝 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="悬笔e绝 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+              </div>
+              
+
+
+              
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div class="disqus-loading">
+          <strong>Disqus 加载中...</strong>
+          <p>如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        if (disqus_config) {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/';
+            this.page.identifier = '2018/05/01/前端性能优化大全/';
+            this.page.title = '前端性能优化大全';
+          };
+          if (window.DISQUS) {
+            $('.disqus-loading').remove();
+            window.DISQUS.reset({
+              reload: true,
+              config: function () {
+                this.page.url = 'http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/';
+                this.page.identifier = '2018/05/01/前端性能优化大全/';
+                this.page.title = '前端性能优化大全';
+              }
+            });
+          }
+        }
+        else {
+          var disqus_config = function () {
+            this.page.url = 'http://www.xuanbiyijue.com/2018/05/01/前端性能优化大全/';
+            this.page.identifier = '2018/05/01/前端性能优化大全/';
+            this.page.title = '前端性能优化大全';
+          };
+          var d = document, s = d.createElement('script');
+          s.src = 'https://.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+
+        }
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+              
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/card.jpg"
+                alt="悬笔e绝" />
+            
+              <p class="site-author-name" itemprop="name">悬笔e绝</p>
+              <p class="site-description motion-element" itemprop="description">敲代码最溜的BBOY🏃 Breaking最炸的程序猿👨‍💻‍~</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yllg" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/WeChat.jpeg" target="_blank" title="微信公众号" data-balloon="微信公众号" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-wechat"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq.png" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="javascript:void(0)" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              <div class="site-state-item site-state-tags">
+                <a href="javascript:void(0)">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+          </nav>
+
+          <nav class="site-state motion-element wordcount">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-file-word-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">全站字数统计&#58;</span>
+            
+            <span title="全站字数统计 ">
+              23.4k
+            </span>
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xuanbiyijue.com/" title="悬笔e绝" target="_blank">悬笔e绝</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="javascript:void(0)" title="更多" target="_blank">更多</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#资源方面的优化"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x8D44;&#x6E90;&#x65B9;&#x9762;&#x7684;&#x4F18;&#x5316;" class="headerlink" title="&#x8D44;&#x6E90;&#x65B9;&#x9762;&#x7684;&#x4F18;&#x5316;"></a>&#x8D44;&#x6E90;&#x65B9;&#x9762;&#x7684;&#x4F18;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML的优化"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#HTML&#x7684;&#x4F18;&#x5316;" class="headerlink" title="HTML&#x7684;&#x4F18;&#x5316;"></a>HTML&#x7684;&#x4F18;&#x5316;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS的优化"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#CSS&#x7684;&#x4F18;&#x5316;" class="headerlink" title="CSS&#x7684;&#x4F18;&#x5316;"></a>CSS&#x7684;&#x4F18;&#x5316;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS的优化"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#JS&#x7684;&#x4F18;&#x5316;" class="headerlink" title="JS&#x7684;&#x4F18;&#x5316;"></a>JS&#x7684;&#x4F18;&#x5316;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP网络请求的优化"><span class="nav-number">2.</span> <span class="nav-text"><a href="#HTTP&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x4F18;&#x5316;" class="headerlink" title="HTTP&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x4F18;&#x5316;"></a>HTTP&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x4F18;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#减少http请求数"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x51CF;&#x5C11;http&#x8BF7;&#x6C42;&#x6570;" class="headerlink" title="&#x51CF;&#x5C11;http&#x8BF7;&#x6C42;&#x6570;"></a>&#x51CF;&#x5C11;http&#x8BF7;&#x6C42;&#x6570;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减少DNS查询"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x51CF;&#x5C11;DNS&#x67E5;&#x8BE2;" class="headerlink" title="&#x51CF;&#x5C11;DNS&#x67E5;&#x8BE2;"></a>&#x51CF;&#x5C11;DNS&#x67E5;&#x8BE2;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尽量避免重定向"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x91CD;&#x5B9A;&#x5411;" class="headerlink" title="&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x91CD;&#x5B9A;&#x5411;"></a>&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x91CD;&#x5B9A;&#x5411;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用HTTP2"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;HTTP2" class="headerlink" title="&#x4F7F;&#x7528;HTTP2"></a>&#x4F7F;&#x7528;HTTP2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#server服务端的优化"><span class="nav-number">3.</span> <span class="nav-text"><a href="#server&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4F18;&#x5316;" class="headerlink" title="server&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4F18;&#x5316;"></a>server&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4F18;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用CDN"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;CDN" class="headerlink" title="&#x4F7F;&#x7528;CDN"></a>&#x4F7F;&#x7528;CDN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负载均衡"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x8D1F;&#x8F7D;&#x5747;&#x8861;" class="headerlink" title="&#x8D1F;&#x8F7D;&#x5747;&#x8861;"></a>&#x8D1F;&#x8F7D;&#x5747;&#x8861;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启GZip压缩"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#&#x5F00;&#x542F;GZip&#x538B;&#x7F29;" class="headerlink" title="&#x5F00;&#x542F;GZip&#x538B;&#x7F29;"></a>&#x5F00;&#x542F;GZip&#x538B;&#x7F29;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存策略"><span class="nav-number">3.4.</span> <span class="nav-text"><a href="#&#x7F13;&#x5B58;&#x7B56;&#x7565;" class="headerlink" title="&#x7F13;&#x5B58;&#x7B56;&#x7565;"></a>&#x7F13;&#x5B58;&#x7B56;&#x7565;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node的性能优化"><span class="nav-number">3.5.</span> <span class="nav-text"><a href="#node&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316;" class="headerlink" title="node&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316;"></a>node&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端缓存的优化"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x524D;&#x7AEF;&#x7F13;&#x5B58;&#x7684;&#x4F18;&#x5316;" class="headerlink" title="&#x524D;&#x7AEF;&#x7F13;&#x5B58;&#x7684;&#x4F18;&#x5316;"></a>&#x524D;&#x7AEF;&#x7F13;&#x5B58;&#x7684;&#x4F18;&#x5316;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端工程化方面的优化"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5316;&#x65B9;&#x9762;&#x7684;&#x4F18;&#x5316;" class="headerlink" title="&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5316;&#x65B9;&#x9762;&#x7684;&#x4F18;&#x5316;"></a>&#x524D;&#x7AEF;&#x5DE5;&#x7A0B;&#x5316;&#x65B9;&#x9762;&#x7684;&#x4F18;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工具优化之webpack优化技巧"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#&#x5DE5;&#x5177;&#x4F18;&#x5316;&#x4E4B;webpack&#x4F18;&#x5316;&#x6280;&#x5DE7;" class="headerlink" title="&#x5DE5;&#x5177;&#x4F18;&#x5316;&#x4E4B;webpack&#x4F18;&#x5316;&#x6280;&#x5DE7;"></a>&#x5DE5;&#x5177;&#x4F18;&#x5316;&#x4E4B;webpack&#x4F18;&#x5316;&#x6280;&#x5DE7;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM框架优化"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#MVVM&#x6846;&#x67B6;&#x4F18;&#x5316;" class="headerlink" title="MVVM&#x6846;&#x67B6;&#x4F18;&#x5316;"></a>MVVM&#x6846;&#x67B6;&#x4F18;&#x5316;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策略优化之增量更新策略"><span class="nav-number">5.3.</span> <span class="nav-text"><a href="#&#x7B56;&#x7565;&#x4F18;&#x5316;&#x4E4B;&#x589E;&#x91CF;&#x66F4;&#x65B0;&#x7B56;&#x7565;" class="headerlink" title="&#x7B56;&#x7565;&#x4F18;&#x5316;&#x4E4B;&#x589E;&#x91CF;&#x66F4;&#x65B0;&#x7B56;&#x7565;"></a>&#x7B56;&#x7565;&#x4F18;&#x5316;&#x4E4B;&#x589E;&#x91CF;&#x66F4;&#x65B0;&#x7B56;&#x7565;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他专题优化"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x5176;&#x4ED6;&#x4E13;&#x9898;&#x4F18;&#x5316;" class="headerlink" title="&#x5176;&#x4ED6;&#x4E13;&#x9898;&#x4F18;&#x5316;"></a>&#x5176;&#x4ED6;&#x4E13;&#x9898;&#x4F18;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端首屏优化"><span class="nav-number">6.1.</span> <span class="nav-text"><a href="#&#x79FB;&#x52A8;&#x7AEF;&#x9996;&#x5C4F;&#x4F18;&#x5316;" class="headerlink" title="&#x79FB;&#x52A8;&#x7AEF;&#x9996;&#x5C4F;&#x4F18;&#x5316;"></a>&#x79FB;&#x52A8;&#x7AEF;&#x9996;&#x5C4F;&#x4F18;&#x5316;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户网络不稳定的优化策略"><span class="nav-number">6.2.</span> <span class="nav-text"><a href="#&#x7528;&#x6237;&#x7F51;&#x7EDC;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#x4F18;&#x5316;&#x7B56;&#x7565;" class="headerlink" title="&#x7528;&#x6237;&#x7F51;&#x7EDC;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#x4F18;&#x5316;&#x7B56;&#x7565;"></a>&#x7528;&#x6237;&#x7F51;&#x7EDC;&#x4E0D;&#x7A33;&#x5B9A;&#x7684;&#x4F18;&#x5316;&#x7B56;&#x7565;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+            
+          </div>
+        </main>
+
+        <footer id="footer" class="footer">
+          <div class="footer-image"></div>
+          <div class="footer-inner">
+            <p>网站已运行：<span id="since"></span></p>
+<p><span class="my-face">✽-(ˆ▽ˆ)/✽✽\(ˆ▽ˆ)-✽</span></p>
+
+<p>© <span itemprop="copyrightYear">2018</span> 悬笔e绝.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    版本号:v0.0.3.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">悬笔e绝</span>. </p>
+
+            
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+
+        
+
+        
+
+      </div>
+
+      
+
+
+
+
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+	</div>
+</div>
+
+
+<!-- 需要fixed的单独拿出来 -->
+
+<!-- 盖住原来的那个-->
+<div class="meny">
+  <div class="meny-menuwarp">
+    <ul>
+      <li><a href="/"><i class="menu-item-icon fa fa-fw fa-home"></i>首页</a></li>
+      <li><a href="/categories/"><i class="menu-item-icon fa fa-fw fa-book"></i>分类</a></li>
+      <li><a href="/archives/"><i class="menu-item-icon fa fa-fw fa-archive"></i>归档</a></li>
+      <li><a href="/categories/实验室/"><i class="menu-item-icon fa fa-fw fa-rocket"></i>实验室</a></li>
+      <li><a href="/Music/"><i class="menu-item-icon fa fa-fw fa-music"></i>音乐</a></li>
+      <li><a href="/UNSLEEP/"><i class="menu-item-icon fa fa-fw fa-camera"></i>UNSLEEP</a></li>
+      <li><a href="/Message/"><i class="menu-item-icon fa fa-fw fa-pencil"></i>留言板</a></li>
+    </ul>
+  </div>
+</div>
+  <!-- 小三角放到外面 -->
+<div class="meny-arrow"></div>
+
+<!-- 放到3D空间中 -->
+<canvas id="evanyou"></canvas>
+
+
+
+  <script type="text/javascript" src="/js/DecorativeLetter/charming.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/anime.min.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/wordFx.js"></script>
+  <script type="text/javascript" src="/js/DecorativeLetter/DecoLetter.js"></script>
+
+  <script type="text/javascript" src="/js/authorName.js"></script>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.3"></script>
+  <script type="text/javascript" src="/js/waifu-tips.js"></script>
+  <script type="text/javascript" src="/js/live2d.js"></script>
+  <script type="text/javascript">
+      loadlive2d("live2d", "/js/Skin/Pio/model1.json");
+  </script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/aplayer/1.6.0/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/DPlayer.min.js"></script>
+
+  <script type="text/javascript" src="/js/meny.js"></script>
+   <script>
+    var meny = Meny.create({
+      menuElement: document.querySelector( '.meny' ),
+      contentsElement: document.querySelector( '.meny-contents' ),
+      position: Meny.getQuery().p || 'left',
+      width: 260,
+      threshold: 40,
+      mouse: true,
+      touch: false
+    });
+  </script>
+
+
+</body>
+</html>
