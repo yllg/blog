@@ -108,7 +108,7 @@
 
 
 
-  <meta name="keywords" content="Canvas,game," />
+  <meta name="keywords" content="悬笔e绝,个人博客,blog, web前端,大前端,学习,笔记,UNSLEEP" />
 
 
 
@@ -119,20 +119,19 @@
 
 
 
-<meta name="description" content="见缝插针小游戏基于Canvas的游戏，关卡难度加大，速度加快（性能不够好的手机可能会有卡顿现象，建议在PC上试玩）  演示地址: 演示地址GitHub: GitHub">
-<meta name="keywords" content="Canvas,game">
+<meta name="description" content="常见双向绑定的实现方法（1）KnockoutJS 基于观察者模式的双向绑定；（2）Ember 基于数据模型的；（3）Angular 基于脏检查的双向绑定，使用主动遍历（4）基于数据劫持的双向绑定  A.Vue现在使用的Object.defineProperty  B.ES6新增的Proxy。 基于数据劫持双向绑定的优点无需显示调用data.name = ‘悬笔e绝’;    就能直接触发变更不用像">
 <meta property="og:type" content="article">
-<meta property="og:title" content="insertGame">
-<meta property="og:url" content="http://www.xuanbiyijue.com/2017/12/30/insertGame/index.html">
+<meta property="og:title" content="MVVM的双向绑定">
+<meta property="og:url" content="http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/index.html">
 <meta property="og:site_name" content="悬笔e绝">
-<meta property="og:description" content="见缝插针小游戏基于Canvas的游戏，关卡难度加大，速度加快（性能不够好的手机可能会有卡顿现象，建议在PC上试玩）  演示地址: 演示地址GitHub: GitHub">
+<meta property="og:description" content="常见双向绑定的实现方法（1）KnockoutJS 基于观察者模式的双向绑定；（2）Ember 基于数据模型的；（3）Angular 基于脏检查的双向绑定，使用主动遍历（4）基于数据劫持的双向绑定  A.Vue现在使用的Object.defineProperty  B.ES6新增的Proxy。 基于数据劫持双向绑定的优点无需显示调用data.name = ‘悬笔e绝’;    就能直接触发变更不用像">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.xuanbiyijue.com/2017/12/30/insertGame/insertGame.png">
-<meta property="og:updated_time" content="2017-12-30T16:07:04.849Z">
+<meta property="og:image" content="http://www.xuanbiyijue.com/img/公众号二维码.jpg">
+<meta property="og:updated_time" content="2018-05-13T03:01:41.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="insertGame">
-<meta name="twitter:description" content="见缝插针小游戏基于Canvas的游戏，关卡难度加大，速度加快（性能不够好的手机可能会有卡顿现象，建议在PC上试玩）  演示地址: 演示地址GitHub: GitHub">
-<meta name="twitter:image" content="http://www.xuanbiyijue.com/2017/12/30/insertGame/insertGame.png">
+<meta name="twitter:title" content="MVVM的双向绑定">
+<meta name="twitter:description" content="常见双向绑定的实现方法（1）KnockoutJS 基于观察者模式的双向绑定；（2）Ember 基于数据模型的；（3）Angular 基于脏检查的双向绑定，使用主动遍历（4）基于数据劫持的双向绑定  A.Vue现在使用的Object.defineProperty  B.ES6新增的Proxy。 基于数据劫持双向绑定的优点无需显示调用data.name = ‘悬笔e绝’;    就能直接触发变更不用像">
+<meta name="twitter:image" content="http://www.xuanbiyijue.com/img/公众号二维码.jpg">
 
 
 
@@ -187,13 +186,13 @@
 
 
 
-  <link rel="canonical" href="http://www.xuanbiyijue.com/2017/12/30/insertGame/"/>
+  <link rel="canonical" href="http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/"/>
 
 
 
 
 
-  <title>insertGame | 悬笔e绝</title>
+  <title>MVVM的双向绑定 | 悬笔e绝</title>
   
 
 
@@ -462,21 +461,15 @@
   
   
   <div class="post-date">
-			<div class="post-month">12月</div>
-			<div class="post-day">30</div>
+			<div class="post-month">05月</div>
+			<div class="post-day">13</div>
 	</div>
   
   <div class="post-badge">
     
       <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/实验室/" itemprop="url" rel="index">
-          <span itemprop="name">实验室</span>
-        </a>
-      </span>
-    
-      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/实验室/Canvas/" itemprop="url" rel="index">
-          <span itemprop="name">Canvas</span>
+        <a href="/categories/MV框架/" itemprop="url" rel="index">
+          <span itemprop="name">MV框架</span>
         </a>
       </span>
     
@@ -484,7 +477,7 @@
   
 
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2017/12/30/insertGame/">
+    <link itemprop="mainEntityOfPage" href="http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="悬笔e绝">
@@ -501,7 +494,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">insertGame</h1>
+          <h1 class="post-title" itemprop="name headline">MVVM的双向绑定</h1>
         
 
         <div class="post-meta">
@@ -513,8 +506,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T23:58:24+08:00">
-                2017/12/30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-13T10:29:24+08:00">
+                2018/05/13
               </time>
             
 
@@ -529,8 +522,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2017-12-31T00:07:04+08:00">
-                2017/12/31
+              <time title="Post modified" itemprop="dateModified" datetime="2018-05-13T11:01:41+08:00">
+                2018/05/13
               </time>
             
           </span>
@@ -548,19 +541,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/实验室/" itemprop="url" rel="index">
-                    <span itemprop="name">实验室</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/实验室/Canvas/" itemprop="url" rel="index">
-                    <span itemprop="name">Canvas</span>
+                  <a href="/categories/MV框架/" itemprop="url" rel="index">
+                    <span itemprop="name">MV框架</span>
                   </a>
                 </span>
 
@@ -577,8 +559,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/30/insertGame/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/30/insertGame/" itemprop="commentsCount"></span>
+                <a href="/2018/05/13/MVVM的双向绑定/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/13/MVVM的双向绑定/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -586,7 +568,7 @@
 
           
           
-             <span id="/2017/12/30/insertGame/" class="leancloud_visitors" data-flag-title="insertGame">
+             <span id="/2018/05/13/MVVM的双向绑定/" class="leancloud_visitors" data-flag-title="MVVM的双向绑定">
                <span class="post-meta-divider">•</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -611,7 +593,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计 ">
-                  56
+                  771
                 </span>
               
 
@@ -627,7 +609,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1&nbsp;min
+                  3&nbsp;min
                 </span>
               
             </div>
@@ -648,9 +630,18 @@
       
 
       
-        <h2 id="见缝插针小游戏"><a href="#见缝插针小游戏" class="headerlink" title="见缝插针小游戏"></a>见缝插针小游戏</h2><h3 id="基于Canvas的游戏，关卡难度加大，速度加快"><a href="#基于Canvas的游戏，关卡难度加大，速度加快" class="headerlink" title="基于Canvas的游戏，关卡难度加大，速度加快"></a>基于Canvas的游戏，关卡难度加大，速度加快</h3><p>（性能不够好的手机可能会有卡顿现象，建议在PC上试玩）</p>
-<img src="/2017/12/30/insertGame/insertGame.png" class="insertGame" title="insertGame">
-<p>演示地址: <a href="https://yllg.github.io/canvas-game/" target="_blank" rel="noopener">演示地址</a><br>GitHub: <a href="https://github.com/yllg/canvas-game" target="_blank" rel="noopener">GitHub</a></p>
+        <h1 id="常见双向绑定的实现方法"><a href="#常见双向绑定的实现方法" class="headerlink" title="常见双向绑定的实现方法"></a>常见双向绑定的实现方法</h1><p>（1）KnockoutJS 基于观察者模式的双向绑定；<br>（2）Ember 基于数据模型的；<br>（3）Angular 基于脏检查的双向绑定，使用主动遍历<br>（4）基于数据劫持的双向绑定<br>  A.Vue现在使用的Object.defineProperty<br>  B.ES6新增的Proxy。</p>
+<h1 id="基于数据劫持双向绑定的优点"><a href="#基于数据劫持双向绑定的优点" class="headerlink" title="基于数据劫持双向绑定的优点"></a>基于数据劫持双向绑定的优点</h1><h2 id="无需显示调用"><a href="#无需显示调用" class="headerlink" title="无需显示调用"></a>无需显示调用</h2><p>data.name = ‘悬笔e绝’;    就能直接触发变更<br>不用像react使用setState显示调用；</p>
+<h2 id="可以精确得到变化数据"><a href="#可以精确得到变化数据" class="headerlink" title="可以精确得到变化数据"></a>可以精确得到变化数据</h2><p>劫持属性的setter变化时可以得到newVal；否则只知道数据变了，具体需要大量的diff才能找出变化值；</p>
+<h1 id="基于Object-defineProperty双向绑定的两个缺点"><a href="#基于Object-defineProperty双向绑定的两个缺点" class="headerlink" title="基于Object.defineProperty双向绑定的两个缺点"></a>基于Object.defineProperty双向绑定的两个缺点</h1><h2 id="无法监听数组的变化"><a href="#无法监听数组的变化" class="headerlink" title="无法监听数组的变化"></a>无法监听数组的变化</h2><p>根本原因：数组没有setter和getter，因为数组的长度不确定，可能会很大，出于性能考虑就没有setter和getter。<br>注：vue文档说可以检测数组变化，其实是使用了奇技淫巧，<br>实现代码思路如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">const aryMethods = [<span class="string">'push'</span>, <span class="string">'pop'</span>, <span class="string">'shift'</span>, <span class="string">'unshift'</span>, <span class="string">'splice'</span>, <span class="string">'sort'</span>, <span class="string">'reverse'</span>];</span><br><span class="line">const arrayAugmentations = [];</span><br><span class="line"></span><br><span class="line">aryMethods.forEach((method)=&gt; &#123;</span><br><span class="line"></span><br><span class="line">    // 原生Array的原型方法</span><br><span class="line">    <span class="built_in">let</span> original = Array.prototype[method];</span><br><span class="line"></span><br><span class="line">   // 将push, pop等封装好的方法定义在对象arrayAugmentations的属性上</span><br><span class="line">   // 注意：是属性而非原型属性</span><br><span class="line">    arrayAugmentations[method] = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        console.log(<span class="string">'我被改变啦!'</span>);</span><br><span class="line"></span><br><span class="line">        // 调用对应的原生方法 并返回结果即新数组的长度</span><br><span class="line">        <span class="built_in">return</span> original.apply(this, arguments);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> list = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line">// 将我们要监听的数组的原型指针 指向上面定义的空数组对象</span><br><span class="line">// 这个空数组的属性上定义了我们封装好的push等方法</span><br><span class="line">list.__proto__ = arrayAugmentations;</span><br><span class="line">//返回“我被改变了”和新的数组长度</span><br><span class="line">list.push(<span class="string">'d'</span>);  // 我被改变啦！ 4</span><br><span class="line"></span><br><span class="line">// 这里的list2没有被重新定义原型指针，所以就正常输出</span><br><span class="line"><span class="built_in">let</span> list2 = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line">//只返回新数组长度</span><br><span class="line">list2.push(<span class="string">'d'</span>);  // 4</span><br></pre></td></tr></table></figure>
+<h2 id="只能劫持对象的属性"><a href="#只能劫持对象的属性" class="headerlink" title="只能劫持对象的属性"></a>只能劫持对象的属性</h2><p>我们需要对每个对象的每个属性进行遍历，如果属性值也是对象，就要深度遍历了。<br>所以要放大招了~</p>
+<h1 id="Proxy实现双向绑定的特点"><a href="#Proxy实现双向绑定的特点" class="headerlink" title="Proxy实现双向绑定的特点"></a>Proxy实现双向绑定的特点</h1><p>严格讲proxy叫做代理，提供了一种机制能对外界访问进行过滤和改写，简单理解Proxy是Object.defineProperty的全方位加强版</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>（1）直接监听整个对象，而不是属性<br>（2）可以监听数组的变化<br>（3）Proxy有多达13种拦截方法，很多都是Object.defineProperty不具备的。<br>（4）返回一个新的对象，不是像Object.defineProperty那样直接修改对象属性；符合immutable思想；<br>（5）新标准的性能红利，会受到浏览器厂商重点持续的心性能优化</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>兼容性问题，且无法用polyfill磨平，所以尤大才说要等到大版本3.0再用Proxy重写了。</p>
+<p>参考文章：<br>掘金: <a href="https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf" target="_blank" rel="noopener">面试官: 实现双向绑定Proxy比defineproperty优劣如何?</a></p>
+<p>以上</p>
+<p>同时欢迎关注我的个人微信公众号：<br><img src="/img/公众号二维码.jpg" width="300" height="300" title="悬笔e绝"></p>
 
       
     </div>
@@ -675,7 +666,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://www.xuanbiyijue.com/2017/12/30/insertGame/" title="insertGame">http://www.xuanbiyijue.com/2017/12/30/insertGame/</a>
+    <a href="http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/" title="MVVM的双向绑定">http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -688,14 +679,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Canvas/" rel="tag"># Canvas</a>
-          
-            <a href="/tags/game/" rel="tag"># game</a>
-          
-        </div>
-      
 
       
       
@@ -705,8 +688,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/30/2048/" rel="next" title="2048">
-                <i class="fa fa-chevron-left"></i> 2048
+              <a href="/2018/05/01/前端性能优化大全/" rel="next" title="前端性能优化大全">
+                <i class="fa fa-chevron-left"></i> 前端性能优化大全
               </a>
             
           </div>
@@ -714,10 +697,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/31/reactTodos/" rel="prev" title="reactTodos">
-                reactTodos <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -801,27 +780,27 @@
       <script type="text/javascript">
         if (disqus_config) {
           var disqus_config = function () {
-            this.page.url = 'http://www.xuanbiyijue.com/2017/12/30/insertGame/';
-            this.page.identifier = '2017/12/30/insertGame/';
-            this.page.title = 'insertGame';
+            this.page.url = 'http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/';
+            this.page.identifier = '2018/05/13/MVVM的双向绑定/';
+            this.page.title = 'MVVM的双向绑定';
           };
           if (window.DISQUS) {
             $('.disqus-loading').remove();
             window.DISQUS.reset({
               reload: true,
               config: function () {
-                this.page.url = 'http://www.xuanbiyijue.com/2017/12/30/insertGame/';
-                this.page.identifier = '2017/12/30/insertGame/';
-                this.page.title = 'insertGame';
+                this.page.url = 'http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/';
+                this.page.identifier = '2018/05/13/MVVM的双向绑定/';
+                this.page.title = 'MVVM的双向绑定';
               }
             });
           }
         }
         else {
           var disqus_config = function () {
-            this.page.url = 'http://www.xuanbiyijue.com/2017/12/30/insertGame/';
-            this.page.identifier = '2017/12/30/insertGame/';
-            this.page.title = 'insertGame';
+            this.page.url = 'http://www.xuanbiyijue.com/2018/05/13/MVVM的双向绑定/';
+            this.page.identifier = '2018/05/13/MVVM的双向绑定/';
+            this.page.title = 'MVVM的双向绑定';
           };
           var d = document, s = d.createElement('script');
           s.src = 'https://.disqus.com/embed.js';
@@ -1024,7 +1003,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#见缝插针小游戏"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x89C1;&#x7F1D;&#x63D2;&#x9488;&#x5C0F;&#x6E38;&#x620F;" class="headerlink" title="&#x89C1;&#x7F1D;&#x63D2;&#x9488;&#x5C0F;&#x6E38;&#x620F;"></a>&#x89C1;&#x7F1D;&#x63D2;&#x9488;&#x5C0F;&#x6E38;&#x620F;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于Canvas的游戏，关卡难度加大，速度加快"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x57FA;&#x4E8E;Canvas&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x5173;&#x5361;&#x96BE;&#x5EA6;&#x52A0;&#x5927;&#xFF0C;&#x901F;&#x5EA6;&#x52A0;&#x5FEB;" class="headerlink" title="&#x57FA;&#x4E8E;Canvas&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x5173;&#x5361;&#x96BE;&#x5EA6;&#x52A0;&#x5927;&#xFF0C;&#x901F;&#x5EA6;&#x52A0;&#x5FEB;"></a>&#x57FA;&#x4E8E;Canvas&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x5173;&#x5361;&#x96BE;&#x5EA6;&#x52A0;&#x5927;&#xFF0C;&#x901F;&#x5EA6;&#x52A0;&#x5FEB;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常见双向绑定的实现方法"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5E38;&#x89C1;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5E38;&#x89C1;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;"></a>&#x5E38;&#x89C1;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于数据劫持双向绑定的优点"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x57FA;&#x4E8E;&#x6570;&#x636E;&#x52AB;&#x6301;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x4F18;&#x70B9;" class="headerlink" title="&#x57FA;&#x4E8E;&#x6570;&#x636E;&#x52AB;&#x6301;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x4F18;&#x70B9;"></a>&#x57FA;&#x4E8E;&#x6570;&#x636E;&#x52AB;&#x6301;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x4F18;&#x70B9;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无需显示调用"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x65E0;&#x9700;&#x663E;&#x793A;&#x8C03;&#x7528;" class="headerlink" title="&#x65E0;&#x9700;&#x663E;&#x793A;&#x8C03;&#x7528;"></a>&#x65E0;&#x9700;&#x663E;&#x793A;&#x8C03;&#x7528;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可以精确得到变化数据"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x5F97;&#x5230;&#x53D8;&#x5316;&#x6570;&#x636E;" class="headerlink" title="&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x5F97;&#x5230;&#x53D8;&#x5316;&#x6570;&#x636E;"></a>&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x5F97;&#x5230;&#x53D8;&#x5316;&#x6570;&#x636E;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于Object-defineProperty双向绑定的两个缺点"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x57FA;&#x4E8E;Object-defineProperty&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x4E24;&#x4E2A;&#x7F3A;&#x70B9;" class="headerlink" title="&#x57FA;&#x4E8E;Object.defineProperty&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x4E24;&#x4E2A;&#x7F3A;&#x70B9;"></a>&#x57FA;&#x4E8E;Object.defineProperty&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x4E24;&#x4E2A;&#x7F3A;&#x70B9;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无法监听数组的变化"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x65E0;&#x6CD5;&#x76D1;&#x542C;&#x6570;&#x7EC4;&#x7684;&#x53D8;&#x5316;" class="headerlink" title="&#x65E0;&#x6CD5;&#x76D1;&#x542C;&#x6570;&#x7EC4;&#x7684;&#x53D8;&#x5316;"></a>&#x65E0;&#x6CD5;&#x76D1;&#x542C;&#x6570;&#x7EC4;&#x7684;&#x53D8;&#x5316;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只能劫持对象的属性"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x53EA;&#x80FD;&#x52AB;&#x6301;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;" class="headerlink" title="&#x53EA;&#x80FD;&#x52AB;&#x6301;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;"></a>&#x53EA;&#x80FD;&#x52AB;&#x6301;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Proxy实现双向绑定的特点"><span class="nav-number">4.</span> <span class="nav-text"><a href="#Proxy&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x7279;&#x70B9;" class="headerlink" title="Proxy&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x7279;&#x70B9;"></a>Proxy&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x7279;&#x70B9;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#&#x4F18;&#x70B9;" class="headerlink" title="&#x4F18;&#x70B9;"></a>&#x4F18;&#x70B9;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#&#x7F3A;&#x70B9;" class="headerlink" title="&#x7F3A;&#x70B9;"></a>&#x7F3A;&#x70B9;</span></a></li></ol></li></ol></div>
             
 
           </div>
