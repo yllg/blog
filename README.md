@@ -22,6 +22,6 @@
 
 4.音乐页</br>
 <img src="http://upload-images.jianshu.io/upload_images/5716959-f710f6758380531d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="365" height="700"/>
-
+</br></br></br>
 5.视频页</br>
 <img src="http://upload-images.jianshu.io/upload_images/5716959-e30b8dfbe92eef59?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="365" height="700"/>
