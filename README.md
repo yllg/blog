@@ -1,6 +1,9 @@
 ## 网站效果图如下，地址：[www.xuanbiyijue.com](http://www.xuanbiyijue.com/ "悬笔e绝")
 
-### 2月3日更新
+### 2018年8月5日更新
+个人博客已迁移到腾讯云，将不再本仓库更新</br>
+
+### 2018年2月3日更新
 分类页特效，加载动画，修复各种小bug
 ![分类页特效.gif](http://upload-images.jianshu.io/upload_images/5716959-5684e411ae3a3b41.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
