@@ -1,7 +1,7 @@
 ---
 title: 预渲染、SSR、SSG、ISR
 categories:
-  - 实验室
+  - 前端性能优化与工程化
   - null
 tags:
   - null
