@@ -1,0 +1,98 @@
+
+---
+title: 音乐🎵
+---
+
+<link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+
+<div class="category-all-page">
+    
+    <h3>云音乐飙升榜</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer1">
+    </div>
+
+    <h3>新歌榜</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer2">
+    </div>
+
+    <h3>原创榜</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer3">
+    </div>
+
+    <h3>我的收藏</h3>
+    <div class="aplayer aplayer-withlrc aplayer-withlist" id="aplayer5">
+    </div>
+
+</div>
+
+<script>
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=19723756",
+            success: function (e) {
+                var a = new APlayer({
+                    container: document.getElementById("aplayer1"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "circulation",
+                    audio: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=3779629",
+            success: function (e) {
+                var a = new APlayer({
+                    container: document.getElementById("aplayer2"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "circulation",
+                    audio: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=2884035",
+            success: function (e) {
+                var a = new APlayer({
+                    container: document.getElementById("aplayer3"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "circulation",
+                    audio: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+
+    $(function () {
+        $.ajax({
+            url: "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=626708643",
+            success: function (e) {
+                var a = new APlayer({
+                    container: document.getElementById("aplayer5"),
+                    showlrc: 3,
+                    theme: "red",
+                    listmaxheight: "280px",
+                    mode: "random",
+                    audio: JSON.parse(e)
+                });
+                window.aplayers || (window.aplayers = []), window.aplayers.push(a)
+            }
+        })
+    })
+</script>

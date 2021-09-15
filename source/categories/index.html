@@ -1,0 +1,457 @@
+
+--- 
+title: 分类 
+---
+
+<style>
+    .categoriesContent {
+        font-family: "Overpass Mono", monospace;
+        color: #37373e;
+        background: white;
+    }
+
+    /* Content */
+
+    .categoriesContent .content {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 0 1em;
+    }
+
+
+    /* Grid */
+
+    .categoriesContent .grid {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        perspective: 800px;
+        perspective-origin: 50% 100%;
+    }
+
+    .categoriesContent .grid__item {
+        position: relative;
+        display: block;
+        flex: none;
+        width: 180px;
+        margin: 1.5em 1.5vw;
+        cursor: default;
+        transform-style: preserve-3d;
+    }
+
+    .categoriesContent .grid__item:hover,
+    .categoriesContent .grid__item:focus {
+        outline: none;
+    }
+
+
+    .categoriesContent .grid__item--c1:hover,
+    .categoriesContent .grid__item--c1:focus {
+        color: #52649e;
+    }
+
+
+    .categoriesContent .grid__item--c2:hover,
+    .categoriesContent .grid__item--c2:focus {
+        color: #ee7074;
+    }
+
+    
+    .categoriesContent .grid__item--c3:hover,
+    .categoriesContent .grid__item--c3:focus {
+        color: #f7f295;
+    }
+
+    .categoriesContent .grid__item--c1,
+    .categoriesContent .grid__item--c2,
+    .categoriesContent .grid__item--c3{
+        color: white;
+    }
+
+
+    /* stack */
+
+    .categoriesContent .stack {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+    }
+
+    .categoriesContent .stack__deco {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: currentColor;
+        transform-origin: 50% 100%;
+    }
+
+    .categoriesContent .stack__deco:first-child {
+        opacity: 0.2;
+    }
+
+    .categoriesContent .stack__deco:nth-child(2) {
+        opacity: 0.4;
+    }
+
+    .categoriesContent .stack__deco:nth-child(3) {
+        opacity: 0.6;
+    }
+
+    .categoriesContent .stack__deco:nth-child(4) {
+        opacity: 0.8;
+    }
+
+    .categoriesContent .stack__figure {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transform-origin: 50% 100%;
+    }
+
+    .categoriesContent .stack__img {
+        position: relative;
+        display: block;
+        flex: none;
+    }
+
+    .categoriesContent .grid__item-caption {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        transform-style: preserve-3d;
+    }
+
+    .categoriesContent .grid__item-title {
+        font-size: 1.15em;
+        width: 100%;
+        margin: 1em 0;
+        text-align: center;
+        color: #37373e;
+        cursor: pointer;
+    }
+
+
+    /* polaris */
+
+    .categoriesContent .grid--effect-polaris {
+        perspective-origin: 100% -100%;
+    }
+
+    /* Alphard */
+
+    .categoriesContent .grid--effect-alphard {
+        perspective: none;
+    }
+
+    .categoriesContent .grid--effect-alphard .stack__figure,
+    .categoriesContent .grid--effect-alphard .stack__deco {
+        transform-origin: 50% 150%;
+    }
+
+    /* Altair */
+
+    .categoriesContent .grid--effect-altair {
+        perspective-origin: 50% -50%;
+    }
+
+    .categoriesContent .grid--effect-altair .stack__figure,
+    .categoriesContent .grid--effect-altair .stack__deco {
+        transform-origin: 50% 100%;
+    }
+
+    /* Canopus */
+
+    .categoriesContent .grid--effect-canopus {
+        perspective-origin: 50% 0%;
+    }
+
+    .categoriesContent .grid--effect-canopus .stack__figure,
+    .categoriesContent .grid--effect-canopus .stack__deco {
+        transform-origin: 50% 100%;
+    }
+
+    .categoriesContent .stack__img {
+        margin: 0 !important;
+    }
+</style>
+
+<main class="categoriesContent">
+    <section class="content">
+        <div class="grid grid--effect-canopus">
+            <a href="/categories/JS与QA/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/1.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">JS与QA</h3>
+
+                </div>
+            </a>
+            <a href="/categories/NodeJS/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/2.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">NodeJS</h3>
+
+                </div>
+            </a>
+            <a href="/categories/前端工程化与持续构建/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/3.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">前端工程化与持续构建</h3>
+
+                </div>
+            </a>
+
+        </div>
+    </section>
+    <section class="content">
+        <div class="grid grid--effect-polaris">
+            <a href="/categories/前端性能优化与工程化/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/4.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">前端性能优化</h3>
+
+                </div>
+            </a>
+            <a href="/categories/CSS与网站重构/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/5.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">CSS</h3>
+
+                </div>
+            </a>
+            <a href="/categories/MV框架/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/6.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">MV*框架</h3>
+
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="content">
+        <div class="grid grid--effect-alphard">
+            <a href="/categories/前端跨界/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/7.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">前端跨界</h3>
+
+                </div>
+            </a>
+            <a href="/categories/数据结构与算法的JS实践/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/8.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">数据结构与算法</h3>
+
+                </div>
+            </a>
+            <a href="/categories/JS图形学与H5游戏/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/9.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">JS图形学与H5游戏</h3>
+
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="content">
+        <div class="grid grid--effect-altair">
+            <a href="/categories/设计模式/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/10.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">设计模式</h3>
+
+                </div>
+            </a>
+            <a href="/categories/网络安全/" class="grid__item grid__item--c2">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/11.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">网络安全</h3>
+
+                </div>
+            </a>
+            <a href="/categories/实验室/" class="grid__item grid__item--c3">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/12.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">实验室</h3>
+
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="content">
+        <div class="grid grid--effect-canopus">
+            <a href="/categories/随笔/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/13.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">随笔</h3>
+
+                </div>
+            </a>
+            <a href="/categories/AI/" class="grid__item grid__item--c1">
+                <div class="stack">
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__deco"></div>
+                    <div class="stack__figure">
+                        <img class="stack__img" src="/images/categories/0.png" alt="Image" />
+                    </div>
+                </div>
+                <div class="grid__item-caption">
+                    <h3 class="grid__item-title">AI</h3>
+            
+                </div>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    $(function () {
+        $.ajax({
+            url: "/js/categories.js",
+            success: function (e) {
+                // console.log("获取js之后再本页初始化即可");
+                (function () {
+
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-polaris > .grid__item')).forEach(function (stackEl) {
+                        new PolarisFx(stackEl);
+                    });
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-alphard > .grid__item')).forEach(function (stackEl) {
+                        new AlphardFx(stackEl);
+                    });
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-altair > .grid__item')).forEach(function (stackEl) {
+                        new AltairFx(stackEl);
+                    });
+
+                    [].slice.call(document.querySelectorAll(
+                        '.grid--effect-canopus > .grid__item')).forEach(function (stackEl) {
+                        new CanopusFx(stackEl);
+                    });
+
+                })();
+            }
+        })
+    })
+</script>
