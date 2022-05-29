@@ -8,6 +8,7 @@ tags:
 -
 -
 top:
+mathjax: true
 ---
 
 
@@ -31,6 +32,33 @@ $ console.log("之后会把旧文章更新过来~😜")
 两种都行
 ![](1.jpg)
 {% asset_img ClassName 1.jpg %}
+
+矩阵：
+
+$$
+ \begin{bmatrix}
+   1 & 0 & e \\\
+   0 & 1 & f \\\
+   0 & 0 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+   x \\\
+   y \\\
+   1
+  \end{bmatrix} =
+  \begin{bmatrix}
+   x+e \\\
+   y+f \\\
+   1
+  \end{bmatrix}
+$$
+
+向量：
+
+$\vec{i}$ 
+
+上标： x的平方 $x^2$,
+下标： x1  $x_1$
 
 
 演示地址: [演示地址](https://yllg.github.io/ZWJ/)

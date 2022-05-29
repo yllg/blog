@@ -86,3 +86,10 @@ deploy:
   repo: https://github.com/yllg/blog.git
   # branch:
   message: 更新一个项目《mpvue-xbyjShop微信小程序商城》~~
+
+math:
+  engine: 'mathjax'
+  mathjax:
+    src: custom_mathjax_source
+    config:
+      # MathJax config
